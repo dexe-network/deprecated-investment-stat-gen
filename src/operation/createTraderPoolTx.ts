@@ -1,11 +1,12 @@
 import {Transaction} from 'ethereumjs-tx';
 import abiDecoder from 'abi-decoder';
-import {IState} from '../interfaces/basic.interface';
+import {IPoolInfo, IState} from '../interfaces/basic.interface';
+import {TransactionReceipt} from 'web3-core';
 
 export async function createTraderPoolTx(state: IState) {
-    const tpfuContract = new state.web3.eth.Contract(state.abiTPFU, state.traderPoolFactoryUpgradeableAddress);
+    const tpfuContract = new state.web3.eth.Contract(state.abis.abiTPFU, state.traderPoolFactoryUpgradeableAddress);
 
-    abiDecoder.addABI(state.abiTPFU);
+    abiDecoder.addABI(state.abis.abiTPFU);
 
     const txCount = await state.web3.eth.getTransactionCount(state.config.walletAddress);
     const commissions = [state.web3.utils.toHex(10), state.web3.utils.toHex(3), state.web3.utils.toHex(10), state.web3.utils.toHex(3), state.web3.utils.toHex(10), state.web3.utils.toHex(3)];
@@ -32,7 +33,27 @@ export async function createTraderPoolTx(state: IState) {
         .on('error', function a(r) {
             console.log("Error sending transaction (TRANSACTION TYPE 2):", r)
         })
-    // console.log('receipt', receipt, abiDecoder.decodeMethod((await web3.eth.getTransaction(receipt.transactionHash)).input));
+
+    const poolAddress = getTraderPoolAddress(receipt);
+    addTraderPoolInfo({
+        poolAddress,
+        traderName: 'Trader1',
+        basicToken: state.config.busdTokenAddress,
+        traderWallet: state.config.walletAddress
+    }, state)
+
+    // console.log('getTransactionCount', await state.web3.eth.getTransactionCount(poolAddress));
+    // console.log('receipt', receipt, abiDecoder.decodeMethod((await state.web3.eth.getTransaction(receipt.transactionHash)).input));
     // console.log('2')
     // console.log('receipt', receipt);
+}
+
+function getTraderPoolAddress(receipt: TransactionReceipt): string {
+    const data = receipt.logs[receipt.logs.length - 1].data;
+    const poolAddress = '0x' + data.substring(26);
+    return poolAddress;
+}
+
+function addTraderPoolInfo(data: IPoolInfo, state: IState) {
+    state.traderPools.push(data);
 }

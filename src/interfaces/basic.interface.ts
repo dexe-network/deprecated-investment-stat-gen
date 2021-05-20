@@ -3,13 +3,25 @@ import Web3 from 'web3';
 export interface IState {
     config: IConfig;
     web3: Web3;
-    abiPET: any;
-    abiTPFU: any;
-    abiPancake: any;
+    abis: {
+        abiPET: any;
+        abiTPFU: any;
+        abiPancake: any;
+        abiTraderPool: any;
+        abiErc20: any;
+    }
     accounts: IAccount[];
     pancakeExchangeToolAddress: string;
     traderPoolFactoryUpgradeableAddress: string;
     pancakeRouterAddress: string;
+    traderPools: IPoolInfo[];
+}
+
+export interface IPoolInfo {
+    traderName: string;
+    traderWallet: string;
+    basicToken: string;
+    poolAddress: string;
 }
 
 export interface IConfig {
