@@ -8,7 +8,7 @@ export async function createTraderPoolTx(state: IState) {
     abiDecoder.addABI(state.abiTPFU);
 
     const txCount = await state.web3.eth.getTransactionCount(state.config.walletAddress);
-    const commissions = [state.web3.utils.toHex(10),state.web3.utils.toHex(3), state.web3.utils.toHex(10),state.web3.utils.toHex(3), state.web3.utils.toHex(10),state.web3.utils.toHex(3)];
+    const commissions = [state.web3.utils.toHex(10), state.web3.utils.toHex(3), state.web3.utils.toHex(10), state.web3.utils.toHex(3), state.web3.utils.toHex(10), state.web3.utils.toHex(3)];
 
     const createTraderPoolRawTransaction = {
         "from": state.config.walletAddress,
@@ -17,7 +17,7 @@ export async function createTraderPoolTx(state: IState) {
         "gasLimit": state.web3.utils.toHex(state.config.gasLimit),
         "to": state.traderPoolFactoryUpgradeableAddress,
         "value": state.web3.utils.toHex(0),
-        "data": tpfuContract.methods.createTraderContract(state.config.walletAddress, state.config.basicTokenAddress, state.web3.utils.toHex(1000), commissions, true, false, "Statistic Trader DEXE", "STDX").encodeABI(),
+        "data": tpfuContract.methods.createTraderContract(state.config.walletAddress, state.config.busdTokenAddress, state.web3.utils.toHex(1000), commissions, true, false, "Statistic Trader DEXE", "STDX").encodeABI(),
     }
 
     const privKey = state.config.privateKey;
