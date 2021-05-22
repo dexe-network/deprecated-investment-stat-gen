@@ -16,8 +16,8 @@ export function stateInitializer(provider: GanacheCore.Provider): IState {
         web3: new Web3(provider, null, { transactionConfirmationBlocks: 1 }),
         accounts: {
             all: accounts,
-            traders: accounts.slice(0, 5),
-            users: accounts.slice(21, 22)
+            traders: accounts.slice(0, 1),
+            users: accounts.slice(21, 25)
         },
         abis: {
             abiPET : require('../abi/PancakeExchangeTool.json'),

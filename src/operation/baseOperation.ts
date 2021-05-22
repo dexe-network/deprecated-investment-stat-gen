@@ -9,6 +9,7 @@ import {getRevertReason} from '../utils/getRevertReason';
 import {getCurrentExchangeRate} from '../utils/pairPrice';
 import BigNumber from 'bignumber.js';
 import {parsedBalanceToRaw} from '../helpers/tokens.helper';
+import {getUserBalance} from '../utils/getUserBalance';
 
 export class BaseOperation {
     constructor(private state: IState) {
@@ -49,6 +50,7 @@ export class BaseOperation {
     public async depositTokenToTraderPool(account: IAccount, traderPool: IPoolInfo, amount: number) {
         await this.swapTokens(account, traderPool.basicToken, amount);
         await this.approveTransferTokenToPool(account, traderPool, amount);
+        console.log('Balance before Deposit' , await getUserBalance(this.state, traderPool.basicToken, account.address))
 
         const poolAddress = traderPool.poolAddress;
         const traderPoolContract = new this.state.web3.eth.Contract(this.state.abis.abiTraderPool, poolAddress);
@@ -64,12 +66,11 @@ export class BaseOperation {
             data: traderPoolContract.methods.deposit(this.state.web3.utils.toHex(amount)).encodeABI(),
         }
         await this.sendTransaction(createDepositTransaction, account.secretKey, 'Deposit');
+        console.log('Balance after Deposit' , await getUserBalance(this.state, traderPool.basicToken, account.address))
     }
 
     public async approveTransferTokenToPool(account: IAccount, traderPool: IPoolInfo, amount: number) {
         const tokenContract = new this.state.web3.eth.Contract(this.state.abis.abiErc20, traderPool.basicToken);
-        const balance = await tokenContract.methods.balanceOf(account.address).call();
-        console.log(balance)
         const txCount = await this.state.web3.eth.getTransactionCount(account.address);
         const createApproveRawTransaction = {
             from: account.address,

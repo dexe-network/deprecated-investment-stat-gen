@@ -49,7 +49,7 @@ export class BaseGenerator {
         //@ts-ignore
         console.log(colors.bgGreen.bold('Deposit From Users'))
         await Promise.all(usersList.map(async value => {
-            await this.baseOperation.depositTokenToTraderPool(value, lodash.sample(traderPools), lodash.random(1, 9) * 1000);
+            await this.baseOperation.depositTokenToTraderPool(value, lodash.sample(traderPools), 997);
         }))
         //@ts-ignore
         console.log(colors.bgGreen.bold('Deposit From Users Completed'))
