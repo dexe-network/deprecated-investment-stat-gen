@@ -9,12 +9,22 @@ export interface IState {
         abiPancake: any;
         abiTraderPool: any;
         abiErc20: any;
+        abiPancakeFactory: any;
+        abiPairContract: any;
     }
-    accounts: IAccount[];
-    pancakeExchangeToolAddress: string;
-    traderPoolFactoryUpgradeableAddress: string;
-    pancakeRouterAddress: string;
+    accounts: {
+        all: IAccount[],
+        traders: IAccount[],
+        users: IAccount[],
+    };
+    baseAddresses: {
+        pancakeExchangeTool: string;
+        traderPoolFactoryUpgradeable: string;
+        pancakeSwapRouterV2: string;
+        pancakeFactory: string;
+    }
     traderPools: IPoolInfo[];
+    baseTokenList: string[];
 }
 
 export interface IPoolInfo {
@@ -25,15 +35,44 @@ export interface IPoolInfo {
 }
 
 export interface IConfig {
-    walletAddress: string,
-    privateKey: Buffer,
     gasPrice: number,
     gasLimit: number,
-    busdTokenAddress: string, //busd
 }
 
 export interface IAccount {
     secretKey: Buffer;
     publicKey: Buffer;
     address: string;
+}
+
+export interface IRawTransaction {
+    from: string;
+    nonce: string;
+    gasPrice: string;
+    gasLimit: string;
+    to: string;
+    value: string;
+    data: string;
+}
+
+export interface IContractTokenNames {
+    token0: string;
+    token1: string;
+}
+
+export interface ITokenPriceData {
+    sendToken: {
+        address: string;
+        reserve: string;
+    };
+    receiveToken: {
+        address: string;
+        reserve: string;
+    };
+}
+
+export interface IReserveData {
+    reserve0: string;
+    reserve1: string;
+    blockTimestampLast: string;
 }
