@@ -10,6 +10,7 @@ import {getCurrentExchangeRate} from '../utils/pairPrice';
 import BigNumber from 'bignumber.js';
 import {parsedBalanceToRaw} from '../helpers/tokens.helper';
 import {getUserBalance} from '../utils/getUserBalance';
+import colors from 'colors/safe';
 
 export class BaseOperation {
     constructor(private state: IState) {
@@ -33,7 +34,7 @@ export class BaseOperation {
             value: this.state.web3.utils.toHex(0),
             data: tpfuContract.methods.createTraderContract(account.address, basicToken, this.state.web3.utils.toHex(lodash.random(1, 9) * 100000), commissions, true, false, faker.commerce.productName(), faker.address.stateAbbr()).encodeABI(),
         }
-        const receipt = await this.sendTransaction(createTraderPoolRawTransaction, account.secretKey, 'Create Pool');
+        const receipt = await this.sendTransaction(createTraderPoolRawTransaction, account.secretKey, 'Pool Created');
 
         const poolAddress = this.getTraderPoolAddress(receipt);
         this.addTraderPoolInfo({
@@ -50,7 +51,7 @@ export class BaseOperation {
     public async depositTokenToTraderPool(account: IAccount, traderPool: IPoolInfo, amount: number) {
         await this.swapTokens(account, traderPool.basicToken, amount);
         await this.approveTransferTokenToPool(account, traderPool, amount);
-        console.log('Balance before Deposit' , await getUserBalance(this.state, traderPool.basicToken, account.address))
+        console.log('Balance before Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address))
 
         const poolAddress = traderPool.poolAddress;
         const traderPoolContract = new this.state.web3.eth.Contract(this.state.abis.abiTraderPool, poolAddress);
@@ -65,8 +66,8 @@ export class BaseOperation {
             value: this.state.web3.utils.toHex(0),
             data: traderPoolContract.methods.deposit(this.state.web3.utils.toHex(amount)).encodeABI(),
         }
-        await this.sendTransaction(createDepositTransaction, account.secretKey, 'Deposit');
-        console.log('Balance after Deposit' , await getUserBalance(this.state, traderPool.basicToken, account.address))
+        await this.sendTransaction(createDepositTransaction, account.secretKey, 'Deposited');
+        console.log('Balance after Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address))
     }
 
     public async approveTransferTokenToPool(account: IAccount, traderPool: IPoolInfo, amount: number) {
@@ -81,7 +82,7 @@ export class BaseOperation {
             value: this.state.web3.utils.toHex(0),
             data: tokenContract.methods.approve(traderPool.poolAddress, this.state.web3.utils.toHex(amount)).encodeABI(),
         }
-        await this.sendTransaction(createApproveRawTransaction, account.secretKey, 'Approve');
+        await this.sendTransaction(createApproveRawTransaction, account.secretKey, 'Approved');
     }
 
     public async swapTokens(account: IAccount, swapTokenAddress: string, amount: number) {
@@ -108,23 +109,30 @@ export class BaseOperation {
             ),
             data: pancakeContract.methods.swapETHForExactTokens(this.state.web3.utils.toHex(amount), path, account.address, deadlineTime).encodeABI(),
         }
-        await this.sendTransaction(createSwapRawTransaction, account.secretKey, 'Swap Token');
+        await this.sendTransaction(createSwapRawTransaction, account.secretKey, 'Token Swapped');
     }
 
-    private sendTransaction(rawTransaction: IRawTransaction, secretKey: Buffer, type: string): PromiEvent<TransactionReceipt> {
-        const transaction = new Transaction(rawTransaction);
-        transaction.sign(secretKey);
-        const serializedTransaction = transaction.serialize();
+    private async sendTransaction(rawTransaction: IRawTransaction, secretKey: Buffer, type: string): Promise<TransactionReceipt> {
 
-        return this.state.web3.eth.sendSignedTransaction('0x' + serializedTransaction.toString('hex'))
-            .on('transactionHash', (r) => {
-                console.log(type, ": Transaction sent, TX hash:", r)
-            })
-            .on('error', (r) => {
-                console.log("Error sending transaction (TRANSACTION TYPE 2):", r)
-                // @ts-ignore
-                getRevertReason(r.receipt.transactionHash, this.state)
-            })
+        try {
+            const transaction = new Transaction(rawTransaction);
+            transaction.sign(secretKey);
+            const serializedTransaction = transaction.serialize();
+
+            const receipt = await this.state.web3.eth.sendSignedTransaction('0x' + serializedTransaction.toString('hex'))
+                .on('transactionHash', (r) => {
+                    //@ts-ignore
+                    console.log(colors.bgWhite.bold(type), colors.magenta.bold("Transaction sent, TX hash:"), r)
+                })
+                .on('error', (r) => {
+                    // console.log("Error sending transaction (TRANSACTION TYPE 2):", r)
+                    // @ts-ignore
+                    getRevertReason(r.receipt.transactionHash, this.state)
+                })
+            return receipt;
+        } catch (e) {
+
+        }
     }
 
     private getTraderPoolAddress(receipt: TransactionReceipt): string {

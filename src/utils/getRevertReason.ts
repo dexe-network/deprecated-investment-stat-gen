@@ -1,4 +1,5 @@
 import {IState} from '../interfaces/basic.interface';
+import colors from 'colors/safe';
 
 export async function getRevertReason(txHash, state: IState) {
     try {
@@ -11,7 +12,7 @@ export async function getRevertReason(txHash, state: IState) {
         if (result && result.substr(138)) {
 
             const reason = state.web3.utils.toAscii(result.substr(138))
-            console.log('Revert reason:', reason)
+            console.log('Revert reason:', reason);
             return reason
 
         } else {
@@ -20,6 +21,9 @@ export async function getRevertReason(txHash, state: IState) {
 
         }
     } catch (e) {
-        console.log(e)
+        for (const [key, value] of Object.entries(e.results)) {
+            //@ts-ignore
+            console.log(colors.bgRed.bold('Error', value.error), colors.bgYellow.bold('Reason', value.reason), colors.magenta.bold("TX hash:"), key);
+        }
     }
 }
