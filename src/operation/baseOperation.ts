@@ -11,6 +11,7 @@ import BigNumber from 'bignumber.js';
 import {parsedBalanceToRaw} from '../helpers/tokens.helper';
 import {getUserBalance} from '../utils/getUserBalance';
 import colors from 'colors/safe';
+import {getDecimal} from '../utils/getDecimal';
 
 export class BaseOperation {
     constructor(private state: IState) {
@@ -32,7 +33,7 @@ export class BaseOperation {
             gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
             to: this.state.baseAddresses.traderPoolFactoryUpgradeable,
             value: this.state.web3.utils.toHex(0),
-            data: tpfuContract.methods.createTraderContract(account.address, basicToken, this.state.web3.utils.toHex(lodash.random(1, 9) * 100000), commissions, true, false, faker.commerce.productName(), faker.address.stateAbbr()).encodeABI(),
+            data: tpfuContract.methods.createTraderContract(account.address, basicToken, this.state.web3.utils.toHex(0), commissions, true, false, faker.commerce.productName(), faker.address.stateAbbr()).encodeABI(),
         }
         const receipt = await this.sendTransaction(createTraderPoolRawTransaction, account.secretKey, 'Pool Created');
 
@@ -94,6 +95,8 @@ export class BaseOperation {
         const path = ['0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c', swapTokenAddress];
         const deadlineTime = moment(moment.now()).add(10, 'minutes').unix();
 
+        const tokenDecimal = await getDecimal(swapTokenAddress, this.state);
+
         const createSwapRawTransaction: IRawTransaction = {
             from: account.address,
             nonce: this.state.web3.utils.toHex(txCount),
@@ -104,7 +107,7 @@ export class BaseOperation {
             value: this.state.web3.utils.toHex(
                 parsedBalanceToRaw(
                     new BigNumber(amount).multipliedBy(1.03).dividedBy(currentPrice),
-                    18
+                    tokenDecimal
                 ).toFixed(0)
             ),
             data: pancakeContract.methods.swapETHForExactTokens(this.state.web3.utils.toHex(amount), path, account.address, deadlineTime).encodeABI(),

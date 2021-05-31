@@ -39,7 +39,7 @@ export class BaseGenerator {
         console.log(colors.bgGreen.bold('Deposit From Traders'))
         await Promise.all(traderPools.map(async value => {
             const traderAccount = tradersList.find(x => x.address.toLowerCase() === value.traderWallet.toLowerCase());
-            await this.baseOperation.depositTokenToTraderPool(traderAccount, value, 1000);
+            await this.baseOperation.depositTokenToTraderPool(traderAccount, value, lodash.random(1, 3) * 1000);
         }))
         //@ts-ignore
         console.log(colors.bgGreen.bold('Deposit From Traders Completed'))
@@ -49,7 +49,7 @@ export class BaseGenerator {
         //@ts-ignore
         console.log(colors.bgGreen.bold('Deposit From Users'))
         await Promise.all(usersList.map(async value => {
-            await this.baseOperation.depositTokenToTraderPool(value, lodash.sample(traderPools), 997);
+            await this.baseOperation.depositTokenToTraderPool(value, lodash.sample(traderPools), lodash.random(1, 3) * 1000);
         }))
         //@ts-ignore
         console.log(colors.bgGreen.bold('Deposit From Users Completed'))
