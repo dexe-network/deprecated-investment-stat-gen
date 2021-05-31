@@ -1,7 +1,7 @@
 import {IAccount, IState} from '../interfaces/basic.interface';
 import Web3 from 'web3';
 import GanacheCore from 'ganache-core';
-import {basicTokensAddress} from '../constant/basicTokenList';
+import {basicBscTokensAddress} from '../constant/basicTokenList';
 
 export function stateInitializer(provider: GanacheCore.Provider): IState {
     // @ts-ignore
@@ -35,7 +35,7 @@ export function stateInitializer(provider: GanacheCore.Provider): IState {
             pancakeFactory: '0xBCfCcbde45cE874adCB698cC183deBcF17952812',
         },
         traderPools: [],
-        baseTokenList: basicTokensAddress,
+        baseTokenList: basicBscTokensAddress,
     }
 
     return state;

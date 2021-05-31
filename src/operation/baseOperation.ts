@@ -10,7 +10,7 @@ import {getCurrentExchangeRate} from '../utils/pairPrice';
 import BigNumber from 'bignumber.js';
 import {parsedBalanceToRaw} from '../helpers/tokens.helper';
 import {getUserBalance} from '../utils/getUserBalance';
-import colors from 'colors/safe';
+import 'colors';
 import {getDecimal} from '../utils/getDecimal';
 
 export class BaseOperation {
@@ -124,8 +124,7 @@ export class BaseOperation {
 
             const receipt = await this.state.web3.eth.sendSignedTransaction('0x' + serializedTransaction.toString('hex'))
                 .on('transactionHash', (r) => {
-                    //@ts-ignore
-                    console.log(colors.bgWhite.bold(type), colors.magenta.bold("Transaction sent, TX hash:"), r)
+                    console.log(type.bgWhite.bold, "Transaction sent, TX hash:".magenta.bold, r)
                 })
                 .on('error', (r) => {
                     // console.log("Error sending transaction (TRANSACTION TYPE 2):", r)

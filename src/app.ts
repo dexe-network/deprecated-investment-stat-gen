@@ -13,6 +13,8 @@ const ganacheOptions: Ganache.IProviderOptions = {
     blockTime: 1,
     default_balance_ether: 10000,
     total_accounts: 301,
+    mnemonic: 'catalog forum over nut turkey topic village reduce issue speak enforce diamond capable horror click',
+    db_path: path.resolve(__dirname,'db','db')
 }
 
 const provider = ganacheCore.provider(ganacheOptions);

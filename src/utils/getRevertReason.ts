@@ -1,5 +1,5 @@
 import {IState} from '../interfaces/basic.interface';
-import colors from 'colors/safe';
+import 'colors';
 
 export async function getRevertReason(txHash, state: IState) {
     try {
@@ -22,8 +22,8 @@ export async function getRevertReason(txHash, state: IState) {
         }
     } catch (e) {
         for (const [key, value] of Object.entries(e.results)) {
-            //@ts-ignore
-            console.log(colors.bgRed.bold('Error', value.error), colors.bgYellow.bold('Reason', value.reason), colors.magenta.bold("TX hash:"), key);
+            // @ts-ignore
+            console.log(`Error ${value.error}`.bgRed.bold, `Reason ${value.reason}`.bgYellow.bold, "TX hash:".magenta.bold, key);
         }
     }
 }
