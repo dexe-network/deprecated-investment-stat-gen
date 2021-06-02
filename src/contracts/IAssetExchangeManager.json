@@ -1,0 +1,285 @@
+{
+  "contractName": "IAssetExchangeManager",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "bytes",
+          "name": "_calldata",
+          "type": "bytes"
+        }
+      ],
+      "name": "execute",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"bytes\",\"name\":\"_calldata\",\"type\":\"bytes\"}],\"name\":\"execute\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IAssetExchangeManager.sol\":\"IAssetExchangeManager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IAssetExchangeManager.sol\":{\"keccak256\":\"0xfb97c44c08845d9b1fa4c7acebdffe5c0f1e93262ac4e2915212c187087d1913\",\"urls\":[\"bzz-raw://fd88953b9af44f0cd2dcbc339cc36f9971aa61edb4e03cbe4b3ac3c5120d7634\",\"dweb:/ipfs/QmdeWfEahibBXMU4n7GBdCHcurK32xWSFjm9XTxxtw9yPV\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity >=0.6.2 <0.8.0;\n\ninterface IAssetExchangeManager {\n    function execute(bytes calldata _calldata) external returns (bool);\n}",
+  "sourcePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IAssetExchangeManager.sol",
+  "ast": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IAssetExchangeManager.sol",
+    "exportedSymbols": {
+      "IAssetExchangeManager": [6214]
+    },
+    "id": 6215,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6206,
+        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:24"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6214,
+        "linearizedBaseContracts": [6214],
+        "name": "IAssetExchangeManager",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "09c5eabe",
+            "id": 6213,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "execute",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6209,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6208,
+                  "mutability": "mutable",
+                  "name": "_calldata",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6213,
+                  "src": "121:24:24",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 6207,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "121:5:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "120:26:24"
+            },
+            "returnParameters": {
+              "id": 6212,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6211,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6213,
+                  "src": "165:4:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6210,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "165:4:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "164:6:24"
+            },
+            "scope": 6214,
+            "src": "104:67:24",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6215,
+        "src": "66:107:24"
+      }
+    ],
+    "src": "33:140:24"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IAssetExchangeManager.sol",
+    "exportedSymbols": {
+      "IAssetExchangeManager": [6214]
+    },
+    "id": 6215,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6206,
+        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:24"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6214,
+        "linearizedBaseContracts": [6214],
+        "name": "IAssetExchangeManager",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "09c5eabe",
+            "id": 6213,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "execute",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6209,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6208,
+                  "mutability": "mutable",
+                  "name": "_calldata",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6213,
+                  "src": "121:24:24",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes_calldata_ptr",
+                    "typeString": "bytes"
+                  },
+                  "typeName": {
+                    "id": 6207,
+                    "name": "bytes",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "121:5:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes_storage_ptr",
+                      "typeString": "bytes"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "120:26:24"
+            },
+            "returnParameters": {
+              "id": 6212,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6211,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6213,
+                  "src": "165:4:24",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6210,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "165:4:24",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "164:6:24"
+            },
+            "scope": 6214,
+            "src": "104:67:24",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6215,
+        "src": "66:107:24"
+      }
+    ],
+    "src": "33:140:24"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.4",
+  "updatedAt": "2021-05-31T12:09:06.730Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

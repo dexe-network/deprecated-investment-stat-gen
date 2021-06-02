@@ -6,7 +6,12 @@
   "scripts": {
     "start": "ts-node  --transpile-only ./src/app.ts",
     "start-network": "npx ganache-cli -f https://bsc-dataseed1.binance.org -d -i 56 --hardfork istanbul -b 3 -e 10000 -a 101",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lintPretty": "pretty-quick --staged && npm run lint:fix",
+    "lint": "npm run lint:js ",
+    "lint:eslint": "eslint --ignore-path .gitignore --ext .ts",
+    "lint:js": "npm run lint:eslint src/",
+    "lint:fix": "npm run lint:js -- --fix"
   },
   "author": "",
   "license": "ISC",
@@ -26,6 +31,13 @@
     "@types/faker": "^5.5.5",
     "@types/lodash": "^4.14.169",
     "@types/web3": "^1.2.2",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.27.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "prettier": "^2.3.0",
+    "pretty-quick": "^3.1.0",
     "ts-node": "^9.1.1",
     "typescript": "^4.2.4"
   }

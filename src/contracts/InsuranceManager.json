@@ -1,0 +1,285 @@
+{
+  "contractName": "InsuranceManager",
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/InsuranceManager.sol\":\"InsuranceManager\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/GSN/Context.sol\":{\"keccak256\":\"0xdb26cbf4d028490f49831a7865c2fe1b28db44b535ca8d343785a3b768aae183\",\"urls\":[\"bzz-raw://840b14ce0315c47d49ba328f1f9fa7654ded1c9e1559e6c5e777a7b2dc28bf0a\",\"dweb:/ipfs/QmTLLabn4wcfGro9LEmUXUN2nwKqZSotXMvjDCLXEnLtZP\"]},\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/InsuranceManager.sol\":{\"keccak256\":\"0x4ec3939e7f603e421b258218790ce9aa77fcf6e59247df7e2e6aed0f19c0e111\",\"urls\":[\"bzz-raw://ae381e25e9df9ba39dd25813006a76bcdfcbd6c6f5c85193fbd304ccee3b81ed\",\"dweb:/ipfs/QmUcC1DpLwmbGNRF5ufMsc2s7t3yr6YYPnN6bWd478uveW\"]},\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/access/Ownable.sol\":{\"keccak256\":\"0x2cbaadee4d72bc76621a37b35bfe7cbb1f75849150fa122841390eb2581d1edb\",\"urls\":[\"bzz-raw://b65c7d51b3e2511d88ed834ebf2460d128de1e4967c0027b87723ebe3aaf3359\",\"dweb:/ipfs/QmS9Lyn9reiQ9b6dzr91edpfosxobjR6PXXEJ8ed5bMJMe\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060006100246001600160e01b0361007316565b600080546001600160a01b0319166001600160a01b0383169081178255604051929350917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a350610077565b3390565b6102ef806100866000396000f3fe608060405234801561001057600080fd5b50600436106100415760003560e01c8063715018a6146100465780638da5cb5b14610050578063f2fde38b14610074575b600080fd5b61004e61009a565b005b610058610162565b604080516001600160a01b039092168252519081900360200190f35b61004e6004803603602081101561008a57600080fd5b50356001600160a01b0316610171565b6100a261028f565b6000546001600160a01b03908116911614806100c757506000546001600160a01b0316155b610118576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b6000546001600160a01b031690565b61017961028f565b6000546001600160a01b039081169116148061019e57506000546001600160a01b0316155b6101ef576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b6001600160a01b0381166102345760405162461bcd60e51b81526004018080602001828103825260268152602001806102946026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b339056fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061646472657373a2646970667358221220de8a5aac4e11237c62d7a89c5e0435793b279a7a9b98ff3777553f2f4699191d64736f6c63430006060033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100415760003560e01c8063715018a6146100465780638da5cb5b14610050578063f2fde38b14610074575b600080fd5b61004e61009a565b005b610058610162565b604080516001600160a01b039092168252519081900360200190f35b61004e6004803603602081101561008a57600080fd5b50356001600160a01b0316610171565b6100a261028f565b6000546001600160a01b03908116911614806100c757506000546001600160a01b0316155b610118576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b6000546001600160a01b031690565b61017961028f565b6000546001600160a01b039081169116148061019e57506000546001600160a01b0316155b6101ef576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b6001600160a01b0381166102345760405162461bcd60e51b81526004018080602001828103825260268152602001806102946026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b339056fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f2061646472657373a2646970667358221220de8a5aac4e11237c62d7a89c5e0435793b279a7a9b98ff3777553f2f4699191d64736f6c63430006060033",
+  "immutableReferences": {},
+  "sourceMap": "88:71:3:-:0;;;129:26;5:9:-1;2:2;;;27:1;24;17:12;2:2;-1:-1;866:17:15;886:12;-1:-1:-1;;;;;886:10:15;:12;:::i;:::-;908:6;:18;;-1:-1:-1;;;;;;908:18:15;-1:-1:-1;;;;;908:18:15;;;;;;;941:43;;908:18;;-1:-1:-1;908:18:15;941:43;;908:6;;941:43;832:159;88:71:3;;590:104:1;677:10;590:104;:::o;88:71:3:-;;;;;;;",
+  "deployedSourceMap": "88:71:3:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;88:71:3;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;1714:145:15;;;:::i;:::-;;1067:77;;;:::i;:::-;;;;-1:-1:-1;;;;;1067:77:15;;;;;;;;;;;;;;2008:240;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;2008:240:15;-1:-1:-1;;;;;2008:240:15;;:::i;1714:145::-;1281:12;:10;:12::i;:::-;1271:6;;-1:-1:-1;;;;;1271:6:15;;;:22;;;;:46;;-1:-1:-1;1315:1:15;1297:6;-1:-1:-1;;;;;1297:6:15;:20;1271:46;1263:91;;;;;-1:-1:-1;;;1263:91:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1820:1:::1;1804:6:::0;;1783:40:::1;::::0;-1:-1:-1;;;;;1804:6:15;;::::1;::::0;1783:40:::1;::::0;1820:1;;1783:40:::1;1850:1;1833:19:::0;;-1:-1:-1;;;;;;1833:19:15::1;::::0;;1714:145::o;1067:77::-;1105:7;1131:6;-1:-1:-1;;;;;1131:6:15;1067:77;:::o;2008:240::-;1281:12;:10;:12::i;:::-;1271:6;;-1:-1:-1;;;;;1271:6:15;;;:22;;;;:46;;-1:-1:-1;1315:1:15;1297:6;-1:-1:-1;;;;;1297:6:15;:20;1271:46;1263:91;;;;;-1:-1:-1;;;1263:91:15;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;2096:22:15;::::1;2088:73;;;;-1:-1:-1::0;;;2088:73:15::1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2197:6;::::0;;2176:38:::1;::::0;-1:-1:-1;;;;;2176:38:15;;::::1;::::0;2197:6;::::1;::::0;2176:38:::1;::::0;::::1;2224:6;:17:::0;;-1:-1:-1;;;;;;2224:17:15::1;-1:-1:-1::0;;;;;2224:17:15;;;::::1;::::0;;;::::1;::::0;;2008:240::o;590:104:1:-;677:10;590:104;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity 0.6.6;\n\nimport \"./access/Ownable.sol\";\n\ncontract InsuranceManager is Ownable{\n\n  constructor() public {\n  }\n\n\n}\n",
+  "sourcePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/InsuranceManager.sol",
+  "ast": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/InsuranceManager.sol",
+    "exportedSymbols": {
+      "InsuranceManager": [52]
+    },
+    "id": 53,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 44,
+        "literals": ["solidity", "0.6", ".6"],
+        "nodeType": "PragmaDirective",
+        "src": "32:22:3"
+      },
+      {
+        "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/access/Ownable.sol",
+        "file": "./access/Ownable.sol",
+        "id": 45,
+        "nodeType": "ImportDirective",
+        "scope": 53,
+        "sourceUnit": 5755,
+        "src": "56:30:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 46,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5754,
+              "src": "117:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$5754",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 47,
+            "nodeType": "InheritanceSpecifier",
+            "src": "117:7:3"
+          }
+        ],
+        "contractDependencies": [32, 5754],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 52,
+        "linearizedBaseContracts": [52, 5754, 32],
+        "name": "InsuranceManager",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 50,
+              "nodeType": "Block",
+              "src": "150:5:3",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 51,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 48,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "140:2:3"
+            },
+            "returnParameters": {
+              "id": 49,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "150:0:3"
+            },
+            "scope": 52,
+            "src": "129:26:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 53,
+        "src": "88:71:3"
+      }
+    ],
+    "src": "32:128:3"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/InsuranceManager.sol",
+    "exportedSymbols": {
+      "InsuranceManager": [52]
+    },
+    "id": 53,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 44,
+        "literals": ["solidity", "0.6", ".6"],
+        "nodeType": "PragmaDirective",
+        "src": "32:22:3"
+      },
+      {
+        "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/access/Ownable.sol",
+        "file": "./access/Ownable.sol",
+        "id": 45,
+        "nodeType": "ImportDirective",
+        "scope": 53,
+        "sourceUnit": 5755,
+        "src": "56:30:3",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 46,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 5754,
+              "src": "117:7:3",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$5754",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 47,
+            "nodeType": "InheritanceSpecifier",
+            "src": "117:7:3"
+          }
+        ],
+        "contractDependencies": [32, 5754],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 52,
+        "linearizedBaseContracts": [52, 5754, 32],
+        "name": "InsuranceManager",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 50,
+              "nodeType": "Block",
+              "src": "150:5:3",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 51,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 48,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "140:2:3"
+            },
+            "returnParameters": {
+              "id": 49,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "150:0:3"
+            },
+            "scope": 52,
+            "src": "129:26:3",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          }
+        ],
+        "scope": 53,
+        "src": "88:71:3"
+      }
+    ],
+    "src": "32:128:3"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.4",
+  "updatedAt": "2021-05-31T12:09:06.659Z",
+  "devdoc": {
+    "methods": {
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

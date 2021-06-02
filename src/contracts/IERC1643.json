@@ -1,0 +1,1472 @@
+{
+  "contractName": "IERC1643",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "_name",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "_uri",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "_documentHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "DocumentRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "bytes32",
+          "name": "_name",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "_uri",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "bytes32",
+          "name": "_documentHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "DocumentUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_name",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "string",
+          "name": "_uri",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "_documentHash",
+          "type": "bytes32"
+        }
+      ],
+      "name": "setDocument",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_name",
+          "type": "bytes32"
+        }
+      ],
+      "name": "removeDocument",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "bytes32",
+          "name": "_name",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getDocument",
+      "outputs": [
+        {
+          "internalType": "string",
+          "name": "documentUri",
+          "type": "string"
+        },
+        {
+          "internalType": "bytes32",
+          "name": "documentHash",
+          "type": "bytes32"
+        },
+        {
+          "internalType": "uint256",
+          "name": "documentTime",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getAllDocuments",
+      "outputs": [
+        {
+          "internalType": "bytes32[]",
+          "name": "documentNames",
+          "type": "bytes32[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"_name\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"_uri\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"_documentHash\",\"type\":\"bytes32\"}],\"name\":\"DocumentRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"_name\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"_uri\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"_documentHash\",\"type\":\"bytes32\"}],\"name\":\"DocumentUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"getAllDocuments\",\"outputs\":[{\"internalType\":\"bytes32[]\",\"name\":\"documentNames\",\"type\":\"bytes32[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_name\",\"type\":\"bytes32\"}],\"name\":\"getDocument\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"documentUri\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"documentHash\",\"type\":\"bytes32\"},{\"internalType\":\"uint256\",\"name\":\"documentTime\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_name\",\"type\":\"bytes32\"}],\"name\":\"removeDocument\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"_name\",\"type\":\"bytes32\"},{\"internalType\":\"string\",\"name\":\"_uri\",\"type\":\"string\"},{\"internalType\":\"bytes32\",\"name\":\"_documentHash\",\"type\":\"bytes32\"}],\"name\":\"setDocument\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{\"getDocument(bytes32)\":{\"params\":{\"_name\":\"Name of the document\"},\"returns\":{\"documentHash\":\"bytes32 The hash (of the contents) of the document.\",\"documentTime\":\"uint256 the timestamp at which the document was last modified.\",\"documentUri\":\"string The URI associated with the document.\"}},\"removeDocument(bytes32)\":{\"details\":\"Can only be executed by the owner of the contract.\",\"params\":{\"_name\":\"Name of the document. It should be unique always\"}},\"setDocument(bytes32,string,bytes32)\":{\"details\":\"Can only be executed by the owner of the contract.\",\"params\":{\"_documentHash\":\"hash (of the contents) of the document.\",\"_name\":\"Name of the document. It should be unique always\",\"_uri\":\"Off-chain uri of the document from where it is accessible to investors/advisors to read.\"}}}},\"userdoc\":{\"methods\":{\"getAllDocuments()\":{\"notice\":\"Used to retrieve a full list of documents attached to the smart contract.\"},\"getDocument(bytes32)\":{\"notice\":\"Used to return the details of a document with a known name (`bytes32`).\"},\"removeDocument(bytes32)\":{\"notice\":\"Used to remove an existing document from the contract by giving the name of the document.\"},\"setDocument(bytes32,string,bytes32)\":{\"notice\":\"Used to attach a new document to the contract, or update the URI or hash of an existing attached document\"}}}},\"settings\":{\"compilationTarget\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IERC1643.sol\":\"IERC1643\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IERC1643.sol\":{\"keccak256\":\"0x99a3cfaf4ba222d68bf3ea9d8b7963c2646aaa843b77b5203abebbfcc323447f\",\"urls\":[\"bzz-raw://7a203c566327c45d26f144aff6bef402f477694e1baddc701f0f90741e63a743\",\"dweb:/ipfs/QmcJEEp3X4TYaxaCZsuq6AYybbEPcEfH5NmKFWNJMwcioQ\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "\n// SPDX-License-Identifier: MIT\n\npragma solidity >=0.6.2 <0.8.0;\n\ninterface IERC1643{\n    // Document Events\n    event DocumentRemoved(bytes32 indexed _name, string _uri, bytes32 _documentHash);\n    event DocumentUpdated(bytes32 indexed _name, string _uri, bytes32 _documentHash);\n     /**\n     * @notice Used to attach a new document to the contract, or update the URI or hash of an existing attached document\n     * @dev Can only be executed by the owner of the contract.\n     * @param _name Name of the document. It should be unique always\n     * @param _uri Off-chain uri of the document from where it is accessible to investors/advisors to read.\n     * @param _documentHash hash (of the contents) of the document.\n     */\n    function setDocument(bytes32 _name, string calldata _uri, bytes32 _documentHash) external;\n\n    /**\n     * @notice Used to remove an existing document from the contract by giving the name of the document.\n     * @dev Can only be executed by the owner of the contract.\n     * @param _name Name of the document. It should be unique always\n     */\n    function removeDocument(bytes32 _name) external;\n\n    /**\n     * @notice Used to return the details of a document with a known name (`bytes32`).\n     * @param _name Name of the document\n     * @return documentUri string The URI associated with the document.\n     * @return documentHash bytes32 The hash (of the contents) of the document.\n     * @return documentTime uint256 the timestamp at which the document was last modified.\n     */\n    function getDocument(bytes32 _name) external view returns (string memory documentUri, bytes32 documentHash, uint256 documentTime);\n\n    /**\n     * @notice Used to retrieve a full list of documents attached to the smart contract.\n     * @return documentNames bytes32 List of all documents names present in the contract.\n     */\n    function getAllDocuments() external view returns (bytes32[] memory documentNames);\n}",
+  "sourcePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IERC1643.sol",
+  "ast": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IERC1643.sol",
+    "exportedSymbols": {
+      "IERC1643": [6291]
+    },
+    "id": 6292,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6239,
+        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "nodeType": "PragmaDirective",
+        "src": "34:31:26"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6291,
+        "linearizedBaseContracts": [6291],
+        "name": "IERC1643",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6247,
+            "name": "DocumentRemoved",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6246,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6241,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6247,
+                  "src": "136:21:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6240,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "136:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6243,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_uri",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6247,
+                  "src": "159:11:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6242,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "159:6:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6245,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_documentHash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6247,
+                  "src": "172:21:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6244,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "172:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "135:59:26"
+            },
+            "src": "114:81:26"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6255,
+            "name": "DocumentUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6254,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6249,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6255,
+                  "src": "222:21:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6248,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "222:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6251,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_uri",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6255,
+                  "src": "245:11:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6250,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "245:6:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6253,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_documentHash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6255,
+                  "src": "258:21:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6252,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "221:59:26"
+            },
+            "src": "200:81:26"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6256,
+              "nodeType": "StructuredDocumentation",
+              "src": "287:440:26",
+              "text": "@notice Used to attach a new document to the contract, or update the URI or hash of an existing attached document\n@dev Can only be executed by the owner of the contract.\n@param _name Name of the document. It should be unique always\n@param _uri Off-chain uri of the document from where it is accessible to investors/advisors to read.\n@param _documentHash hash (of the contents) of the document."
+            },
+            "functionSelector": "010648ca",
+            "id": 6265,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setDocument",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6263,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6258,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6265,
+                  "src": "753:13:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6257,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "753:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6260,
+                  "mutability": "mutable",
+                  "name": "_uri",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6265,
+                  "src": "768:20:26",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6259,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "768:6:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6262,
+                  "mutability": "mutable",
+                  "name": "_documentHash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6265,
+                  "src": "790:21:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6261,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "790:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "752:60:26"
+            },
+            "returnParameters": {
+              "id": 6264,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "821:0:26"
+            },
+            "scope": 6291,
+            "src": "732:90:26",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6266,
+              "nodeType": "StructuredDocumentation",
+              "src": "828:248:26",
+              "text": "@notice Used to remove an existing document from the contract by giving the name of the document.\n@dev Can only be executed by the owner of the contract.\n@param _name Name of the document. It should be unique always"
+            },
+            "functionSelector": "c3501848",
+            "id": 6271,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeDocument",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6269,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6268,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6271,
+                  "src": "1105:13:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6267,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1105:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1104:15:26"
+            },
+            "returnParameters": {
+              "id": 6270,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1128:0:26"
+            },
+            "scope": 6291,
+            "src": "1081:48:26",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6272,
+              "nodeType": "StructuredDocumentation",
+              "src": "1135:382:26",
+              "text": "@notice Used to return the details of a document with a known name (`bytes32`).\n@param _name Name of the document\n@return documentUri string The URI associated with the document.\n@return documentHash bytes32 The hash (of the contents) of the document.\n@return documentTime uint256 the timestamp at which the document was last modified."
+            },
+            "functionSelector": "b10d6b41",
+            "id": 6283,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDocument",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6275,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6274,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6283,
+                  "src": "1543:13:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6273,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1543:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1542:15:26"
+            },
+            "returnParameters": {
+              "id": 6282,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6277,
+                  "mutability": "mutable",
+                  "name": "documentUri",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6283,
+                  "src": "1581:25:26",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6276,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1581:6:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6279,
+                  "mutability": "mutable",
+                  "name": "documentHash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6283,
+                  "src": "1608:20:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6278,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1608:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6281,
+                  "mutability": "mutable",
+                  "name": "documentTime",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6283,
+                  "src": "1630:20:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6280,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1630:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1580:71:26"
+            },
+            "scope": 6291,
+            "src": "1522:130:26",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6284,
+              "nodeType": "StructuredDocumentation",
+              "src": "1658:190:26",
+              "text": "@notice Used to retrieve a full list of documents attached to the smart contract.\n@return documentNames bytes32 List of all documents names present in the contract."
+            },
+            "functionSelector": "9fa5f50b",
+            "id": 6290,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAllDocuments",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6285,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1877:2:26"
+            },
+            "returnParameters": {
+              "id": 6289,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6288,
+                  "mutability": "mutable",
+                  "name": "documentNames",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6290,
+                  "src": "1903:30:26",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 6286,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1903:7:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 6287,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1903:9:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1902:32:26"
+            },
+            "scope": 6291,
+            "src": "1853:82:26",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6292,
+        "src": "67:1870:26"
+      }
+    ],
+    "src": "34:1903:26"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IERC1643.sol",
+    "exportedSymbols": {
+      "IERC1643": [6291]
+    },
+    "id": 6292,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6239,
+        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "nodeType": "PragmaDirective",
+        "src": "34:31:26"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6291,
+        "linearizedBaseContracts": [6291],
+        "name": "IERC1643",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6247,
+            "name": "DocumentRemoved",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6246,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6241,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6247,
+                  "src": "136:21:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6240,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "136:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6243,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_uri",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6247,
+                  "src": "159:11:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6242,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "159:6:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6245,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_documentHash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6247,
+                  "src": "172:21:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6244,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "172:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "135:59:26"
+            },
+            "src": "114:81:26"
+          },
+          {
+            "anonymous": false,
+            "documentation": null,
+            "id": 6255,
+            "name": "DocumentUpdated",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 6254,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6249,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6255,
+                  "src": "222:21:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6248,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "222:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6251,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_uri",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6255,
+                  "src": "245:11:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6250,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "245:6:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6253,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "_documentHash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6255,
+                  "src": "258:21:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6252,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "258:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "221:59:26"
+            },
+            "src": "200:81:26"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6256,
+              "nodeType": "StructuredDocumentation",
+              "src": "287:440:26",
+              "text": "@notice Used to attach a new document to the contract, or update the URI or hash of an existing attached document\n@dev Can only be executed by the owner of the contract.\n@param _name Name of the document. It should be unique always\n@param _uri Off-chain uri of the document from where it is accessible to investors/advisors to read.\n@param _documentHash hash (of the contents) of the document."
+            },
+            "functionSelector": "010648ca",
+            "id": 6265,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setDocument",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6263,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6258,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6265,
+                  "src": "753:13:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6257,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "753:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6260,
+                  "mutability": "mutable",
+                  "name": "_uri",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6265,
+                  "src": "768:20:26",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_calldata_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6259,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "768:6:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6262,
+                  "mutability": "mutable",
+                  "name": "_documentHash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6265,
+                  "src": "790:21:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6261,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "790:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "752:60:26"
+            },
+            "returnParameters": {
+              "id": 6264,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "821:0:26"
+            },
+            "scope": 6291,
+            "src": "732:90:26",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6266,
+              "nodeType": "StructuredDocumentation",
+              "src": "828:248:26",
+              "text": "@notice Used to remove an existing document from the contract by giving the name of the document.\n@dev Can only be executed by the owner of the contract.\n@param _name Name of the document. It should be unique always"
+            },
+            "functionSelector": "c3501848",
+            "id": 6271,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "removeDocument",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6269,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6268,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6271,
+                  "src": "1105:13:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6267,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1105:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1104:15:26"
+            },
+            "returnParameters": {
+              "id": 6270,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1128:0:26"
+            },
+            "scope": 6291,
+            "src": "1081:48:26",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6272,
+              "nodeType": "StructuredDocumentation",
+              "src": "1135:382:26",
+              "text": "@notice Used to return the details of a document with a known name (`bytes32`).\n@param _name Name of the document\n@return documentUri string The URI associated with the document.\n@return documentHash bytes32 The hash (of the contents) of the document.\n@return documentTime uint256 the timestamp at which the document was last modified."
+            },
+            "functionSelector": "b10d6b41",
+            "id": 6283,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDocument",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6275,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6274,
+                  "mutability": "mutable",
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6283,
+                  "src": "1543:13:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6273,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1543:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1542:15:26"
+            },
+            "returnParameters": {
+              "id": 6282,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6277,
+                  "mutability": "mutable",
+                  "name": "documentUri",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6283,
+                  "src": "1581:25:26",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_memory_ptr",
+                    "typeString": "string"
+                  },
+                  "typeName": {
+                    "id": 6276,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1581:6:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6279,
+                  "mutability": "mutable",
+                  "name": "documentHash",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6283,
+                  "src": "1608:20:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bytes32",
+                    "typeString": "bytes32"
+                  },
+                  "typeName": {
+                    "id": 6278,
+                    "name": "bytes32",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1608:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bytes32",
+                      "typeString": "bytes32"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6281,
+                  "mutability": "mutable",
+                  "name": "documentTime",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6283,
+                  "src": "1630:20:26",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6280,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1630:7:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1580:71:26"
+            },
+            "scope": 6291,
+            "src": "1522:130:26",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "body": null,
+            "documentation": {
+              "id": 6284,
+              "nodeType": "StructuredDocumentation",
+              "src": "1658:190:26",
+              "text": "@notice Used to retrieve a full list of documents attached to the smart contract.\n@return documentNames bytes32 List of all documents names present in the contract."
+            },
+            "functionSelector": "9fa5f50b",
+            "id": 6290,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getAllDocuments",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6285,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1877:2:26"
+            },
+            "returnParameters": {
+              "id": 6289,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6288,
+                  "mutability": "mutable",
+                  "name": "documentNames",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6290,
+                  "src": "1903:30:26",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_bytes32_$dyn_memory_ptr",
+                    "typeString": "bytes32[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 6286,
+                      "name": "bytes32",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1903:7:26",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_bytes32",
+                        "typeString": "bytes32"
+                      }
+                    },
+                    "id": 6287,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1903:9:26",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_bytes32_$dyn_storage_ptr",
+                      "typeString": "bytes32[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1902:32:26"
+            },
+            "scope": 6291,
+            "src": "1853:82:26",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6292,
+        "src": "67:1870:26"
+      }
+    ],
+    "src": "34:1903:26"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.4",
+  "updatedAt": "2021-05-31T12:09:06.731Z",
+  "devdoc": {
+    "methods": {
+      "getDocument(bytes32)": {
+        "params": {
+          "_name": "Name of the document"
+        },
+        "returns": {
+          "documentHash": "bytes32 The hash (of the contents) of the document.",
+          "documentTime": "uint256 the timestamp at which the document was last modified.",
+          "documentUri": "string The URI associated with the document."
+        }
+      },
+      "removeDocument(bytes32)": {
+        "details": "Can only be executed by the owner of the contract.",
+        "params": {
+          "_name": "Name of the document. It should be unique always"
+        }
+      },
+      "setDocument(bytes32,string,bytes32)": {
+        "details": "Can only be executed by the owner of the contract.",
+        "params": {
+          "_documentHash": "hash (of the contents) of the document.",
+          "_name": "Name of the document. It should be unique always",
+          "_uri": "Off-chain uri of the document from where it is accessible to investors/advisors to read."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "getAllDocuments()": {
+        "notice": "Used to retrieve a full list of documents attached to the smart contract."
+      },
+      "getDocument(bytes32)": {
+        "notice": "Used to return the details of a document with a known name (`bytes32`)."
+      },
+      "removeDocument(bytes32)": {
+        "notice": "Used to remove an existing document from the contract by giving the name of the document."
+      },
+      "setDocument(bytes32,string,bytes32)": {
+        "notice": "Used to attach a new document to the contract, or update the URI or hash of an existing attached document"
+      }
+    }
+  }
+}

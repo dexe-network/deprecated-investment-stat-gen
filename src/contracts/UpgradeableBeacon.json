@@ -1,0 +1,1850 @@
+{
+  "contractName": "UpgradeableBeacon",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "implementation_",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "implementation",
+          "type": "address"
+        }
+      ],
+      "name": "Upgraded",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "implementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newImplementation",
+          "type": "address"
+        }
+      ],
+      "name": "upgradeTo",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"implementation_\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"name\":\"Upgraded\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"implementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"}],\"name\":\"upgradeTo\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This contract is used in conjunction with one or more instances of {BeaconProxy} to determine their implementation contract, which is where they will delegate all function calls. * An owner is able to change the implementation the beacon points to, thus upgrading the proxies that use this beacon.\",\"methods\":{\"constructor\":{\"details\":\"Sets the address of the initial implementation, and the deployer account as the owner who can upgrade the beacon.\"},\"implementation()\":{\"details\":\"Returns the current implementation address.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner.\"},\"upgradeTo(address)\":{\"details\":\"Upgrades the beacon to a new implementation.     * Emits an {Upgraded} event.     * Requirements:     * - msg.sender must be the owner of the contract. - `newImplementation` must be a contract.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/UpgradeableBeacon.sol\":\"UpgradeableBeacon\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/IBeacon.sol\":{\"keccak256\":\"0x77c167740c8227e2569064dabdb2d683800f409743bda1bab8d66d5a2dae3674\",\"urls\":[\"bzz-raw://db67aa92e2fa0b00447b469ab9416584024092ff9fd0768d8f2a56b82f90a13a\",\"dweb:/ipfs/QmT39rVeCqKkniTVvPJjgFajmS5QbjE77xgrEVJeAw6VFA\"]},\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/UpgradeableBeacon.sol\":{\"keccak256\":\"0x94a44dd00fb07ef46a0e1de9b3848750c6ede6e9a863d79ee8f56f99c62ee657\",\"urls\":[\"bzz-raw://9e65be0cf9a6cb22d197baf58f541d428a30703bc5c706b4c879d2efd46df667\",\"dweb:/ipfs/QmTrrC1fiAaQp7Szw2vuD1fGjQ9esXgsti4pEx5L2MeNuh\"]},\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/util/Address.sol\":{\"keccak256\":\"0x67bf2dd5a56395b107ec6ec049d3bc0be559bcd9800c11549fda9603368f4b1a\",\"urls\":[\"bzz-raw://1bd95d6f0a8757ca62a39b861b35a3b6e8166fcf8b83cbb65150436821b040e0\",\"dweb:/ipfs/QmbfRNRR6cediYriyFQA4SmXTyj8prML12eNuhsbAZU85Q\"]},\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/util/Context.sol\":{\"keccak256\":\"0xdb26cbf4d028490f49831a7865c2fe1b28db44b535ca8d343785a3b768aae183\",\"urls\":[\"bzz-raw://840b14ce0315c47d49ba328f1f9fa7654ded1c9e1559e6c5e777a7b2dc28bf0a\",\"dweb:/ipfs/QmTLLabn4wcfGro9LEmUXUN2nwKqZSotXMvjDCLXEnLtZP\"]},\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/util/Ownable.sol\":{\"keccak256\":\"0xa2c2c6f81788436bd2b77eac30f4985124f1439e7f19c7892b390942ba754446\",\"urls\":[\"bzz-raw://66ce23ee0ab6b82b1c8ea4026fc265b227a20fdd0e3042e9a14363af58d2d192\",\"dweb:/ipfs/QmbvuobWxXPhepwkxVqEsnt5ADvNHtQExVxg6wvWZT7Po3\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516105c93803806105c98339818101604052602081101561003357600080fd5b505160006100486001600160e01b036100aa16565b600080546001600160a01b0319166001600160a01b0383169081178255604051929350917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908290a3506100a4816001600160e01b036100ae16565b50610124565b3390565b6100c18161011e60201b6103ce1760201c565b6100fc5760405162461bcd60e51b81526004018080602001828103825260338152602001806105966033913960400191505060405180910390fd5b600180546001600160a01b0319166001600160a01b0392909216919091179055565b3b151590565b610463806101336000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80633659cfe61461005c5780635c60da1b14610084578063715018a6146100a85780638da5cb5b146100b0578063f2fde38b146100b8575b600080fd5b6100826004803603602081101561007257600080fd5b50356001600160a01b03166100de565b005b61008c610188565b604080516001600160a01b039092168252519081900360200190f35b610082610197565b61008c61024b565b610082600480360360208110156100ce57600080fd5b50356001600160a01b031661025a565b6100e6610364565b6000546001600160a01b03908116911614610148576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b61015181610368565b6040516001600160a01b038216907fbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b90600090a250565b6001546001600160a01b031690565b61019f610364565b6000546001600160a01b03908116911614610201576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b6000546001600160a01b031690565b610262610364565b6000546001600160a01b039081169116146102c4576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b6001600160a01b0381166103095760405162461bcd60e51b81526004018080602001828103825260268152602001806103d56026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b3390565b610371816103ce565b6103ac5760405162461bcd60e51b81526004018080602001828103825260338152602001806103fb6033913960400191505060405180910390fd5b600180546001600160a01b0319166001600160a01b0392909216919091179055565b3b15159056fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f20616464726573735570677261646561626c65426561636f6e3a20696d706c656d656e746174696f6e206973206e6f74206120636f6e7472616374a2646970667358221220a021168ea7e5200f8acc2696fe07c1b52d21e27dd77a27b24d511014475e3df664736f6c634300060600335570677261646561626c65426561636f6e3a20696d706c656d656e746174696f6e206973206e6f74206120636f6e7472616374",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c80633659cfe61461005c5780635c60da1b14610084578063715018a6146100a85780638da5cb5b146100b0578063f2fde38b146100b8575b600080fd5b6100826004803603602081101561007257600080fd5b50356001600160a01b03166100de565b005b61008c610188565b604080516001600160a01b039092168252519081900360200190f35b610082610197565b61008c61024b565b610082600480360360208110156100ce57600080fd5b50356001600160a01b031661025a565b6100e6610364565b6000546001600160a01b03908116911614610148576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b61015181610368565b6040516001600160a01b038216907fbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b90600090a250565b6001546001600160a01b031690565b61019f610364565b6000546001600160a01b03908116911614610201576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b600080546040516001600160a01b03909116907f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0908390a3600080546001600160a01b0319169055565b6000546001600160a01b031690565b610262610364565b6000546001600160a01b039081169116146102c4576040805162461bcd60e51b815260206004820181905260248201527f4f776e61626c653a2063616c6c6572206973206e6f7420746865206f776e6572604482015290519081900360640190fd5b6001600160a01b0381166103095760405162461bcd60e51b81526004018080602001828103825260268152602001806103d56026913960400191505060405180910390fd5b600080546040516001600160a01b03808516939216917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e091a3600080546001600160a01b0319166001600160a01b0392909216919091179055565b3390565b610371816103ce565b6103ac5760405162461bcd60e51b81526004018080602001828103825260338152602001806103fb6033913960400191505060405180910390fd5b600180546001600160a01b0319166001600160a01b0392909216919091179055565b3b15159056fe4f776e61626c653a206e6577206f776e657220697320746865207a65726f20616464726573735570677261646561626c65426561636f6e3a20696d706c656d656e746174696f6e206973206e6f74206120636f6e7472616374a2646970667358221220a021168ea7e5200f8acc2696fe07c1b52d21e27dd77a27b24d511014475e3df664736f6c63430006060033",
+  "immutableReferences": {},
+  "sourceMap": "470:1487:62:-:0;;;858:96;5:9:-1;2:2;;;27:1;24;17:12;2:2;858:96:62;;;;;;;;;;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;858:96:62;877:17:66;897:12;-1:-1:-1;;;;;897:10:66;:12;:::i;:::-;919:6;:18;;-1:-1:-1;;;;;;919:18:66;-1:-1:-1;;;;;919:18:66;;;;;;;952:43;;919:18;;-1:-1:-1;919:18:66;952:43;;919:6;;952:43;-1:-1:-1;912:35:62;931:15;-1:-1:-1;;;;;912:18:62;:35;:::i;:::-;858:96;470:1487;;590:104:65;677:10;590:104;:::o;1729:226:62:-;1810:37;1829:17;1810:18;;;;;:37;;:::i;:::-;1802:101;;;;-1:-1:-1;;;1802:101:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1913:15;:35;;-1:-1:-1;;;;;;1913:35:62;-1:-1:-1;;;;;1913:35:62;;;;;;;;;;1729:226::o;726:413:64:-;1086:20;1124:8;;;726:413::o;470:1487:62:-;;;;;;;",
+  "deployedSourceMap": "470:1487:62:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;470:1487:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;12:1:-1;9;2:12;1395:159:62;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1395:159:62;-1:-1:-1;;;;;1395:159:62;;:::i;:::-;;1032:104;;;:::i;:::-;;;;-1:-1:-1;;;;;1032:104:62;;;;;;;;;;;;;;1701:145:66;;;:::i;1078:77::-;;;:::i;1995:240::-;;;;;;15:2:-1;10:3;7:11;4:2;;;31:1;28;21:12;4:2;-1:-1;1995:240:66;-1:-1:-1;;;;;1995:240:66;;:::i;1395:159:62:-;1292:12:66;:10;:12::i;:::-;1282:6;;-1:-1:-1;;;;;1282:6:66;;;:22;;;1274:67;;;;;-1:-1:-1;;;1274:67:66;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1468:37:62::1;1487:17;1468:18;:37::i;:::-;1520:27;::::0;-1:-1:-1;;;;;1520:27:62;::::1;::::0;::::1;::::0;;;::::1;1395:159:::0;:::o;1032:104::-;1114:15;;-1:-1:-1;;;;;1114:15:62;1032:104;:::o;1701:145:66:-;1292:12;:10;:12::i;:::-;1282:6;;-1:-1:-1;;;;;1282:6:66;;;:22;;;1274:67;;;;;-1:-1:-1;;;1274:67:66;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1807:1:::1;1791:6:::0;;1770:40:::1;::::0;-1:-1:-1;;;;;1791:6:66;;::::1;::::0;1770:40:::1;::::0;1807:1;;1770:40:::1;1837:1;1820:19:::0;;-1:-1:-1;;;;;;1820:19:66::1;::::0;;1701:145::o;1078:77::-;1116:7;1142:6;-1:-1:-1;;;;;1142:6:66;1078:77;:::o;1995:240::-;1292:12;:10;:12::i;:::-;1282:6;;-1:-1:-1;;;;;1282:6:66;;;:22;;;1274:67;;;;;-1:-1:-1;;;1274:67:66;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;;;2083:22:66;::::1;2075:73;;;;-1:-1:-1::0;;;2075:73:66::1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2184:6;::::0;;2163:38:::1;::::0;-1:-1:-1;;;;;2163:38:66;;::::1;::::0;2184:6;::::1;::::0;2163:38:::1;::::0;::::1;2211:6;:17:::0;;-1:-1:-1;;;;;;2211:17:66::1;-1:-1:-1::0;;;;;2211:17:66;;;::::1;::::0;;;::::1;::::0;;1995:240::o;590:104:65:-;677:10;590:104;:::o;1729:226:62:-;1810:37;1829:17;1810:18;:37::i;:::-;1802:101;;;;-1:-1:-1;;;1802:101:62;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1913:15;:35;;-1:-1:-1;;;;;;1913:35:62;-1:-1:-1;;;;;1913:35:62;;;;;;;;;;1729:226::o;726:413:64:-;1086:20;1124:8;;;726:413::o",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity >=0.6.0 <0.8.0;\n\nimport \"./IBeacon.sol\";\nimport \"./util/Ownable.sol\";\nimport \"./util/Address.sol\";\n\n/**\n * @dev This contract is used in conjunction with one or more instances of {BeaconProxy} to determine their\n * implementation contract, which is where they will delegate all function calls.\n *\n * An owner is able to change the implementation the beacon points to, thus upgrading the proxies that use this beacon.\n */\ncontract UpgradeableBeacon is IBeacon, Ownable {\n    address private _implementation;\n\n    /**\n     * @dev Emitted when the implementation returned by the beacon is changed.\n     */\n    event Upgraded(address indexed implementation);\n\n    /**\n     * @dev Sets the address of the initial implementation, and the deployer account as the owner who can upgrade the\n     * beacon.\n     */\n    constructor(address implementation_) public {\n        _setImplementation(implementation_);\n    }\n\n    /**\n     * @dev Returns the current implementation address.\n     */\n    function implementation() public view override returns (address) {\n        return _implementation;\n    }\n\n    /**\n     * @dev Upgrades the beacon to a new implementation.\n     *\n     * Emits an {Upgraded} event.\n     *\n     * Requirements:\n     *\n     * - msg.sender must be the owner of the contract.\n     * - `newImplementation` must be a contract.\n     */\n    function upgradeTo(address newImplementation) public onlyOwner {\n        _setImplementation(newImplementation);\n        emit Upgraded(newImplementation);\n    }\n\n    /**\n     * @dev Sets the implementation contract address for this beacon\n     *\n     * Requirements:\n     *\n     * - `newImplementation` must be a contract.\n     */\n    function _setImplementation(address newImplementation) private {\n        require(Address.isContract(newImplementation), \"UpgradeableBeacon: implementation is not a contract\");\n        _implementation = newImplementation;\n    }\n}\n",
+  "sourcePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/UpgradeableBeacon.sol",
+  "ast": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/UpgradeableBeacon.sol",
+    "exportedSymbols": {
+      "UpgradeableBeacon": [14736]
+    },
+    "id": 14737,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14663,
+        "literals": ["solidity", ">=", "0.6", ".0", "<", "0.8", ".0"],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:62"
+      },
+      {
+        "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/IBeacon.sol",
+        "file": "./IBeacon.sol",
+        "id": 14664,
+        "nodeType": "ImportDirective",
+        "scope": 14737,
+        "sourceUnit": 14271,
+        "src": "66:23:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/util/Ownable.sol",
+        "file": "./util/Ownable.sol",
+        "id": 14665,
+        "nodeType": "ImportDirective",
+        "scope": 14737,
+        "sourceUnit": 15275,
+        "src": "90:28:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/util/Address.sol",
+        "file": "./util/Address.sol",
+        "id": 14666,
+        "nodeType": "ImportDirective",
+        "scope": 14737,
+        "sourceUnit": 15143,
+        "src": "119:28:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14668,
+              "name": "IBeacon",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 14270,
+              "src": "500:7:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IBeacon_$14270",
+                "typeString": "contract IBeacon"
+              }
+            },
+            "id": 14669,
+            "nodeType": "InheritanceSpecifier",
+            "src": "500:7:62"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14670,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 15274,
+              "src": "509:7:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$15274",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 14671,
+            "nodeType": "InheritanceSpecifier",
+            "src": "509:7:62"
+          }
+        ],
+        "contractDependencies": [14270, 15165, 15274],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 14667,
+          "nodeType": "StructuredDocumentation",
+          "src": "149:320:62",
+          "text": "@dev This contract is used in conjunction with one or more instances of {BeaconProxy} to determine their\nimplementation contract, which is where they will delegate all function calls.\n * An owner is able to change the implementation the beacon points to, thus upgrading the proxies that use this beacon."
+        },
+        "fullyImplemented": true,
+        "id": 14736,
+        "linearizedBaseContracts": [14736, 15274, 15165, 14270],
+        "name": "UpgradeableBeacon",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 14673,
+            "mutability": "mutable",
+            "name": "_implementation",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 14736,
+            "src": "523:31:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 14672,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "523:7:62",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 14674,
+              "nodeType": "StructuredDocumentation",
+              "src": "561:90:62",
+              "text": "@dev Emitted when the implementation returned by the beacon is changed."
+            },
+            "id": 14678,
+            "name": "Upgraded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 14677,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14676,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "implementation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14678,
+                  "src": "671:30:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14675,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "671:7:62",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "670:32:62"
+            },
+            "src": "656:47:62"
+          },
+          {
+            "body": {
+              "id": 14688,
+              "nodeType": "Block",
+              "src": "902:52:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14685,
+                        "name": "implementation_",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14681,
+                        "src": "931:15:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 14684,
+                      "name": "_setImplementation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14735,
+                      "src": "912:18:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 14686,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "912:35:62",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14687,
+                  "nodeType": "ExpressionStatement",
+                  "src": "912:35:62"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 14679,
+              "nodeType": "StructuredDocumentation",
+              "src": "709:144:62",
+              "text": "@dev Sets the address of the initial implementation, and the deployer account as the owner who can upgrade the\nbeacon."
+            },
+            "id": 14689,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 14682,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14681,
+                  "mutability": "mutable",
+                  "name": "implementation_",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14689,
+                  "src": "870:23:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14680,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "870:7:62",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "869:25:62"
+            },
+            "returnParameters": {
+              "id": 14683,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "902:0:62"
+            },
+            "scope": 14736,
+            "src": "858:96:62",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [14269],
+            "body": {
+              "id": 14698,
+              "nodeType": "Block",
+              "src": "1097:39:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14696,
+                    "name": "_implementation",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14673,
+                    "src": "1114:15:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 14695,
+                  "id": 14697,
+                  "nodeType": "Return",
+                  "src": "1107:22:62"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 14690,
+              "nodeType": "StructuredDocumentation",
+              "src": "960:67:62",
+              "text": "@dev Returns the current implementation address."
+            },
+            "functionSelector": "5c60da1b",
+            "id": 14699,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "implementation",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 14692,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1070:8:62"
+            },
+            "parameters": {
+              "id": 14691,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1055:2:62"
+            },
+            "returnParameters": {
+              "id": 14695,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14694,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14699,
+                  "src": "1088:7:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14693,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1088:7:62",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1087:9:62"
+            },
+            "scope": 14736,
+            "src": "1032:104:62",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 14715,
+              "nodeType": "Block",
+              "src": "1458:96:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14708,
+                        "name": "newImplementation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14702,
+                        "src": "1487:17:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 14707,
+                      "name": "_setImplementation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14735,
+                      "src": "1468:18:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 14709,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1468:37:62",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14710,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1468:37:62"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14712,
+                        "name": "newImplementation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14702,
+                        "src": "1529:17:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 14711,
+                      "name": "Upgraded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14678,
+                      "src": "1520:8:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 14713,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1520:27:62",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14714,
+                  "nodeType": "EmitStatement",
+                  "src": "1515:32:62"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 14700,
+              "nodeType": "StructuredDocumentation",
+              "src": "1142:248:62",
+              "text": "@dev Upgrades the beacon to a new implementation.\n     * Emits an {Upgraded} event.\n     * Requirements:\n     * - msg.sender must be the owner of the contract.\n- `newImplementation` must be a contract."
+            },
+            "functionSelector": "3659cfe6",
+            "id": 14716,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 14705,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 14704,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15223,
+                  "src": "1448:9:62",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1448:9:62"
+              }
+            ],
+            "name": "upgradeTo",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 14703,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14702,
+                  "mutability": "mutable",
+                  "name": "newImplementation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14716,
+                  "src": "1414:25:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14701,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1414:7:62",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1413:27:62"
+            },
+            "returnParameters": {
+              "id": 14706,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1458:0:62"
+            },
+            "scope": 14736,
+            "src": "1395:159:62",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 14734,
+              "nodeType": "Block",
+              "src": "1792:163:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 14725,
+                            "name": "newImplementation",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14719,
+                            "src": "1829:17:62",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 14723,
+                            "name": "Address",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 15142,
+                            "src": "1810:7:62",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Address_$15142_$",
+                              "typeString": "type(library Address)"
+                            }
+                          },
+                          "id": 14724,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "isContract",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 14866,
+                          "src": "1810:18:62",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view returns (bool)"
+                          }
+                        },
+                        "id": 14726,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1810:37:62",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "5570677261646561626c65426561636f6e3a20696d706c656d656e746174696f6e206973206e6f74206120636f6e7472616374",
+                        "id": 14727,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1849:53:62",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_5ccca6b0666a32006e874c0f8fc30910124098b6e8e91ea2ea1baa45ce41f1e6",
+                          "typeString": "literal_string \"UpgradeableBeacon: implementation is not a contract\""
+                        },
+                        "value": "UpgradeableBeacon: implementation is not a contract"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_5ccca6b0666a32006e874c0f8fc30910124098b6e8e91ea2ea1baa45ce41f1e6",
+                          "typeString": "literal_string \"UpgradeableBeacon: implementation is not a contract\""
+                        }
+                      ],
+                      "id": 14722,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [-18, -18],
+                      "referencedDeclaration": -18,
+                      "src": "1802:7:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 14728,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1802:101:62",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14729,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1802:101:62"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14732,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14730,
+                      "name": "_implementation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14673,
+                      "src": "1913:15:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14731,
+                      "name": "newImplementation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14719,
+                      "src": "1931:17:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1913:35:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 14733,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1913:35:62"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 14717,
+              "nodeType": "StructuredDocumentation",
+              "src": "1560:164:62",
+              "text": "@dev Sets the implementation contract address for this beacon\n     * Requirements:\n     * - `newImplementation` must be a contract."
+            },
+            "id": 14735,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_setImplementation",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 14720,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14719,
+                  "mutability": "mutable",
+                  "name": "newImplementation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14735,
+                  "src": "1757:25:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14718,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1757:7:62",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1756:27:62"
+            },
+            "returnParameters": {
+              "id": 14721,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1792:0:62"
+            },
+            "scope": 14736,
+            "src": "1729:226:62",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "private"
+          }
+        ],
+        "scope": 14737,
+        "src": "470:1487:62"
+      }
+    ],
+    "src": "33:1925:62"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/UpgradeableBeacon.sol",
+    "exportedSymbols": {
+      "UpgradeableBeacon": [14736]
+    },
+    "id": 14737,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14663,
+        "literals": ["solidity", ">=", "0.6", ".0", "<", "0.8", ".0"],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:62"
+      },
+      {
+        "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/IBeacon.sol",
+        "file": "./IBeacon.sol",
+        "id": 14664,
+        "nodeType": "ImportDirective",
+        "scope": 14737,
+        "sourceUnit": 14271,
+        "src": "66:23:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/util/Ownable.sol",
+        "file": "./util/Ownable.sol",
+        "id": 14665,
+        "nodeType": "ImportDirective",
+        "scope": 14737,
+        "sourceUnit": 15275,
+        "src": "90:28:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/util/Address.sol",
+        "file": "./util/Address.sol",
+        "id": 14666,
+        "nodeType": "ImportDirective",
+        "scope": 14737,
+        "sourceUnit": 15143,
+        "src": "119:28:62",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "abstract": false,
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14668,
+              "name": "IBeacon",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 14270,
+              "src": "500:7:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_IBeacon_$14270",
+                "typeString": "contract IBeacon"
+              }
+            },
+            "id": 14669,
+            "nodeType": "InheritanceSpecifier",
+            "src": "500:7:62"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 14670,
+              "name": "Ownable",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 15274,
+              "src": "509:7:62",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Ownable_$15274",
+                "typeString": "contract Ownable"
+              }
+            },
+            "id": 14671,
+            "nodeType": "InheritanceSpecifier",
+            "src": "509:7:62"
+          }
+        ],
+        "contractDependencies": [14270, 15165, 15274],
+        "contractKind": "contract",
+        "documentation": {
+          "id": 14667,
+          "nodeType": "StructuredDocumentation",
+          "src": "149:320:62",
+          "text": "@dev This contract is used in conjunction with one or more instances of {BeaconProxy} to determine their\nimplementation contract, which is where they will delegate all function calls.\n * An owner is able to change the implementation the beacon points to, thus upgrading the proxies that use this beacon."
+        },
+        "fullyImplemented": true,
+        "id": 14736,
+        "linearizedBaseContracts": [14736, 15274, 15165, 14270],
+        "name": "UpgradeableBeacon",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "constant": false,
+            "id": 14673,
+            "mutability": "mutable",
+            "name": "_implementation",
+            "nodeType": "VariableDeclaration",
+            "overrides": null,
+            "scope": 14736,
+            "src": "523:31:62",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_address",
+              "typeString": "address"
+            },
+            "typeName": {
+              "id": 14672,
+              "name": "address",
+              "nodeType": "ElementaryTypeName",
+              "src": "523:7:62",
+              "stateMutability": "nonpayable",
+              "typeDescriptions": {
+                "typeIdentifier": "t_address",
+                "typeString": "address"
+              }
+            },
+            "value": null,
+            "visibility": "private"
+          },
+          {
+            "anonymous": false,
+            "documentation": {
+              "id": 14674,
+              "nodeType": "StructuredDocumentation",
+              "src": "561:90:62",
+              "text": "@dev Emitted when the implementation returned by the beacon is changed."
+            },
+            "id": 14678,
+            "name": "Upgraded",
+            "nodeType": "EventDefinition",
+            "parameters": {
+              "id": 14677,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14676,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "implementation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14678,
+                  "src": "671:30:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14675,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "671:7:62",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "670:32:62"
+            },
+            "src": "656:47:62"
+          },
+          {
+            "body": {
+              "id": 14688,
+              "nodeType": "Block",
+              "src": "902:52:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14685,
+                        "name": "implementation_",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14681,
+                        "src": "931:15:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 14684,
+                      "name": "_setImplementation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14735,
+                      "src": "912:18:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 14686,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "912:35:62",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14687,
+                  "nodeType": "ExpressionStatement",
+                  "src": "912:35:62"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 14679,
+              "nodeType": "StructuredDocumentation",
+              "src": "709:144:62",
+              "text": "@dev Sets the address of the initial implementation, and the deployer account as the owner who can upgrade the\nbeacon."
+            },
+            "id": 14689,
+            "implemented": true,
+            "kind": "constructor",
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 14682,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14681,
+                  "mutability": "mutable",
+                  "name": "implementation_",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14689,
+                  "src": "870:23:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14680,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "870:7:62",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "869:25:62"
+            },
+            "returnParameters": {
+              "id": 14683,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "902:0:62"
+            },
+            "scope": 14736,
+            "src": "858:96:62",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "baseFunctions": [14269],
+            "body": {
+              "id": 14698,
+              "nodeType": "Block",
+              "src": "1097:39:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14696,
+                    "name": "_implementation",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 14673,
+                    "src": "1114:15:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "functionReturnParameters": 14695,
+                  "id": 14697,
+                  "nodeType": "Return",
+                  "src": "1107:22:62"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 14690,
+              "nodeType": "StructuredDocumentation",
+              "src": "960:67:62",
+              "text": "@dev Returns the current implementation address."
+            },
+            "functionSelector": "5c60da1b",
+            "id": 14699,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "implementation",
+            "nodeType": "FunctionDefinition",
+            "overrides": {
+              "id": 14692,
+              "nodeType": "OverrideSpecifier",
+              "overrides": [],
+              "src": "1070:8:62"
+            },
+            "parameters": {
+              "id": 14691,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1055:2:62"
+            },
+            "returnParameters": {
+              "id": 14695,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14694,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14699,
+                  "src": "1088:7:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14693,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1088:7:62",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1087:9:62"
+            },
+            "scope": 14736,
+            "src": "1032:104:62",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 14715,
+              "nodeType": "Block",
+              "src": "1458:96:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14708,
+                        "name": "newImplementation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14702,
+                        "src": "1487:17:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 14707,
+                      "name": "_setImplementation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14735,
+                      "src": "1468:18:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 14709,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1468:37:62",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14710,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1468:37:62"
+                },
+                {
+                  "eventCall": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "id": 14712,
+                        "name": "newImplementation",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 14702,
+                        "src": "1529:17:62",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_address",
+                          "typeString": "address"
+                        }
+                      ],
+                      "id": 14711,
+                      "name": "Upgraded",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14678,
+                      "src": "1520:8:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_event_nonpayable$_t_address_$returns$__$",
+                        "typeString": "function (address)"
+                      }
+                    },
+                    "id": 14713,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1520:27:62",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14714,
+                  "nodeType": "EmitStatement",
+                  "src": "1515:32:62"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 14700,
+              "nodeType": "StructuredDocumentation",
+              "src": "1142:248:62",
+              "text": "@dev Upgrades the beacon to a new implementation.\n     * Emits an {Upgraded} event.\n     * Requirements:\n     * - msg.sender must be the owner of the contract.\n- `newImplementation` must be a contract."
+            },
+            "functionSelector": "3659cfe6",
+            "id": 14716,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [
+              {
+                "arguments": null,
+                "id": 14705,
+                "modifierName": {
+                  "argumentTypes": null,
+                  "id": 14704,
+                  "name": "onlyOwner",
+                  "nodeType": "Identifier",
+                  "overloadedDeclarations": [],
+                  "referencedDeclaration": 15223,
+                  "src": "1448:9:62",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_modifier$__$",
+                    "typeString": "modifier ()"
+                  }
+                },
+                "nodeType": "ModifierInvocation",
+                "src": "1448:9:62"
+              }
+            ],
+            "name": "upgradeTo",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 14703,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14702,
+                  "mutability": "mutable",
+                  "name": "newImplementation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14716,
+                  "src": "1414:25:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14701,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1414:7:62",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1413:27:62"
+            },
+            "returnParameters": {
+              "id": 14706,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1458:0:62"
+            },
+            "scope": 14736,
+            "src": "1395:159:62",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 14734,
+              "nodeType": "Block",
+              "src": "1792:163:62",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 14725,
+                            "name": "newImplementation",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 14719,
+                            "src": "1829:17:62",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": null,
+                            "id": 14723,
+                            "name": "Address",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 15142,
+                            "src": "1810:7:62",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_type$_t_contract$_Address_$15142_$",
+                              "typeString": "type(library Address)"
+                            }
+                          },
+                          "id": 14724,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "memberName": "isContract",
+                          "nodeType": "MemberAccess",
+                          "referencedDeclaration": 14866,
+                          "src": "1810:18:62",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
+                            "typeString": "function (address) view returns (bool)"
+                          }
+                        },
+                        "id": 14726,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "functionCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "1810:37:62",
+                        "tryCall": false,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        }
+                      },
+                      {
+                        "argumentTypes": null,
+                        "hexValue": "5570677261646561626c65426561636f6e3a20696d706c656d656e746174696f6e206973206e6f74206120636f6e7472616374",
+                        "id": 14727,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": true,
+                        "kind": "string",
+                        "lValueRequested": false,
+                        "nodeType": "Literal",
+                        "src": "1849:53:62",
+                        "subdenomination": null,
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_stringliteral_5ccca6b0666a32006e874c0f8fc30910124098b6e8e91ea2ea1baa45ce41f1e6",
+                          "typeString": "literal_string \"UpgradeableBeacon: implementation is not a contract\""
+                        },
+                        "value": "UpgradeableBeacon: implementation is not a contract"
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_bool",
+                          "typeString": "bool"
+                        },
+                        {
+                          "typeIdentifier": "t_stringliteral_5ccca6b0666a32006e874c0f8fc30910124098b6e8e91ea2ea1baa45ce41f1e6",
+                          "typeString": "literal_string \"UpgradeableBeacon: implementation is not a contract\""
+                        }
+                      ],
+                      "id": 14722,
+                      "name": "require",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [-18, -18],
+                      "referencedDeclaration": -18,
+                      "src": "1802:7:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
+                        "typeString": "function (bool,string memory) pure"
+                      }
+                    },
+                    "id": 14728,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "1802:101:62",
+                    "tryCall": false,
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_tuple$__$",
+                      "typeString": "tuple()"
+                    }
+                  },
+                  "id": 14729,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1802:101:62"
+                },
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "id": 14732,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftHandSide": {
+                      "argumentTypes": null,
+                      "id": 14730,
+                      "name": "_implementation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14673,
+                      "src": "1913:15:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "nodeType": "Assignment",
+                    "operator": "=",
+                    "rightHandSide": {
+                      "argumentTypes": null,
+                      "id": 14731,
+                      "name": "newImplementation",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 14719,
+                      "src": "1931:17:62",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "src": "1913:35:62",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "id": 14733,
+                  "nodeType": "ExpressionStatement",
+                  "src": "1913:35:62"
+                }
+              ]
+            },
+            "documentation": {
+              "id": 14717,
+              "nodeType": "StructuredDocumentation",
+              "src": "1560:164:62",
+              "text": "@dev Sets the implementation contract address for this beacon\n     * Requirements:\n     * - `newImplementation` must be a contract."
+            },
+            "id": 14735,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "_setImplementation",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 14720,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14719,
+                  "mutability": "mutable",
+                  "name": "newImplementation",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14735,
+                  "src": "1757:25:62",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14718,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1757:7:62",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1756:27:62"
+            },
+            "returnParameters": {
+              "id": 14721,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1792:0:62"
+            },
+            "scope": 14736,
+            "src": "1729:226:62",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "private"
+          }
+        ],
+        "scope": 14737,
+        "src": "470:1487:62"
+      }
+    ],
+    "src": "33:1925:62"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.4",
+  "updatedAt": "2021-05-31T12:09:06.877Z",
+  "devdoc": {
+    "details": "This contract is used in conjunction with one or more instances of {BeaconProxy} to determine their implementation contract, which is where they will delegate all function calls. * An owner is able to change the implementation the beacon points to, thus upgrading the proxies that use this beacon.",
+    "methods": {
+      "constructor": {
+        "details": "Sets the address of the initial implementation, and the deployer account as the owner who can upgrade the beacon."
+      },
+      "implementation()": {
+        "details": "Returns the current implementation address."
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner.     * NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+      },
+      "upgradeTo(address)": {
+        "details": "Upgrades the beacon to a new implementation.     * Emits an {Upgraded} event.     * Requirements:     * - msg.sender must be the owner of the contract. - `newImplementation` must be a contract."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

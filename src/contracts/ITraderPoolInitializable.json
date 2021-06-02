@@ -1,0 +1,460 @@
+{
+  "contractName": "ITraderPoolInitializable",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address[9]",
+          "name": "iaddr",
+          "type": "address[9]"
+        },
+        {
+          "internalType": "uint256",
+          "name": "commissions",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "_actual",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "_investorRestricted",
+          "type": "bool"
+        }
+      ],
+      "name": "initialize",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address[9]\",\"name\":\"iaddr\",\"type\":\"address[9]\"},{\"internalType\":\"uint256\",\"name\":\"commissions\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"_actual\",\"type\":\"bool\"},{\"internalType\":\"bool\",\"name\":\"_investorRestricted\",\"type\":\"bool\"}],\"name\":\"initialize\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/ITraderPoolInitializable.sol\":\"ITraderPoolInitializable\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/ITraderPoolInitializable.sol\":{\"keccak256\":\"0x286016842eafe42f188cbc74471c7db3ec04adbbbd6c79fa9ed468fcf8a5a3c2\",\"urls\":[\"bzz-raw://b6ed54112da8c5b0b251791e72eae7bff83c2c74c59ec7044d339eb246f54cb5\",\"dweb:/ipfs/QmeSGK6ENhccsyhvSP4n5TzdBk3VSMe5TvnjqJ3bjWbgTM\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity >=0.6.2 <0.8.0;\n\ninterface ITraderPoolInitializable{\n  function initialize(address[9] calldata iaddr, uint256 commissions, bool _actual, bool _investorRestricted) external;\n}",
+  "sourcePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/ITraderPoolInitializable.sol",
+  "ast": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/ITraderPoolInitializable.sol",
+    "exportedSymbols": {
+      "ITraderPoolInitializable": [6431]
+    },
+    "id": 6432,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6417,
+        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:32"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6431,
+        "linearizedBaseContracts": [6431],
+        "name": "ITraderPoolInitializable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "00cfb42c",
+            "id": 6430,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6428,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6421,
+                  "mutability": "mutable",
+                  "name": "iaddr",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6430,
+                  "src": "124:25:32",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$9_calldata_ptr",
+                    "typeString": "address[9]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 6418,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "124:7:32",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 6420,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "39",
+                      "id": 6419,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "132:1:32",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_9_by_1",
+                        "typeString": "int_const 9"
+                      },
+                      "value": "9"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "124:10:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$9_storage_ptr",
+                      "typeString": "address[9]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6423,
+                  "mutability": "mutable",
+                  "name": "commissions",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6430,
+                  "src": "151:19:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6422,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "151:7:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6425,
+                  "mutability": "mutable",
+                  "name": "_actual",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6430,
+                  "src": "172:12:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6424,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "172:4:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6427,
+                  "mutability": "mutable",
+                  "name": "_investorRestricted",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6430,
+                  "src": "186:24:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6426,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "186:4:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "123:88:32"
+            },
+            "returnParameters": {
+              "id": 6429,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "220:0:32"
+            },
+            "scope": 6431,
+            "src": "104:117:32",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6432,
+        "src": "66:157:32"
+      }
+    ],
+    "src": "33:190:32"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/ITraderPoolInitializable.sol",
+    "exportedSymbols": {
+      "ITraderPoolInitializable": [6431]
+    },
+    "id": 6432,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 6417,
+        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:32"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 6431,
+        "linearizedBaseContracts": [6431],
+        "name": "ITraderPoolInitializable",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": null,
+            "functionSelector": "00cfb42c",
+            "id": 6430,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "initialize",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 6428,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 6421,
+                  "mutability": "mutable",
+                  "name": "iaddr",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6430,
+                  "src": "124:25:32",
+                  "stateVariable": false,
+                  "storageLocation": "calldata",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_$9_calldata_ptr",
+                    "typeString": "address[9]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 6418,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "124:7:32",
+                      "stateMutability": "nonpayable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address",
+                        "typeString": "address"
+                      }
+                    },
+                    "id": 6420,
+                    "length": {
+                      "argumentTypes": null,
+                      "hexValue": "39",
+                      "id": 6419,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "kind": "number",
+                      "lValueRequested": false,
+                      "nodeType": "Literal",
+                      "src": "132:1:32",
+                      "subdenomination": null,
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_rational_9_by_1",
+                        "typeString": "int_const 9"
+                      },
+                      "value": "9"
+                    },
+                    "nodeType": "ArrayTypeName",
+                    "src": "124:10:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_$9_storage_ptr",
+                      "typeString": "address[9]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6423,
+                  "mutability": "mutable",
+                  "name": "commissions",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6430,
+                  "src": "151:19:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 6422,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "151:7:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6425,
+                  "mutability": "mutable",
+                  "name": "_actual",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6430,
+                  "src": "172:12:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6424,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "172:4:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 6427,
+                  "mutability": "mutable",
+                  "name": "_investorRestricted",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 6430,
+                  "src": "186:24:32",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_bool",
+                    "typeString": "bool"
+                  },
+                  "typeName": {
+                    "id": 6426,
+                    "name": "bool",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "186:4:32",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "123:88:32"
+            },
+            "returnParameters": {
+              "id": 6429,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "220:0:32"
+            },
+            "scope": 6431,
+            "src": "104:117:32",
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 6432,
+        "src": "66:157:32"
+      }
+    ],
+    "src": "33:190:32"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.4",
+  "updatedAt": "2021-05-31T12:09:06.734Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

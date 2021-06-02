@@ -1,0 +1,248 @@
+{
+  "contractName": "IBeacon",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "implementation",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.6.6+commit.6c089d02\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"implementation\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"details\":\"This is the interface that {BeaconProxy} expects of its beacon.\",\"methods\":{\"implementation()\":{\"details\":\"Must return an address that can be used as a delegate call target.     * {BeaconProxy} will check that this address is a contract.\"}}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/IBeacon.sol\":\"IBeacon\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/IBeacon.sol\":{\"keccak256\":\"0x77c167740c8227e2569064dabdb2d683800f409743bda1bab8d66d5a2dae3674\",\"urls\":[\"bzz-raw://db67aa92e2fa0b00447b469ab9416584024092ff9fd0768d8f2a56b82f90a13a\",\"dweb:/ipfs/QmT39rVeCqKkniTVvPJjgFajmS5QbjE77xgrEVJeAw6VFA\"]}},\"version\":1}",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "immutableReferences": {},
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "// SPDX-License-Identifier: MIT\n\npragma solidity >=0.6.0 <0.8.0;\n\n/**\n * @dev This is the interface that {BeaconProxy} expects of its beacon.\n */\ninterface IBeacon {\n    /**\n     * @dev Must return an address that can be used as a delegate call target.\n     *\n     * {BeaconProxy} will check that this address is a contract.\n     */\n    function implementation() external view returns (address);\n}\n",
+  "sourcePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/IBeacon.sol",
+  "ast": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/IBeacon.sol",
+    "exportedSymbols": {
+      "IBeacon": [14270]
+    },
+    "id": 14271,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14262,
+        "literals": ["solidity", ">=", "0.6", ".0", "<", "0.8", ".0"],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:58"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 14263,
+          "nodeType": "StructuredDocumentation",
+          "src": "66:79:58",
+          "text": "@dev This is the interface that {BeaconProxy} expects of its beacon."
+        },
+        "fullyImplemented": false,
+        "id": 14270,
+        "linearizedBaseContracts": [14270],
+        "name": "IBeacon",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 14264,
+              "nodeType": "StructuredDocumentation",
+              "src": "170:162:58",
+              "text": "@dev Must return an address that can be used as a delegate call target.\n     * {BeaconProxy} will check that this address is a contract."
+            },
+            "functionSelector": "5c60da1b",
+            "id": 14269,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "implementation",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 14265,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "360:2:58"
+            },
+            "returnParameters": {
+              "id": 14268,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14267,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14269,
+                  "src": "386:7:58",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14266,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "386:7:58",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "385:9:58"
+            },
+            "scope": 14270,
+            "src": "337:58:58",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14271,
+        "src": "146:251:58"
+      }
+    ],
+    "src": "33:365:58"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/IBeacon.sol",
+    "exportedSymbols": {
+      "IBeacon": [14270]
+    },
+    "id": 14271,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 14262,
+        "literals": ["solidity", ">=", "0.6", ".0", "<", "0.8", ".0"],
+        "nodeType": "PragmaDirective",
+        "src": "33:31:58"
+      },
+      {
+        "abstract": false,
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 14263,
+          "nodeType": "StructuredDocumentation",
+          "src": "66:79:58",
+          "text": "@dev This is the interface that {BeaconProxy} expects of its beacon."
+        },
+        "fullyImplemented": false,
+        "id": 14270,
+        "linearizedBaseContracts": [14270],
+        "name": "IBeacon",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": null,
+            "documentation": {
+              "id": 14264,
+              "nodeType": "StructuredDocumentation",
+              "src": "170:162:58",
+              "text": "@dev Must return an address that can be used as a delegate call target.\n     * {BeaconProxy} will check that this address is a contract."
+            },
+            "functionSelector": "5c60da1b",
+            "id": 14269,
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "implementation",
+            "nodeType": "FunctionDefinition",
+            "overrides": null,
+            "parameters": {
+              "id": 14265,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "360:2:58"
+            },
+            "returnParameters": {
+              "id": 14268,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 14267,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "overrides": null,
+                  "scope": 14269,
+                  "src": "386:7:58",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 14266,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "386:7:58",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "385:9:58"
+            },
+            "scope": 14270,
+            "src": "337:58:58",
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "scope": 14271,
+        "src": "146:251:58"
+      }
+    ],
+    "src": "33:365:58"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.6.6+commit.6c089d02.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.2.4",
+  "updatedAt": "2021-05-31T12:09:06.872Z",
+  "devdoc": {
+    "details": "This is the interface that {BeaconProxy} expects of its beacon.",
+    "methods": {
+      "implementation()": {
+        "details": "Must return an address that can be used as a delegate call target.     * {BeaconProxy} will check that this address is a contract."
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

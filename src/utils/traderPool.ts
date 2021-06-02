@@ -1,21 +1,32 @@
-import {IState} from '../interfaces/basic.interface';
+import { IState } from '../interfaces/basic.interface';
+import { contractCallErrorHandler } from '../helpers/error.helper';
 
 export async function getTotalSupply(contractAddress: string, state: IState): Promise<string> {
-    try {
-        const contract = new state.web3.eth.Contract(state.abis.abiTraderPool, contractAddress);
-        const totalSupply = await contract.methods.totalSupply().call();
-        return totalSupply;
-    } catch (e) {
-        console.log(e)
-    }
+  try {
+    const contract = new state.web3.eth.Contract(state.abis.abiTraderPool, contractAddress);
+    const totalSupply = await contract.methods.totalSupply().call();
+    return totalSupply;
+  } catch (e) {
+    contractCallErrorHandler(e);
+  }
 }
 
 export async function getDepositedAmount(contractAddress: string, state: IState): Promise<string> {
-    try {
-        const contract = new state.web3.eth.Contract(state.abis.abiTraderPool, contractAddress);
-        const deposits = await contract.methods.getTotalValueLocked().call();
-        return deposits;
-    } catch (e) {
-        console.log(e)
-    }
+  try {
+    const contract = new state.web3.eth.Contract(state.abis.abiTraderPool, contractAddress);
+    const deposits = await contract.methods.getTotalValueLocked().call();
+    return deposits;
+  } catch (e) {
+    contractCallErrorHandler(e);
+  }
+}
+
+export async function getMaxPositionOpenAmount(contractAddress: string, state: IState): Promise<string> {
+  try {
+    const contract = new state.web3.eth.Contract(state.abis.abiTraderPool, contractAddress);
+    const amount = await contract.methods.getMaxPositionOpenAmount().call();
+    return amount;
+  } catch (e) {
+    contractCallErrorHandler(e);
+  }
 }
