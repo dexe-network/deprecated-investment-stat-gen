@@ -1,5 +1,6 @@
 import { IState } from '../interfaces/basic.interface';
 import { contractCallErrorHandler } from '../helpers/error.helper';
+import { getContract } from './getContract';
 
 export async function getTotalSupply(contractAddress: string, state: IState): Promise<string> {
   try {
@@ -23,7 +24,7 @@ export async function getDepositedAmount(contractAddress: string, state: IState)
 
 export async function getMaxPositionOpenAmount(contractAddress: string, state: IState): Promise<string> {
   try {
-    const contract = new state.web3.eth.Contract(state.abis.abiTraderPool, contractAddress);
+    const contract = getContract('TraderPoolUpgradeable', contractAddress, state);
     const amount = await contract.methods.getMaxPositionOpenAmount().call();
     return amount;
   } catch (e) {

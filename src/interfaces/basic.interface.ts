@@ -19,6 +19,10 @@ export interface IState {
     traders: IAccount[];
     users: IAccount[];
   };
+  addressData: IAddressData;
+}
+
+export interface IAddressData {
   baseAddresses: {
     defiSwapRouter: string;
     defiFactory: string;

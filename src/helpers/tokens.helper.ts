@@ -1,6 +1,6 @@
 import BigNumber from 'bignumber.js';
 
-export const buildBalanceTransformer = (value: BigNumber, decimals: number): BigNumber => {
+export const rawBalanceToParsed = (value: BigNumber, decimals: number): BigNumber => {
   if (!value || !(typeof decimals === 'number')) {
     return new BigNumber(0);
   }

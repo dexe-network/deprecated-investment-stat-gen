@@ -1,4 +1,4 @@
-import { IPoolInfo, IState } from '../interfaces/basic.interface';
+import { IAddressData, IPoolInfo, IState } from '../interfaces/basic.interface';
 import { BaseOperation } from '../operation/baseOperation';
 import lodash from 'lodash';
 import { basicBscTokensAddress } from '../constant/basicTokenList';
@@ -6,8 +6,6 @@ import 'colors';
 import fs from 'fs';
 import path from 'path';
 import { loadData, storeData } from '../helpers/fileSystem.helper';
-import { deployContract } from '../utils/deployContract';
-import { getAddress } from '../utils/paramKeeper';
 import { DeployContracts } from '../operation/deployContracts';
 
 export class BaseGenerator {
@@ -24,27 +22,33 @@ export class BaseGenerator {
 
   async run(): Promise<void> {
     try {
-      if (this.isNewBD) {
-        await this.deployContracts.run();
-        await this.generateTraderPools();
-        console.log('Start Endless trading operations'.bgYellow.bold);
-        void this.runRandomOperations();
-      } else {
-        console.log('DB already exist'.bgGreen.bold);
-        console.log('generateTraderPools skipped'.bgYellow.bold);
-        this.loadTraderPoolData();
-        console.log('Trader Pool Data was Loaded'.bgCyan.bold);
+      await this.deployContracts.run();
+      await this.generateTraderPools();
+      console.log('Start Endless trading operations'.bgYellow.bold);
+      void this.runRandomOperations();
 
-        console.log('Start Endless trading operations'.bgYellow.bold);
-        void this.runRandomOperations();
-      }
+      // if (this.isNewBD) {
+      //   await this.deployContracts.run();
+      //   await this.generateTraderPools();
+      //   this.saveAddressDataData(this.state.addressData);
+      //   console.log('Start Endless trading operations'.bgYellow.bold);
+      //   void this.runRandomOperations();
+      // } else {
+      //   console.log('DB already exist'.bgGreen.bold);
+      //   console.log('generateTraderPools skipped'.bgYellow.bold);
+      //   this.loadAddressDataData();
+      //   console.log('Trader Pool Data was Loaded'.bgCyan.bold);
+      //
+      //   console.log('Start Endless trading operations'.bgYellow.bold);
+      //   void this.runRandomOperations();
+      // }
     } catch (e) {
       throw e;
     }
   }
 
   async runRandomOperations(): Promise<void> {
-    void this.baseOperation.openPosition(lodash.sample(this.state.traderPools));
+    void this.baseOperation.openPosition(lodash.sample(this.state.addressData.traderPools));
     return;
 
     const rand = lodash.random(3, 10) * 1000;
@@ -55,11 +59,11 @@ export class BaseGenerator {
 
       switch (operation) {
         case 1: {
-          void this.baseOperation.openPosition(lodash.sample(this.state.traderPools));
+          void this.baseOperation.openPosition(lodash.sample(this.state.addressData.traderPools));
           break;
         }
         case 2: {
-          void this.baseOperation.closePosition(lodash.sample(this.state.traderPools));
+          void this.baseOperation.closePosition(lodash.sample(this.state.addressData.traderPools));
           break;
         }
         default: {
@@ -82,8 +86,7 @@ export class BaseGenerator {
         await this.baseOperation.createTraderPoolTx(value, lodash.sample(basicBscTokensAddress));
       }),
     );
-    const traderPools = this.state.traderPools;
-    this.saveTraderPoolData(traderPools);
+    const traderPools = this.state.addressData.traderPools;
     console.log('Creating Pools Completed'.bgGreen.bold);
     //=====================
 
@@ -111,15 +114,14 @@ export class BaseGenerator {
     );
     console.log('Deposit From Users Completed'.bgGreen.bold);
     //=====================
-
     console.log('generateTraderPools was Completed'.bgYellow.bold);
   }
 
-  private saveTraderPoolData(traderPools: IPoolInfo[]): void {
-    storeData(traderPools, path.resolve(__dirname, '../db', 'traderPools.json'));
+  private saveAddressDataData(addressData: IAddressData): void {
+    storeData(addressData, path.resolve(__dirname, '../db', 'addressData.json'));
   }
 
-  private loadTraderPoolData(): void {
-    this.state.traderPools = loadData<IPoolInfo[]>(path.resolve(__dirname, '../db', 'traderPools.json'));
+  private loadAddressDataData(): void {
+    this.state.addressData = loadData<IAddressData>(path.resolve(__dirname, '../db', 'addressData.json'));
   }
 }

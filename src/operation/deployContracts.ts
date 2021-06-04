@@ -7,6 +7,8 @@ import { IDeployResult } from '../interfaces/deployContracts.interface';
 import { getContract } from '../utils/getContract';
 import { Contract } from 'web3-eth-contract';
 import { sendTransaction } from '../utils/sendTransaction';
+import lodash from 'lodash';
+import { basicBscTokensAddress } from '../constant/basicTokenList';
 
 export class DeployContracts {
   account: IAccount;
@@ -50,7 +52,7 @@ export class DeployContracts {
     let swapTool: IDeployResult;
 
     if (this.state.vendor === VENDOR.Ethereum) {
-      defiRouter = getContract('IUniswapV2Router02', this.state.baseAddresses.defiSwapRouter, this.state);
+      defiRouter = getContract('IUniswapV2Router02', this.state.addressData.baseAddresses.defiSwapRouter, this.state);
       defiFactoryAddress = await defiRouter.methods.factory().call();
       wethTokenAddress = await defiRouter.methods.WETH().call();
 
@@ -58,7 +60,7 @@ export class DeployContracts {
       valuationManager = await this.deployContract('UniswapPathFinder', this.account);
       automaticExchangeManager = await this.deployContract('UniswapAutoExchangeTool', this.account);
     } else if (this.state.vendor === VENDOR.BSC) {
-      defiRouter = getContract('IPancakeRouter01', this.state.baseAddresses.defiSwapRouter, this.state);
+      defiRouter = getContract('IPancakeRouter01', this.state.addressData.baseAddresses.defiSwapRouter, this.state);
       defiFactoryAddress = await defiRouter.methods.factory().call();
       wethTokenAddress = await defiRouter.methods.WETH().call();
 
@@ -67,14 +69,14 @@ export class DeployContracts {
       automaticExchangeManager = await this.deployContract('PancakeExchangeTool', this.account);
     }
 
-    this.state.baseAddresses.defiFactory = defiFactoryAddress;
-    this.state.deployedAddresses.exchangeTool = swapTool.address;
-    this.state.deployedAddresses.traderPoolFactoryUpgradeable = traderPoolFactoryUpgradeableBeacon.address;
+    // this.state.addressData.baseAddresses.defiFactory = defiFactoryAddress;
+    this.state.addressData.deployedAddresses.exchangeTool = swapTool.address;
+    this.state.addressData.deployedAddresses.traderPoolFactoryUpgradeable = traderPoolFactoryUpgradeableBeacon.address;
 
     await this.setAssetAutomaticExchangeManager(paramKeeper, automaticExchangeManager);
     await this.setAssetValuationManager(paramKeeper, valuationManager);
-    await this.setParamAddress(paramKeeper, 1000, this.state.baseAddresses.defiSwapRouter);
-    await this.setParamAddress(paramKeeper, 1001, this.state.baseAddresses.defiFactory);
+    await this.setParamAddress(paramKeeper, 1000, this.state.addressData.baseAddresses.defiSwapRouter);
+    await this.setParamAddress(paramKeeper, 1001, this.state.addressData.baseAddresses.defiFactory);
     // insurance address
     await this.setParamAddress(paramKeeper, 101, this.account.address);
     // dexe commission address
@@ -91,6 +93,25 @@ export class DeployContracts {
     );
     await this.setParamAddress(paramKeeper, 1, traderPoolFactoryUpgradeableBeacon.address);
     console.log('Factory inited'.bgMagenta.bold);
+
+    console.log('Set whitelist Token'.bgYellow.bold);
+    for (const tokenAddress of this.state.addressData.swapTokenList) {
+      await this.setWhitelistToken(paramKeeper, tokenAddress);
+    }
+  }
+
+  private async setWhitelistToken(paramKeeper: IDeployResult, address: string): Promise<void> {
+    const txCount = await this.state.web3.eth.getTransactionCount(this.account.address);
+    const rawTransaction: IRawTransaction = {
+      from: this.account.address,
+      nonce: this.state.web3.utils.toHex(txCount),
+      gasPrice: this.state.web3.utils.toHex(this.state.config.gasPrice),
+      gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
+      to: paramKeeper.address,
+      value: this.state.web3.utils.toHex(0),
+      data: paramKeeper.contract.methods.whitelistToken(address).encodeABI(),
+    };
+    await sendTransaction(rawTransaction, this.account.secretKey, 'whitelistToken', this.state);
   }
 
   private async initializeFactory(

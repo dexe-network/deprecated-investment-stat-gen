@@ -32,17 +32,19 @@ export function stateInitializer(provider: GanacheCore.Provider): IState {
       abiPairContract: require('../abi/IPancakePair.json'),
       abiParamKeeper: require('../abi/ParamKeeper.json'),
     },
-    baseAddresses: {
-      defiSwapRouter: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
-      defiFactory: '',
+    addressData: {
+      baseAddresses: {
+        defiSwapRouter: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
+        defiFactory: '0xcA143Ce32Fe78f1f7019d7d551a6402fC5350c73',
+      },
+      deployedAddresses: {
+        exchangeTool: '',
+        traderPoolFactoryUpgradeable: '',
+      },
+      traderPools: [],
+      baseTokenList: basicBscTokensAddress,
+      swapTokenList: bscSwapTokenList,
     },
-    deployedAddresses: {
-      exchangeTool: '',
-      traderPoolFactoryUpgradeable: '',
-    },
-    traderPools: [],
-    baseTokenList: basicBscTokensAddress,
-    swapTokenList: bscSwapTokenList,
   };
 
   return state;

@@ -1,21 +1,23 @@
 import ganacheCore from 'ganache-core';
 import Ganache from 'ganache-core';
 import path from 'path';
+import fs from 'fs';
 import { stateInitializer } from './utils/stateInit';
 import { BaseGenerator } from './generator/baseGenerator';
 import BigNumber from 'bignumber.js';
 
 const ganacheOptions: Ganache.IProviderOptions = {
   account_keys_path: path.resolve(__dirname, 'accounts.json'),
+  // fork: fs.existsSync(path.resolve(__dirname, 'db')) ? undefined : 'https://bsc-dataseed1.binance.org',
   fork: 'https://bsc-dataseed1.binance.org',
   networkId: 56,
   hardfork: 'istanbul',
-  blockTime: 1,
+  blockTime: 0,
   default_balance_ether: 10000,
   total_accounts: 301,
   seed: 'F8Jn2WgcAw',
   mnemonic: 'catalog forum over nut turkey topic village reduce issue speak enforce diamond capable horror click',
-  db_path: path.resolve(__dirname, 'db', 'db'),
+  // db_path: path.resolve(__dirname, 'db', 'db'),
 };
 
 const provider = ganacheCore.provider(ganacheOptions);

@@ -8,12 +8,13 @@ import moment from 'moment';
 import { getRevertReason } from '../utils/getRevertReason';
 import { getCurrentExchangeRate } from '../utils/pairPrice';
 import BigNumber from 'bignumber.js';
-import { parsedBalanceToRaw } from '../helpers/tokens.helper';
+import { parsedBalanceToRaw, rawBalanceToParsed } from '../helpers/tokens.helper';
 import { getUserBalance } from '../utils/getUserBalance';
 import 'colors';
 import { getDecimal } from '../utils/getDecimal';
 import { getMaxPositionOpenAmount } from '../utils/traderPool';
 import { sendTransaction } from '../utils/sendTransaction';
+import { WethOrWbnbAddress } from '../constant/basicTokenList';
 
 export class BaseOperation {
   constructor(private state: IState) {}
@@ -21,7 +22,7 @@ export class BaseOperation {
   public async createTraderPoolTx(account: IAccount, basicToken: string) {
     const tpfuContract = new this.state.web3.eth.Contract(
       this.state.abis.abiTPFU,
-      this.state.deployedAddresses.traderPoolFactoryUpgradeable,
+      this.state.addressData.deployedAddresses.traderPoolFactoryUpgradeable,
     );
 
     abiDecoder.addABI(this.state.abis.abiTPFU);
@@ -41,7 +42,7 @@ export class BaseOperation {
       nonce: this.state.web3.utils.toHex(txCount),
       gasPrice: this.state.web3.utils.toHex(this.state.config.gasPrice),
       gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
-      to: this.state.deployedAddresses.traderPoolFactoryUpgradeable,
+      to: this.state.addressData.deployedAddresses.traderPoolFactoryUpgradeable,
       value: this.state.web3.utils.toHex(0),
       data: tpfuContract.methods
         .createTraderContract(
@@ -76,8 +77,11 @@ export class BaseOperation {
   }
 
   public async depositTokenToTraderPool(account: IAccount, traderPool: IPoolInfo, amount: number) {
-    await this.swapTokens(account, traderPool.basicToken, amount);
-    await this.approveTransferTokenToPool(account, traderPool, amount);
+    const basicTokenDecimal = +(await getDecimal(traderPool.basicToken, this.state));
+    const rawAmount = parsedBalanceToRaw(new BigNumber(amount), basicTokenDecimal);
+
+    await this.swapTokens(account, traderPool.basicToken, rawAmount);
+    await this.approveTransferTokenToPool(account, traderPool, rawAmount);
     console.log('Balance before Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
 
     const poolAddress = traderPool.poolAddress;
@@ -91,13 +95,13 @@ export class BaseOperation {
       gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
       to: poolAddress,
       value: this.state.web3.utils.toHex(0),
-      data: traderPoolContract.methods.deposit(this.state.web3.utils.toHex(amount)).encodeABI(),
+      data: traderPoolContract.methods.deposit(this.state.web3.utils.toHex(rawAmount.toFixed(0))).encodeABI(),
     };
     await sendTransaction(createDepositTransaction, account.secretKey, 'Deposited', this.state);
     console.log('Balance after Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
   }
 
-  public async approveTransferTokenToPool(account: IAccount, traderPool: IPoolInfo, amount: number) {
+  private async approveTransferTokenToPool(account: IAccount, traderPool: IPoolInfo, rawAmount: BigNumber) {
     const tokenContract = new this.state.web3.eth.Contract(this.state.abis.abiErc20, traderPool.basicToken);
     const txCount = await this.state.web3.eth.getTransactionCount(account.address);
     const createApproveRawTransaction = {
@@ -107,42 +111,42 @@ export class BaseOperation {
       gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
       to: traderPool.basicToken,
       value: this.state.web3.utils.toHex(0),
-      data: tokenContract.methods.approve(traderPool.poolAddress, this.state.web3.utils.toHex(amount)).encodeABI(),
+      data: tokenContract.methods
+        .approve(traderPool.poolAddress, this.state.web3.utils.toHex(rawAmount.toFixed(0)))
+        .encodeABI(),
     };
     await sendTransaction(createApproveRawTransaction, account.secretKey, 'Approved', this.state);
   }
 
-  public async swapTokens(account: IAccount, swapTokenAddress: string, amount: number) {
+  private async swapTokens(account: IAccount, swapTokenAddress: string, rawAmount: BigNumber): Promise<void> {
     const pancakeContract = new this.state.web3.eth.Contract(
       this.state.abis.abiPancake,
-      this.state.baseAddresses.defiSwapRouter,
+      this.state.addressData.baseAddresses.defiSwapRouter,
     );
+    const swapTokenDecimal = await getDecimal(swapTokenAddress, this.state);
+    const wethDecimal = 18;
     const txCount = await this.state.web3.eth.getTransactionCount(account.address);
+    const currentPrice = await getCurrentExchangeRate(this.state.web3, this.state, WethOrWbnbAddress, swapTokenAddress);
+    const sendEthValueParsed = rawBalanceToParsed(rawAmount, swapTokenDecimal)
+      .multipliedBy(1.1)
+      .dividedBy(currentPrice);
 
-    const currentPrice = await getCurrentExchangeRate(
-      this.state.web3,
-      this.state,
-      '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
-      swapTokenAddress,
-    );
-
-    const path = ['0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c', swapTokenAddress];
+    const path = [WethOrWbnbAddress, swapTokenAddress];
     const deadlineTime = moment(moment.now()).add(10, 'minutes').unix();
-
-    const tokenDecimal = await getDecimal(swapTokenAddress, this.state);
-
+    // console.log(parsedBalanceToRaw(sendEthValueParsed, wethDecimal).toFixed(0), rawAmount.toFixed(0));
     const createSwapRawTransaction: IRawTransaction = {
       from: account.address,
       nonce: this.state.web3.utils.toHex(txCount),
       gasPrice: this.state.web3.utils.toHex(this.state.config.gasPrice),
       gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
-      to: this.state.baseAddresses.defiSwapRouter,
+      to: this.state.addressData.baseAddresses.defiSwapRouter,
       // add fee
       value: this.state.web3.utils.toHex(
-        parsedBalanceToRaw(new BigNumber(amount).multipliedBy(1.03).dividedBy(currentPrice), tokenDecimal).toFixed(0),
+        // Not correct work with different token decimal, need improve
+        parsedBalanceToRaw(sendEthValueParsed, wethDecimal).toFixed(0),
       ),
       data: pancakeContract.methods
-        .swapETHForExactTokens(this.state.web3.utils.toHex(amount), path, account.address, deadlineTime)
+        .swapETHForExactTokens(this.state.web3.utils.toHex(rawAmount.toFixed(0)), path, account.address, deadlineTime)
         .encodeABI(),
     };
     await sendTransaction(createSwapRawTransaction, account.secretKey, 'Token Swapped', this.state);
@@ -166,10 +170,10 @@ export class BaseOperation {
 
     const contract = new this.state.web3.eth.Contract(
       this.state.abis.abiPET,
-      this.state.deployedAddresses.exchangeTool,
+      this.state.addressData.deployedAddresses.exchangeTool,
     );
     const txCount = await this.state.web3.eth.getTransactionCount(traderPool.traderWallet);
-    const swapTokenAddress = lodash.sample(this.state.swapTokenList);
+    const swapTokenAddress = lodash.sample(this.state.addressData.swapTokenList);
     console.log('Get', swapTokenAddress, 'Send', traderPool.basicToken);
     const currentPrice = await getCurrentExchangeRate(
       this.state.web3,
@@ -191,7 +195,7 @@ export class BaseOperation {
       nonce: this.state.web3.utils.toHex(txCount),
       gasPrice: this.state.web3.utils.toHex(this.state.config.gasPrice),
       gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
-      to: this.state.deployedAddresses.exchangeTool,
+      to: this.state.addressData.deployedAddresses.exchangeTool,
       value: this.state.web3.utils.toHex(0),
       data: contract.methods
         .swapExactTokensForTokens(traderPool.poolAddress, newPositionSpendAmount, getTokenAmount, path, deadlineTime)
@@ -210,6 +214,6 @@ export class BaseOperation {
   }
 
   private addTraderPoolInfo(data: IPoolInfo) {
-    this.state.traderPools.push(data);
+    this.state.addressData.traderPools.push(data);
   }
 }

@@ -2,6 +2,7 @@ import Web3 from 'web3';
 import { IContractTokenNames, IReserveData, IState, ITokenPriceData } from '../interfaces/basic.interface';
 import BigNumber from 'bignumber.js';
 import { contractCallErrorHandler } from '../helpers/error.helper';
+import { getContract } from './getContract';
 
 async function getPairContractAddress(
   web3: Web3,
@@ -10,7 +11,7 @@ async function getPairContractAddress(
   receiveToken: string,
 ): Promise<string> {
   try {
-    const contract = new state.web3.eth.Contract(state.abis.abiPancakeFactory, state.baseAddresses.defiFactory);
+    const contract = getContract('IUniswapV2Factory', state.addressData.baseAddresses.defiFactory, state);
     const pairAddress = await contract.methods.getPair(sendToken, receiveToken).call();
     return pairAddress;
   } catch (e) {
@@ -73,6 +74,7 @@ export async function getCurrentExchangeRate(
   sendToken: string,
   receiveToken: string,
 ): Promise<string> {
+  // Not correct work if token with different decimal , need some improve
   const pairContractAddress = await getPairContractAddress(web3, state, sendToken, receiveToken);
   const reserves = await getReserves(web3, state, pairContractAddress);
   const tokensData = await getTokensData(web3, state, pairContractAddress, sendToken, receiveToken, reserves);
