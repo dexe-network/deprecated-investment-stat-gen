@@ -9,7 +9,8 @@ import BigNumber from 'bignumber.js';
 const ganacheOptions: Ganache.IProviderOptions = {
   account_keys_path: path.resolve(__dirname, 'accounts.json'),
   // fork: fs.existsSync(path.resolve(__dirname, 'db')) ? undefined : 'https://bsc-dataseed1.binance.org',
-  fork: 'https://bsc-dataseed1.binance.org',
+  // fork: 'https://bsc-dataseed1.binance.org',
+  fork: 'ws://eth.getblock.io/mainnet/?api_key=ba8b0738-9220-42e7-97fb-5e607e581ab7',
   networkId: 56,
   hardfork: 'istanbul',
   blockTime: 0,

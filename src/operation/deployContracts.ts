@@ -1,14 +1,10 @@
 import { IAccount, IContract, IRawTransaction, IState, VENDOR } from '../interfaces/basic.interface';
-import fs from 'fs';
-import path from 'path';
 import 'colors';
 import { contractCallErrorHandler } from '../helpers/error.helper';
 import { IDeployResult } from '../interfaces/deployContracts.interface';
 import { getContract } from '../utils/getContract';
 import { Contract } from 'web3-eth-contract';
 import { sendTransaction } from '../utils/sendTransaction';
-import lodash from 'lodash';
-import { basicBscTokensAddress } from '../constant/basicTokenList';
 
 export class DeployContracts {
   account: IAccount;
@@ -65,7 +61,9 @@ export class DeployContracts {
 
       swapTool = await this.deployContract(this.state.contracts.exchangeTool, this.account);
       valuationManager = await this.deployContract(this.state.contracts.pathFinder, this.account);
-      automaticExchangeManager = await this.deployContract(this.state.contracts.autoExchangeTool, this.account);
+      automaticExchangeManager = await this.deployContract(this.state.contracts.autoExchangeTool, this.account, [
+        valuationManager.address,
+      ]);
     } else if (this.state.vendor === VENDOR.BSC) {
       defiRouter = getContract(
         this.state.contracts.swapRouterV2,
@@ -77,7 +75,9 @@ export class DeployContracts {
 
       swapTool = await this.deployContract(this.state.contracts.exchangeTool, this.account);
       valuationManager = await this.deployContract(this.state.contracts.pathFinder, this.account);
-      automaticExchangeManager = await this.deployContract(this.state.contracts.exchangeTool, this.account);
+      automaticExchangeManager = await this.deployContract(this.state.contracts.autoExchangeTool, this.account, [
+        valuationManager.address,
+      ]);
     }
 
     // this.state.addressData.baseAddresses.defiFactory = defiFactoryAddress;

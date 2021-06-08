@@ -1,7 +1,6 @@
 import { IAddressData, IPoolInfo, IState } from '../interfaces/basic.interface';
 import { BaseOperation } from '../operation/baseOperation';
 import lodash from 'lodash';
-import { basicBscTokensAddress } from '../constant/basicTokenList';
 import 'colors';
 import fs from 'fs';
 import path from 'path';
@@ -90,7 +89,7 @@ export class BaseGenerator {
     console.log('Create Trader Pools'.bgGreen.bold);
     await Promise.all(
       tradersList.map(async value => {
-        await this.baseOperation.createTraderPoolTx(value, lodash.sample(basicBscTokensAddress));
+        await this.baseOperation.createTraderPoolTx(value, lodash.sample(this.state.addressData.baseTokenList));
       }),
     );
     const traderPools = this.state.addressData.traderPools;

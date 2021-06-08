@@ -50,7 +50,7 @@ export class BaseOperation {
           basicToken,
           this.state.web3.utils.toHex(0),
           commissions,
-          true,
+          false,
           false,
           faker.commerce.productName(),
           faker.address.stateAbbr(),
@@ -82,7 +82,7 @@ export class BaseOperation {
 
     await this.swapTokens(account, traderPool.basicToken, rawAmount);
     await this.approveTransferTokenToPool(account, traderPool, rawAmount);
-    console.log('Balance before Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
+    // console.log('Balance before Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
 
     const poolAddress = traderPool.poolAddress;
     const traderPoolContract = new this.state.web3.eth.Contract(this.state.contracts.traderPool.abi, poolAddress);
@@ -99,7 +99,7 @@ export class BaseOperation {
       data: traderPoolContract.methods.deposit(this.state.web3.utils.toHex(rawAmount.toFixed(0))).encodeABI(),
     };
     await sendTransaction(createDepositTransaction, account.secretKey, 'Deposited', this.state);
-    console.log('Balance after Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
+    // console.log('Balance after Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
   }
 
   private async approveTransferTokenToPool(account: IAccount, traderPool: IPoolInfo, rawAmount: BigNumber) {

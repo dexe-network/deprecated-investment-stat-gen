@@ -85,10 +85,12 @@ export interface ITokenPriceData {
   sendToken: {
     address: string;
     reserve: string;
+    decimals: number;
   };
   receiveToken: {
     address: string;
     reserve: string;
+    decimals: number;
   };
 }
 

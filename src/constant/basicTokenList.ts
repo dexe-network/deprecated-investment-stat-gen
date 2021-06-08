@@ -20,4 +20,18 @@ export const bscSwapTokenList = [
   // '0x85eac5ac2f758618dfa09bdbe0cf174e7d574d5b', // TRON
 ];
 
-export const WethOrWbnbAddress = '0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c';
+export const basicEthereumTokensAddress = [
+  '0xdAC17F958D2ee523a2206206994597C13D831ec7', // USDT
+  '0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', // USDC
+];
+
+export const ethereumSwapTokenList = [
+  '0x1f9840a85d5af5bf1d1762f925bdaddc4201f984', // UNI
+  '0x514910771af9ca656af840dff83e8264ecf986ca', // Link
+  // '0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2', // Maker
+  '0x111111111117dc0aa78b770fa6a738034120c302', // Inch
+  '0xc00e94cb662c3520282e6f5717214004a7f26888', // COMP
+  '0x35a532d376ffd9a705d0bb319532837337a398e7', // Wdodge
+];
+
+export const WethOrWbnbAddress = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';
