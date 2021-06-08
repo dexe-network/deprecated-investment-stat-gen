@@ -41,6 +41,7 @@ export interface IAddressData {
   traderPools: IPoolInfo[];
   baseTokenList: string[];
   swapTokenList: string[];
+  wethOrWbnbAddress: string;
 }
 
 export enum VENDOR {

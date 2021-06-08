@@ -1,7 +1,7 @@
 import { IAccount, IState, VENDOR } from '../interfaces/basic.interface';
 import Web3 from 'web3';
 import GanacheCore from 'ganache-core';
-import { basicEthereumTokensAddress, ethereumSwapTokenList } from '../constant/basicTokenList';
+import { basicEthereumTokensAddress, ethereumSwapTokenList, WethOrWbnbAddress } from '../constant/basicTokenList';
 
 export function stateInitializer(provider: GanacheCore.Provider): IState {
   // @ts-ignore
@@ -50,6 +50,7 @@ export function stateInitializer(provider: GanacheCore.Provider): IState {
       traderPools: [],
       baseTokenList: basicEthereumTokensAddress,
       swapTokenList: ethereumSwapTokenList,
+      wethOrWbnbAddress: WethOrWbnbAddress,
     },
   };
 

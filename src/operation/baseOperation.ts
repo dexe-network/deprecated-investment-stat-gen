@@ -127,13 +127,18 @@ export class BaseOperation {
     const swapTokenDecimal = await getDecimal(swapTokenAddress, this.state);
     const wethDecimal = 18;
     const txCount = await this.state.web3.eth.getTransactionCount(account.address);
-    const currentPrice = await getCurrentExchangeRate(this.state.web3, this.state, WethOrWbnbAddress, swapTokenAddress);
+    const currentPrice = await getCurrentExchangeRate(
+      this.state.web3,
+      this.state,
+      this.state.addressData.wethOrWbnbAddress,
+      swapTokenAddress,
+    );
     // add fee
     const sendEthValueParsed = rawBalanceToParsed(rawAmount, swapTokenDecimal)
       .multipliedBy(1.15)
       .dividedBy(currentPrice);
 
-    const path = [WethOrWbnbAddress, swapTokenAddress];
+    const path = [this.state.addressData.wethOrWbnbAddress, swapTokenAddress];
     const deadlineTime = moment(moment.now()).add(10, 'minutes').unix();
     // console.log(parsedBalanceToRaw(sendEthValueParsed, wethDecimal).toFixed(0), rawAmount.toFixed(0));
     const createSwapRawTransaction: IRawTransaction = {
@@ -179,14 +184,14 @@ export class BaseOperation {
     );
     const txCount = await this.state.web3.eth.getTransactionCount(traderPool.traderWallet);
     const swapTokenAddress = lodash.sample(this.state.addressData.swapTokenList);
-    console.log(
-      'Get',
-      swapTokenAddress,
-      'Send',
-      traderPool.basicToken,
-      availableTokenForFuturePosition.toString(),
-      newPositionSpendAmountRaw.toString(),
-    );
+    // console.log(
+    //   'Get',
+    //   swapTokenAddress,
+    //   'Send',
+    //   traderPool.basicToken,
+    //   availableTokenForFuturePosition.toString(),
+    //   newPositionSpendAmountRaw.toString(),
+    // );
 
     const path = [traderPool.basicToken, swapTokenAddress];
     const deadlineTime = moment(moment.now()).add(10, 'minutes').unix();
