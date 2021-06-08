@@ -41,14 +41,24 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/ITraderPoolInitializable.sol",
     "exportedSymbols": {
-      "ITraderPoolInitializable": [6431]
+      "ITraderPoolInitializable": [
+        6453
+      ]
     },
-    "id": 6432,
+    "id": 6454,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6417,
-        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "id": 6439,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "33:31:32"
       },
@@ -59,8 +69,10 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6431,
-        "linearizedBaseContracts": [6431],
+        "id": 6453,
+        "linearizedBaseContracts": [
+          6453
+        ],
         "name": "ITraderPoolInitializable",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -68,7 +80,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "00cfb42c",
-            "id": 6430,
+            "id": 6452,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -76,17 +88,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6428,
+              "id": 6450,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6421,
+                  "id": 6443,
                   "mutability": "mutable",
                   "name": "iaddr",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6430,
+                  "scope": 6452,
                   "src": "124:25:32",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -96,7 +108,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 6418,
+                      "id": 6440,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "124:7:32",
@@ -106,11 +118,11 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 6420,
+                    "id": 6442,
                     "length": {
                       "argumentTypes": null,
                       "hexValue": "39",
-                      "id": 6419,
+                      "id": 6441,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -137,12 +149,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6423,
+                  "id": 6445,
                   "mutability": "mutable",
                   "name": "commissions",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6430,
+                  "scope": 6452,
                   "src": "151:19:32",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -151,7 +163,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6422,
+                    "id": 6444,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "151:7:32",
@@ -165,12 +177,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6425,
+                  "id": 6447,
                   "mutability": "mutable",
                   "name": "_actual",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6430,
+                  "scope": 6452,
                   "src": "172:12:32",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -179,7 +191,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6424,
+                    "id": 6446,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "172:4:32",
@@ -193,12 +205,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6427,
+                  "id": 6449,
                   "mutability": "mutable",
                   "name": "_investorRestricted",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6430,
+                  "scope": 6452,
                   "src": "186:24:32",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -207,7 +219,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6426,
+                    "id": 6448,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "186:4:32",
@@ -223,19 +235,19 @@
               "src": "123:88:32"
             },
             "returnParameters": {
-              "id": 6429,
+              "id": 6451,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "220:0:32"
             },
-            "scope": 6431,
+            "scope": 6453,
             "src": "104:117:32",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6432,
+        "scope": 6454,
         "src": "66:157:32"
       }
     ],
@@ -244,14 +256,24 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/ITraderPoolInitializable.sol",
     "exportedSymbols": {
-      "ITraderPoolInitializable": [6431]
+      "ITraderPoolInitializable": [
+        6453
+      ]
     },
-    "id": 6432,
+    "id": 6454,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6417,
-        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "id": 6439,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "33:31:32"
       },
@@ -262,8 +284,10 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6431,
-        "linearizedBaseContracts": [6431],
+        "id": 6453,
+        "linearizedBaseContracts": [
+          6453
+        ],
         "name": "ITraderPoolInitializable",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -271,7 +295,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "00cfb42c",
-            "id": 6430,
+            "id": 6452,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -279,17 +303,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6428,
+              "id": 6450,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6421,
+                  "id": 6443,
                   "mutability": "mutable",
                   "name": "iaddr",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6430,
+                  "scope": 6452,
                   "src": "124:25:32",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -299,7 +323,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 6418,
+                      "id": 6440,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
                       "src": "124:7:32",
@@ -309,11 +333,11 @@
                         "typeString": "address"
                       }
                     },
-                    "id": 6420,
+                    "id": 6442,
                     "length": {
                       "argumentTypes": null,
                       "hexValue": "39",
-                      "id": 6419,
+                      "id": 6441,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -340,12 +364,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6423,
+                  "id": 6445,
                   "mutability": "mutable",
                   "name": "commissions",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6430,
+                  "scope": 6452,
                   "src": "151:19:32",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -354,7 +378,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6422,
+                    "id": 6444,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "151:7:32",
@@ -368,12 +392,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6425,
+                  "id": 6447,
                   "mutability": "mutable",
                   "name": "_actual",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6430,
+                  "scope": 6452,
                   "src": "172:12:32",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -382,7 +406,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6424,
+                    "id": 6446,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "172:4:32",
@@ -396,12 +420,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6427,
+                  "id": 6449,
                   "mutability": "mutable",
                   "name": "_investorRestricted",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6430,
+                  "scope": 6452,
                   "src": "186:24:32",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -410,7 +434,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6426,
+                    "id": 6448,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "186:4:32",
@@ -426,19 +450,19 @@
               "src": "123:88:32"
             },
             "returnParameters": {
-              "id": 6429,
+              "id": 6451,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "220:0:32"
             },
-            "scope": 6431,
+            "scope": 6453,
             "src": "104:117:32",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6432,
+        "scope": 6454,
         "src": "66:157:32"
       }
     ],
@@ -450,7 +474,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.734Z",
+  "updatedAt": "2021-06-08T10:00:09.400Z",
   "devdoc": {
     "methods": {}
   },

@@ -1,4 +1,4 @@
-import { IAccount, IPoolInfo, IRawTransaction, IState } from '../interfaces/basic.interface';
+import { IAccount, IPoolInfo, IPosition, IRawTransaction, IState } from '../interfaces/basic.interface';
 import { Transaction } from 'ethereumjs-tx';
 import { TransactionReceipt, PromiEvent } from 'web3-core';
 import abiDecoder from 'abi-decoder';
@@ -12,7 +12,7 @@ import { parsedBalanceToRaw, rawBalanceToParsed } from '../helpers/tokens.helper
 import { getUserBalance } from '../utils/getUserBalance';
 import 'colors';
 import { getDecimal } from '../utils/getDecimal';
-import { getMaxPositionOpenAmount } from '../utils/traderPool';
+import { getMaxPositionOpenAmount, positionAt, positionsLength } from '../utils/traderPool';
 import { sendTransaction } from '../utils/sendTransaction';
 import { WethOrWbnbAddress } from '../constant/basicTokenList';
 
@@ -82,7 +82,7 @@ export class BaseOperation {
 
     await this.swapTokens(account, traderPool.basicToken, rawAmount);
     await this.approveTransferTokenToPool(account, traderPool, rawAmount);
-    console.log('Balance before Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
+    // console.log('Balance before Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
 
     const poolAddress = traderPool.poolAddress;
     const traderPoolContract = new this.state.web3.eth.Contract(this.state.abis.abiTraderPool, poolAddress);
@@ -98,7 +98,7 @@ export class BaseOperation {
       data: traderPoolContract.methods.deposit(this.state.web3.utils.toHex(rawAmount.toFixed(0))).encodeABI(),
     };
     await sendTransaction(createDepositTransaction, account.secretKey, 'Deposited', this.state);
-    console.log('Balance after Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
+    // console.log('Balance after Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
   }
 
   private async approveTransferTokenToPool(account: IAccount, traderPool: IPoolInfo, rawAmount: BigNumber) {
@@ -127,8 +127,9 @@ export class BaseOperation {
     const wethDecimal = 18;
     const txCount = await this.state.web3.eth.getTransactionCount(account.address);
     const currentPrice = await getCurrentExchangeRate(this.state.web3, this.state, WethOrWbnbAddress, swapTokenAddress);
+    // add fee
     const sendEthValueParsed = rawBalanceToParsed(rawAmount, swapTokenDecimal)
-      .multipliedBy(1.1)
+      .multipliedBy(1.15)
       .dividedBy(currentPrice);
 
     const path = [WethOrWbnbAddress, swapTokenAddress];
@@ -140,7 +141,6 @@ export class BaseOperation {
       gasPrice: this.state.web3.utils.toHex(this.state.config.gasPrice),
       gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
       to: this.state.addressData.baseAddresses.defiSwapRouter,
-      // add fee
       value: this.state.web3.utils.toHex(
         // Not correct work with different token decimal, need improve
         parsedBalanceToRaw(sendEthValueParsed, wethDecimal).toFixed(0),
@@ -154,16 +154,20 @@ export class BaseOperation {
 
   public async openPosition(traderPool: IPoolInfo): Promise<void> {
     const poolAddress = traderPool.poolAddress;
-    const availableTokenForFuturePosition = +(await getMaxPositionOpenAmount(poolAddress, this.state));
-    let newPositionSpendAmount: BigNumber;
-    if (availableTokenForFuturePosition <= 0) {
+    const poolBaseTokenDecimal = await getDecimal(traderPool.basicToken, this.state);
+    const availableTokenForFuturePosition = new BigNumber(await getMaxPositionOpenAmount(poolAddress, this.state));
+    let newPositionSpendAmountRaw: BigNumber;
+    if (availableTokenForFuturePosition.isLessThanOrEqualTo(0)) {
+      console.log('Not Available Tokens for position'.bgWhite, traderPool.poolAddress);
       return;
     }
 
-    if (availableTokenForFuturePosition <= 100) {
-      newPositionSpendAmount = new BigNumber(availableTokenForFuturePosition);
+    if (
+      availableTokenForFuturePosition.isLessThanOrEqualTo(parsedBalanceToRaw(new BigNumber(100), poolBaseTokenDecimal))
+    ) {
+      newPositionSpendAmountRaw = new BigNumber(availableTokenForFuturePosition);
     } else {
-      newPositionSpendAmount = new BigNumber(availableTokenForFuturePosition)
+      newPositionSpendAmountRaw = new BigNumber(availableTokenForFuturePosition)
         .multipliedBy(lodash.random(50, 100))
         .dividedBy(100);
     }
@@ -174,20 +178,17 @@ export class BaseOperation {
     );
     const txCount = await this.state.web3.eth.getTransactionCount(traderPool.traderWallet);
     const swapTokenAddress = lodash.sample(this.state.addressData.swapTokenList);
-    console.log('Get', swapTokenAddress, 'Send', traderPool.basicToken);
-    const currentPrice = await getCurrentExchangeRate(
-      this.state.web3,
-      this.state,
-      traderPool.basicToken,
+    console.log(
+      'Get',
       swapTokenAddress,
+      'Send',
+      traderPool.basicToken,
+      availableTokenForFuturePosition.toString(),
+      newPositionSpendAmountRaw.toString(),
     );
+
     const path = [traderPool.basicToken, swapTokenAddress];
     const deadlineTime = moment(moment.now()).add(10, 'minutes').unix();
-    const getTokenDecimal = await getDecimal(swapTokenAddress, this.state);
-    const getTokenAmount = parsedBalanceToRaw(
-      new BigNumber(newPositionSpendAmount).multipliedBy(0.95).dividedBy(currentPrice),
-      getTokenDecimal,
-    ).toFixed(0);
     const traderAccount = this.state.accounts.traders.find(x => x.address === traderPool.traderWallet);
 
     const createOpenRawTransaction: IRawTransaction = {
@@ -198,14 +199,83 @@ export class BaseOperation {
       to: this.state.addressData.deployedAddresses.exchangeTool,
       value: this.state.web3.utils.toHex(0),
       data: contract.methods
-        .swapExactTokensForTokens(traderPool.poolAddress, newPositionSpendAmount, getTokenAmount, path, deadlineTime)
+        .swapExactTokensForTokens(
+          traderPool.poolAddress,
+          this.state.web3.utils.toHex(newPositionSpendAmountRaw.toFixed(0)),
+          this.state.web3.utils.toHex(0),
+          path,
+          deadlineTime,
+        )
         .encodeABI(),
     };
     await sendTransaction(createOpenRawTransaction, traderAccount.secretKey, 'Position Opened', this.state);
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-empty-function
-  public async closePosition(traderPool: IPoolInfo): Promise<void> {}
+  public async closePosition(traderPool: IPoolInfo): Promise<void> {
+    const poolAddress = traderPool.poolAddress;
+    const poolBaseTokenDecimal = await getDecimal(traderPool.basicToken, this.state);
+    const positionLength = +(await positionsLength(poolAddress, this.state));
+    if (positionLength === 0) {
+      console.log('Not Opened position'.bgWhite, traderPool.poolAddress);
+      return;
+    }
+    const positions = await this.getOpenPositions(poolAddress, positionLength);
+    const selectedPosition = lodash.sample(positions);
+    const availablePositionAmountRaw = new BigNumber(selectedPosition.liquidity);
+    let closePositionAmountRaw: BigNumber;
+    let transactionMessage: string;
+
+    if (availablePositionAmountRaw.isLessThanOrEqualTo(parsedBalanceToRaw(new BigNumber(100), poolBaseTokenDecimal))) {
+      closePositionAmountRaw = availablePositionAmountRaw;
+      transactionMessage = 'Position Closed';
+    } else {
+      closePositionAmountRaw = availablePositionAmountRaw.multipliedBy(lodash.random(50, 100)).dividedBy(100);
+      transactionMessage = 'Partial Position Closed';
+    }
+
+    const contract = new this.state.web3.eth.Contract(
+      this.state.abis.abiPET,
+      this.state.addressData.deployedAddresses.exchangeTool,
+    );
+    const txCount = await this.state.web3.eth.getTransactionCount(traderPool.traderWallet);
+    const path = [selectedPosition.token, traderPool.basicToken];
+    const deadlineTime = moment(moment.now()).add(10, 'minutes').unix();
+    const traderAccount = this.state.accounts.traders.find(x => x.address === traderPool.traderWallet);
+
+    const createOpenRawTransaction: IRawTransaction = {
+      from: traderPool.traderWallet,
+      nonce: this.state.web3.utils.toHex(txCount),
+      gasPrice: this.state.web3.utils.toHex(this.state.config.gasPrice),
+      gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
+      to: this.state.addressData.deployedAddresses.exchangeTool,
+      value: this.state.web3.utils.toHex(0),
+      data: contract.methods
+        .swapExactTokensForTokens(
+          traderPool.poolAddress,
+          this.state.web3.utils.toHex(closePositionAmountRaw.toFixed(0)),
+          this.state.web3.utils.toHex(0),
+          path,
+          deadlineTime,
+        )
+        .encodeABI(),
+    };
+    await sendTransaction(createOpenRawTransaction, traderAccount.secretKey, transactionMessage, this.state);
+  }
+
+  private async getOpenPositions(poolAddress: string, positionLength: number): Promise<IPosition[]> {
+    const positions: IPosition[] = [];
+    for (let i = 0; i < positionLength; i++) {
+      const result: IPosition = await positionAt(i, poolAddress, this.state).then(x => {
+        return {
+          amountOpened: x['0'],
+          liquidity: x['1'],
+          token: x['2'],
+        };
+      });
+      positions.push(result);
+    }
+    return positions;
+  }
 
   private getTraderPoolAddress(receipt: TransactionReceipt): string {
     const data = receipt.logs[receipt.logs.length - 1].data;

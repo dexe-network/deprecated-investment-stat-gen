@@ -26,14 +26,24 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/IBeacon.sol",
     "exportedSymbols": {
-      "IBeacon": [14270]
+      "IBeacon": [
+        14292
+      ]
     },
-    "id": 14271,
+    "id": 14293,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 14262,
-        "literals": ["solidity", ">=", "0.6", ".0", "<", "0.8", ".0"],
+        "id": 14284,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".0",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "33:31:58"
       },
@@ -43,27 +53,29 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 14263,
+          "id": 14285,
           "nodeType": "StructuredDocumentation",
           "src": "66:79:58",
           "text": "@dev This is the interface that {BeaconProxy} expects of its beacon."
         },
         "fullyImplemented": false,
-        "id": 14270,
-        "linearizedBaseContracts": [14270],
+        "id": 14292,
+        "linearizedBaseContracts": [
+          14292
+        ],
         "name": "IBeacon",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": null,
             "documentation": {
-              "id": 14264,
+              "id": 14286,
               "nodeType": "StructuredDocumentation",
               "src": "170:162:58",
               "text": "@dev Must return an address that can be used as a delegate call target.\n     * {BeaconProxy} will check that this address is a contract."
             },
             "functionSelector": "5c60da1b",
-            "id": 14269,
+            "id": 14291,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -71,23 +83,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 14265,
+              "id": 14287,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "360:2:58"
             },
             "returnParameters": {
-              "id": 14268,
+              "id": 14290,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 14267,
+                  "id": 14289,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 14269,
+                  "scope": 14291,
                   "src": "386:7:58",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -96,7 +108,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 14266,
+                    "id": 14288,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "386:7:58",
@@ -112,14 +124,14 @@
               ],
               "src": "385:9:58"
             },
-            "scope": 14270,
+            "scope": 14292,
             "src": "337:58:58",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 14271,
+        "scope": 14293,
         "src": "146:251:58"
       }
     ],
@@ -128,14 +140,24 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/upgradeable/IBeacon.sol",
     "exportedSymbols": {
-      "IBeacon": [14270]
+      "IBeacon": [
+        14292
+      ]
     },
-    "id": 14271,
+    "id": 14293,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 14262,
-        "literals": ["solidity", ">=", "0.6", ".0", "<", "0.8", ".0"],
+        "id": 14284,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".0",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "33:31:58"
       },
@@ -145,27 +167,29 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 14263,
+          "id": 14285,
           "nodeType": "StructuredDocumentation",
           "src": "66:79:58",
           "text": "@dev This is the interface that {BeaconProxy} expects of its beacon."
         },
         "fullyImplemented": false,
-        "id": 14270,
-        "linearizedBaseContracts": [14270],
+        "id": 14292,
+        "linearizedBaseContracts": [
+          14292
+        ],
         "name": "IBeacon",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "body": null,
             "documentation": {
-              "id": 14264,
+              "id": 14286,
               "nodeType": "StructuredDocumentation",
               "src": "170:162:58",
               "text": "@dev Must return an address that can be used as a delegate call target.\n     * {BeaconProxy} will check that this address is a contract."
             },
             "functionSelector": "5c60da1b",
-            "id": 14269,
+            "id": 14291,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -173,23 +197,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 14265,
+              "id": 14287,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "360:2:58"
             },
             "returnParameters": {
-              "id": 14268,
+              "id": 14290,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 14267,
+                  "id": 14289,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 14269,
+                  "scope": 14291,
                   "src": "386:7:58",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -198,7 +222,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 14266,
+                    "id": 14288,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "386:7:58",
@@ -214,14 +238,14 @@
               ],
               "src": "385:9:58"
             },
-            "scope": 14270,
+            "scope": 14292,
             "src": "337:58:58",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 14271,
+        "scope": 14293,
         "src": "146:251:58"
       }
     ],
@@ -233,7 +257,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.872Z",
+  "updatedAt": "2021-06-08T10:00:09.554Z",
   "devdoc": {
     "details": "This is the interface that {BeaconProxy} expects of its beacon.",
     "methods": {

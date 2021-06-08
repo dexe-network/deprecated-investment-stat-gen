@@ -41,14 +41,21 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/pancake/interfaces/IPancakeCallee.sol",
     "exportedSymbols": {
-      "IPancakeCallee": [9614]
+      "IPancakeCallee": [
+        9636
+      ]
     },
-    "id": 9615,
+    "id": 9637,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9602,
-        "literals": ["solidity", ">=", "0.5", ".0"],
+        "id": 9624,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:24:38"
       },
@@ -59,8 +66,10 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 9614,
-        "linearizedBaseContracts": [9614],
+        "id": 9636,
+        "linearizedBaseContracts": [
+          9636
+        ],
         "name": "IPancakeCallee",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -68,7 +77,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "84800812",
-            "id": 9613,
+            "id": 9635,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -76,17 +85,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 9611,
+              "id": 9633,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9604,
+                  "id": 9626,
                   "mutability": "mutable",
                   "name": "sender",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9613,
+                  "scope": 9635,
                   "src": "78:14:38",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -95,7 +104,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9603,
+                    "id": 9625,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "78:7:38",
@@ -110,12 +119,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9606,
+                  "id": 9628,
                   "mutability": "mutable",
                   "name": "amount0",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9613,
+                  "scope": 9635,
                   "src": "94:12:38",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -124,7 +133,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9605,
+                    "id": 9627,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "94:4:38",
@@ -138,12 +147,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9608,
+                  "id": 9630,
                   "mutability": "mutable",
                   "name": "amount1",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9613,
+                  "scope": 9635,
                   "src": "108:12:38",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -152,7 +161,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9607,
+                    "id": 9629,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "108:4:38",
@@ -166,12 +175,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9610,
+                  "id": 9632,
                   "mutability": "mutable",
                   "name": "data",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9613,
+                  "scope": 9635,
                   "src": "122:19:38",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -180,7 +189,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 9609,
+                    "id": 9631,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "122:5:38",
@@ -196,19 +205,19 @@
               "src": "77:65:38"
             },
             "returnParameters": {
-              "id": 9612,
+              "id": 9634,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "151:0:38"
             },
-            "scope": 9614,
+            "scope": 9636,
             "src": "57:95:38",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 9615,
+        "scope": 9637,
         "src": "26:128:38"
       }
     ],
@@ -217,14 +226,21 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/pancake/interfaces/IPancakeCallee.sol",
     "exportedSymbols": {
-      "IPancakeCallee": [9614]
+      "IPancakeCallee": [
+        9636
+      ]
     },
-    "id": 9615,
+    "id": 9637,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9602,
-        "literals": ["solidity", ">=", "0.5", ".0"],
+        "id": 9624,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:24:38"
       },
@@ -235,8 +251,10 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 9614,
-        "linearizedBaseContracts": [9614],
+        "id": 9636,
+        "linearizedBaseContracts": [
+          9636
+        ],
         "name": "IPancakeCallee",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -244,7 +262,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "84800812",
-            "id": 9613,
+            "id": 9635,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -252,17 +270,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 9611,
+              "id": 9633,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9604,
+                  "id": 9626,
                   "mutability": "mutable",
                   "name": "sender",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9613,
+                  "scope": 9635,
                   "src": "78:14:38",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -271,7 +289,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9603,
+                    "id": 9625,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "78:7:38",
@@ -286,12 +304,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9606,
+                  "id": 9628,
                   "mutability": "mutable",
                   "name": "amount0",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9613,
+                  "scope": 9635,
                   "src": "94:12:38",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -300,7 +318,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9605,
+                    "id": 9627,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "94:4:38",
@@ -314,12 +332,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9608,
+                  "id": 9630,
                   "mutability": "mutable",
                   "name": "amount1",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9613,
+                  "scope": 9635,
                   "src": "108:12:38",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -328,7 +346,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9607,
+                    "id": 9629,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "108:4:38",
@@ -342,12 +360,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9610,
+                  "id": 9632,
                   "mutability": "mutable",
                   "name": "data",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9613,
+                  "scope": 9635,
                   "src": "122:19:38",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -356,7 +374,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 9609,
+                    "id": 9631,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "122:5:38",
@@ -372,19 +390,19 @@
               "src": "77:65:38"
             },
             "returnParameters": {
-              "id": 9612,
+              "id": 9634,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "151:0:38"
             },
-            "scope": 9614,
+            "scope": 9636,
             "src": "57:95:38",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 9615,
+        "scope": 9637,
         "src": "26:128:38"
       }
     ],
@@ -396,7 +414,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.772Z",
+  "updatedAt": "2021-06-08T10:00:09.454Z",
   "devdoc": {
     "methods": {}
   },

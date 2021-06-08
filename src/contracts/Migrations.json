@@ -57,14 +57,24 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/Migrations.sol",
     "exportedSymbols": {
-      "Migrations": [89]
+      "Migrations": [
+        89
+      ]
     },
     "id": 90,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 54,
-        "literals": ["solidity", ">=", "0.4", ".21", "<", "0.7", ".0"],
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.7",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "32:32:4"
       },
@@ -76,7 +86,9 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 89,
-        "linearizedBaseContracts": [89],
+        "linearizedBaseContracts": [
+          89
+        ],
         "name": "Migrations",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -470,14 +482,24 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/Migrations.sol",
     "exportedSymbols": {
-      "Migrations": [89]
+      "Migrations": [
+        89
+      ]
     },
     "id": 90,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 54,
-        "literals": ["solidity", ">=", "0.4", ".21", "<", "0.7", ".0"],
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.7",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "32:32:4"
       },
@@ -489,7 +511,9 @@
         "documentation": null,
         "fullyImplemented": true,
         "id": 89,
-        "linearizedBaseContracts": [89],
+        "linearizedBaseContracts": [
+          89
+        ],
         "name": "Migrations",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -886,7 +910,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.661Z",
+  "updatedAt": "2021-06-08T10:00:09.322Z",
   "devdoc": {
     "methods": {}
   },

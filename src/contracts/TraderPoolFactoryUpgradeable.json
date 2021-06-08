@@ -476,14 +476,20 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/TraderPoolFactoryUpgradeable.sol",
     "exportedSymbols": {
-      "TraderPoolFactoryUpgradeable": [2000]
+      "TraderPoolFactoryUpgradeable": [
+        2000
+      ]
     },
     "id": 2001,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1654,
-        "literals": ["solidity", "0.6", ".6"],
+        "literals": [
+          "solidity",
+          "0.6",
+          ".6"
+        ],
         "nodeType": "PragmaDirective",
         "src": "32:22:9"
       },
@@ -493,7 +499,7 @@
         "id": 1655,
         "nodeType": "ImportDirective",
         "scope": 2001,
-        "sourceUnit": 16357,
+        "sourceUnit": 16379,
         "src": "57:81:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -504,7 +510,7 @@
         "id": 1656,
         "nodeType": "ImportDirective",
         "scope": 2001,
-        "sourceUnit": 14261,
+        "sourceUnit": 14283,
         "src": "140:39:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -515,7 +521,7 @@
         "id": 1657,
         "nodeType": "ImportDirective",
         "scope": 2001,
-        "sourceUnit": 6346,
+        "sourceUnit": 6368,
         "src": "180:40:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -526,7 +532,7 @@
         "id": 1658,
         "nodeType": "ImportDirective",
         "scope": 2001,
-        "sourceUnit": 6432,
+        "sourceUnit": 6454,
         "src": "221:51:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -537,7 +543,7 @@
         "id": 1659,
         "nodeType": "ImportDirective",
         "scope": 2001,
-        "sourceUnit": 6400,
+        "sourceUnit": 6422,
         "src": "273:46:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -552,10 +558,10 @@
               "id": 1660,
               "name": "AccessControlUpgradeable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 16356,
+              "referencedDeclaration": 16378,
               "src": "362:24:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_AccessControlUpgradeable_$16356",
+                "typeIdentifier": "t_contract$_AccessControlUpgradeable_$16378",
                 "typeString": "contract AccessControlUpgradeable"
               }
             },
@@ -564,12 +570,22 @@
             "src": "362:24:9"
           }
         ],
-        "contractDependencies": [14260, 16048, 16356, 16751],
+        "contractDependencies": [
+          14282,
+          16070,
+          16378,
+          16773
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 2000,
-        "linearizedBaseContracts": [2000, 16356, 16048, 16751],
+        "linearizedBaseContracts": [
+          2000,
+          16378,
+          16070,
+          16773
+        ],
         "name": "TraderPoolFactoryUpgradeable",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -586,7 +602,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IParamStorage_$6345",
+              "typeIdentifier": "t_contract$_IParamStorage_$6367",
               "typeString": "contract IParamStorage"
             },
             "typeName": {
@@ -594,10 +610,10 @@
               "id": 1662,
               "name": "IParamStorage",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 6345,
+              "referencedDeclaration": 6367,
               "src": "392:13:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                "typeIdentifier": "t_contract$_IParamStorage_$6367",
                 "typeString": "contract IParamStorage"
               }
             },
@@ -818,7 +834,7 @@
                             "name": "DEFAULT_ADMIN_ROLE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 16095,
+                            "referencedDeclaration": 16117,
                             "src": "823:18:9",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -870,7 +886,7 @@
                           "name": "hasRole",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16141,
+                          "referencedDeclaration": 16163,
                           "src": "815:7:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -925,7 +941,10 @@
                       "id": 1680,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [-18, -18],
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
                       "referencedDeclaration": -18,
                       "src": "807:7:9",
                       "typeDescriptions": {
@@ -995,7 +1014,7 @@
                       "name": "__AccessControl_init",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 16071,
+                      "referencedDeclaration": 16093,
                       "src": "1097:20:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
@@ -1031,7 +1050,7 @@
                         "name": "DEFAULT_ADMIN_ROLE",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 16095,
+                        "referencedDeclaration": 16117,
                         "src": "1137:18:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -1067,7 +1086,7 @@
                       "name": "_setupRole",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 16278,
+                      "referencedDeclaration": 16300,
                       "src": "1126:10:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_address_$returns$__$",
@@ -1294,7 +1313,7 @@
                       "referencedDeclaration": 1663,
                       "src": "1330:11:9",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                        "typeIdentifier": "t_contract$_IParamStorage_$6367",
                         "typeString": "contract IParamStorage"
                       }
                     },
@@ -1328,10 +1347,10 @@
                         "name": "IParamStorage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6345,
+                        "referencedDeclaration": 6367,
                         "src": "1344:13:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_IParamStorage_$6345_$",
+                          "typeIdentifier": "t_type$_t_contract$_IParamStorage_$6367_$",
                           "typeString": "type(contract IParamStorage)"
                         }
                       },
@@ -1346,13 +1365,13 @@
                       "src": "1344:27:9",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                        "typeIdentifier": "t_contract$_IParamStorage_$6367",
                         "typeString": "contract IParamStorage"
                       }
                     },
                     "src": "1330:41:9",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                      "typeIdentifier": "t_contract$_IParamStorage_$6367",
                       "typeString": "contract IParamStorage"
                     }
                   },
@@ -1423,7 +1442,7 @@
                   "name": "initializer",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 16728,
+                  "referencedDeclaration": 16750,
                   "src": "1079:11:9",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -1899,7 +1918,9 @@
               "src": "2728:1804:9",
               "statements": [
                 {
-                  "assignments": [1792],
+                  "assignments": [
+                    1792
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -2037,7 +2058,7 @@
                           "nodeType": "NewExpression",
                           "src": "2772:15:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_creation_payable$_t_address_$_t_bytes_memory_ptr_$returns$_t_contract$_BeaconProxy_$14260_$",
+                            "typeIdentifier": "t_function_creation_payable$_t_address_$_t_bytes_memory_ptr_$returns$_t_contract$_BeaconProxy_$14282_$",
                             "typeString": "function (address,bytes memory) payable returns (contract BeaconProxy)"
                           },
                           "typeName": {
@@ -2045,10 +2066,10 @@
                             "id": 1795,
                             "name": "BeaconProxy",
                             "nodeType": "UserDefinedTypeName",
-                            "referencedDeclaration": 14260,
+                            "referencedDeclaration": 14282,
                             "src": "2776:11:9",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                              "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                               "typeString": "contract BeaconProxy"
                             }
                           }
@@ -2064,7 +2085,7 @@
                         "src": "2772:55:9",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                          "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                           "typeString": "contract BeaconProxy"
                         }
                       }
@@ -2072,7 +2093,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                          "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                           "typeString": "contract BeaconProxy"
                         }
                       ],
@@ -2117,7 +2138,9 @@
                   "src": "2734:94:9"
                 },
                 {
-                  "assignments": [1806],
+                  "assignments": [
+                    1806
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -2255,7 +2278,7 @@
                           "nodeType": "NewExpression",
                           "src": "2867:15:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_creation_payable$_t_address_$_t_bytes_memory_ptr_$returns$_t_contract$_BeaconProxy_$14260_$",
+                            "typeIdentifier": "t_function_creation_payable$_t_address_$_t_bytes_memory_ptr_$returns$_t_contract$_BeaconProxy_$14282_$",
                             "typeString": "function (address,bytes memory) payable returns (contract BeaconProxy)"
                           },
                           "typeName": {
@@ -2263,10 +2286,10 @@
                             "id": 1809,
                             "name": "BeaconProxy",
                             "nodeType": "UserDefinedTypeName",
-                            "referencedDeclaration": 14260,
+                            "referencedDeclaration": 14282,
                             "src": "2871:11:9",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                              "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                               "typeString": "contract BeaconProxy"
                             }
                           }
@@ -2282,7 +2305,7 @@
                         "src": "2867:44:9",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                          "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                           "typeString": "contract BeaconProxy"
                         }
                       }
@@ -2290,7 +2313,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                          "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                           "typeString": "contract BeaconProxy"
                         }
                       ],
@@ -2438,10 +2461,10 @@
                           "name": "IPoolLiquidityToken",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6399,
+                          "referencedDeclaration": 6421,
                           "src": "2918:19:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_IPoolLiquidityToken_$6399_$",
+                            "typeIdentifier": "t_type$_t_contract$_IPoolLiquidityToken_$6421_$",
                             "typeString": "type(contract IPoolLiquidityToken)"
                           }
                         },
@@ -2456,7 +2479,7 @@
                         "src": "2918:35:9",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IPoolLiquidityToken_$6399",
+                          "typeIdentifier": "t_contract$_IPoolLiquidityToken_$6421",
                           "typeString": "contract IPoolLiquidityToken"
                         }
                       },
@@ -2467,7 +2490,7 @@
                       "lValueRequested": false,
                       "memberName": "initialize",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6398,
+                      "referencedDeclaration": 6420,
                       "src": "2918:46:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
@@ -2494,7 +2517,9 @@
                   "src": "2918:97:9"
                 },
                 {
-                  "assignments": [1830],
+                  "assignments": [
+                    1830
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -2666,7 +2691,10 @@
                       "id": 1833,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [-18, -18],
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
                       "referencedDeclaration": -18,
                       "src": "3495:7:9",
                       "typeDescriptions": {
@@ -3134,7 +3162,10 @@
                       "id": 1864,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [-18, -18],
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
                       "referencedDeclaration": -18,
                       "src": "3661:7:9",
                       "typeDescriptions": {
@@ -3704,7 +3735,10 @@
                       "id": 1901,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [-18, -18],
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
                       "referencedDeclaration": -18,
                       "src": "3846:7:9",
                       "typeDescriptions": {
@@ -4156,7 +4190,9 @@
                   "src": "3969:54:9"
                 },
                 {
-                  "assignments": [1943],
+                  "assignments": [
+                    1943
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -4282,7 +4318,7 @@
                             "referencedDeclaration": 1663,
                             "src": "4117:11:9",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                              "typeIdentifier": "t_contract$_IParamStorage_$6367",
                               "typeString": "contract IParamStorage"
                             }
                           }
@@ -4290,7 +4326,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                              "typeIdentifier": "t_contract$_IParamStorage_$6367",
                               "typeString": "contract IParamStorage"
                             }
                           ],
@@ -4540,10 +4576,10 @@
                           "name": "ITraderPoolInitializable",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6431,
+                          "referencedDeclaration": 6453,
                           "src": "4328:24:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_ITraderPoolInitializable_$6431_$",
+                            "typeIdentifier": "t_type$_t_contract$_ITraderPoolInitializable_$6453_$",
                             "typeString": "type(contract ITraderPoolInitializable)"
                           }
                         },
@@ -4558,7 +4594,7 @@
                         "src": "4328:45:9",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ITraderPoolInitializable_$6431",
+                          "typeIdentifier": "t_contract$_ITraderPoolInitializable_$6453",
                           "typeString": "contract ITraderPoolInitializable"
                         }
                       },
@@ -4569,7 +4605,7 @@
                       "lValueRequested": false,
                       "memberName": "initialize",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6430,
+                      "referencedDeclaration": 6452,
                       "src": "4328:56:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_array$_t_address_$9_memory_ptr_$_t_uint256_$_t_bool_$_t_bool_$returns$__$",
@@ -5032,7 +5068,7 @@
                         "referencedDeclaration": 1663,
                         "src": "4610:11:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                          "typeIdentifier": "t_contract$_IParamStorage_$6367",
                           "typeString": "contract IParamStorage"
                         }
                       },
@@ -5043,7 +5079,7 @@
                       "lValueRequested": false,
                       "memberName": "getAddress",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6313,
+                      "referencedDeclaration": 6335,
                       "src": "4610:22:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_uint16_$returns$_t_address_$",
@@ -5174,7 +5210,7 @@
                         "referencedDeclaration": 1663,
                         "src": "4725:11:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                          "typeIdentifier": "t_contract$_IParamStorage_$6367",
                           "typeString": "contract IParamStorage"
                         }
                       },
@@ -5185,7 +5221,7 @@
                       "lValueRequested": false,
                       "memberName": "getAddress",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6313,
+                      "referencedDeclaration": 6335,
                       "src": "4725:22:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_uint16_$returns$_t_address_$",
@@ -5281,14 +5317,20 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/TraderPoolFactoryUpgradeable.sol",
     "exportedSymbols": {
-      "TraderPoolFactoryUpgradeable": [2000]
+      "TraderPoolFactoryUpgradeable": [
+        2000
+      ]
     },
     "id": 2001,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1654,
-        "literals": ["solidity", "0.6", ".6"],
+        "literals": [
+          "solidity",
+          "0.6",
+          ".6"
+        ],
         "nodeType": "PragmaDirective",
         "src": "32:22:9"
       },
@@ -5298,7 +5340,7 @@
         "id": 1655,
         "nodeType": "ImportDirective",
         "scope": 2001,
-        "sourceUnit": 16357,
+        "sourceUnit": 16379,
         "src": "57:81:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -5309,7 +5351,7 @@
         "id": 1656,
         "nodeType": "ImportDirective",
         "scope": 2001,
-        "sourceUnit": 14261,
+        "sourceUnit": 14283,
         "src": "140:39:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -5320,7 +5362,7 @@
         "id": 1657,
         "nodeType": "ImportDirective",
         "scope": 2001,
-        "sourceUnit": 6346,
+        "sourceUnit": 6368,
         "src": "180:40:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -5331,7 +5373,7 @@
         "id": 1658,
         "nodeType": "ImportDirective",
         "scope": 2001,
-        "sourceUnit": 6432,
+        "sourceUnit": 6454,
         "src": "221:51:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -5342,7 +5384,7 @@
         "id": 1659,
         "nodeType": "ImportDirective",
         "scope": 2001,
-        "sourceUnit": 6400,
+        "sourceUnit": 6422,
         "src": "273:46:9",
         "symbolAliases": [],
         "unitAlias": ""
@@ -5357,10 +5399,10 @@
               "id": 1660,
               "name": "AccessControlUpgradeable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 16356,
+              "referencedDeclaration": 16378,
               "src": "362:24:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_AccessControlUpgradeable_$16356",
+                "typeIdentifier": "t_contract$_AccessControlUpgradeable_$16378",
                 "typeString": "contract AccessControlUpgradeable"
               }
             },
@@ -5369,12 +5411,22 @@
             "src": "362:24:9"
           }
         ],
-        "contractDependencies": [14260, 16048, 16356, 16751],
+        "contractDependencies": [
+          14282,
+          16070,
+          16378,
+          16773
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 2000,
-        "linearizedBaseContracts": [2000, 16356, 16048, 16751],
+        "linearizedBaseContracts": [
+          2000,
+          16378,
+          16070,
+          16773
+        ],
         "name": "TraderPoolFactoryUpgradeable",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -5391,7 +5443,7 @@
             "stateVariable": true,
             "storageLocation": "default",
             "typeDescriptions": {
-              "typeIdentifier": "t_contract$_IParamStorage_$6345",
+              "typeIdentifier": "t_contract$_IParamStorage_$6367",
               "typeString": "contract IParamStorage"
             },
             "typeName": {
@@ -5399,10 +5451,10 @@
               "id": 1662,
               "name": "IParamStorage",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 6345,
+              "referencedDeclaration": 6367,
               "src": "392:13:9",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                "typeIdentifier": "t_contract$_IParamStorage_$6367",
                 "typeString": "contract IParamStorage"
               }
             },
@@ -5623,7 +5675,7 @@
                             "name": "DEFAULT_ADMIN_ROLE",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 16095,
+                            "referencedDeclaration": 16117,
                             "src": "823:18:9",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bytes32",
@@ -5675,7 +5727,7 @@
                           "name": "hasRole",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 16141,
+                          "referencedDeclaration": 16163,
                           "src": "815:7:9",
                           "typeDescriptions": {
                             "typeIdentifier": "t_function_internal_view$_t_bytes32_$_t_address_$returns$_t_bool_$",
@@ -5730,7 +5782,10 @@
                       "id": 1680,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [-18, -18],
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
                       "referencedDeclaration": -18,
                       "src": "807:7:9",
                       "typeDescriptions": {
@@ -5800,7 +5855,7 @@
                       "name": "__AccessControl_init",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 16071,
+                      "referencedDeclaration": 16093,
                       "src": "1097:20:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$__$returns$__$",
@@ -5836,7 +5891,7 @@
                         "name": "DEFAULT_ADMIN_ROLE",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 16095,
+                        "referencedDeclaration": 16117,
                         "src": "1137:18:9",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes32",
@@ -5872,7 +5927,7 @@
                       "name": "_setupRole",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 16278,
+                      "referencedDeclaration": 16300,
                       "src": "1126:10:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_bytes32_$_t_address_$returns$__$",
@@ -6099,7 +6154,7 @@
                       "referencedDeclaration": 1663,
                       "src": "1330:11:9",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                        "typeIdentifier": "t_contract$_IParamStorage_$6367",
                         "typeString": "contract IParamStorage"
                       }
                     },
@@ -6133,10 +6188,10 @@
                         "name": "IParamStorage",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 6345,
+                        "referencedDeclaration": 6367,
                         "src": "1344:13:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_IParamStorage_$6345_$",
+                          "typeIdentifier": "t_type$_t_contract$_IParamStorage_$6367_$",
                           "typeString": "type(contract IParamStorage)"
                         }
                       },
@@ -6151,13 +6206,13 @@
                       "src": "1344:27:9",
                       "tryCall": false,
                       "typeDescriptions": {
-                        "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                        "typeIdentifier": "t_contract$_IParamStorage_$6367",
                         "typeString": "contract IParamStorage"
                       }
                     },
                     "src": "1330:41:9",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                      "typeIdentifier": "t_contract$_IParamStorage_$6367",
                       "typeString": "contract IParamStorage"
                     }
                   },
@@ -6228,7 +6283,7 @@
                   "name": "initializer",
                   "nodeType": "Identifier",
                   "overloadedDeclarations": [],
-                  "referencedDeclaration": 16728,
+                  "referencedDeclaration": 16750,
                   "src": "1079:11:9",
                   "typeDescriptions": {
                     "typeIdentifier": "t_modifier$__$",
@@ -6704,7 +6759,9 @@
               "src": "2728:1804:9",
               "statements": [
                 {
-                  "assignments": [1792],
+                  "assignments": [
+                    1792
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -6842,7 +6899,7 @@
                           "nodeType": "NewExpression",
                           "src": "2772:15:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_creation_payable$_t_address_$_t_bytes_memory_ptr_$returns$_t_contract$_BeaconProxy_$14260_$",
+                            "typeIdentifier": "t_function_creation_payable$_t_address_$_t_bytes_memory_ptr_$returns$_t_contract$_BeaconProxy_$14282_$",
                             "typeString": "function (address,bytes memory) payable returns (contract BeaconProxy)"
                           },
                           "typeName": {
@@ -6850,10 +6907,10 @@
                             "id": 1795,
                             "name": "BeaconProxy",
                             "nodeType": "UserDefinedTypeName",
-                            "referencedDeclaration": 14260,
+                            "referencedDeclaration": 14282,
                             "src": "2776:11:9",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                              "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                               "typeString": "contract BeaconProxy"
                             }
                           }
@@ -6869,7 +6926,7 @@
                         "src": "2772:55:9",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                          "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                           "typeString": "contract BeaconProxy"
                         }
                       }
@@ -6877,7 +6934,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                          "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                           "typeString": "contract BeaconProxy"
                         }
                       ],
@@ -6922,7 +6979,9 @@
                   "src": "2734:94:9"
                 },
                 {
-                  "assignments": [1806],
+                  "assignments": [
+                    1806
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -7060,7 +7119,7 @@
                           "nodeType": "NewExpression",
                           "src": "2867:15:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_function_creation_payable$_t_address_$_t_bytes_memory_ptr_$returns$_t_contract$_BeaconProxy_$14260_$",
+                            "typeIdentifier": "t_function_creation_payable$_t_address_$_t_bytes_memory_ptr_$returns$_t_contract$_BeaconProxy_$14282_$",
                             "typeString": "function (address,bytes memory) payable returns (contract BeaconProxy)"
                           },
                           "typeName": {
@@ -7068,10 +7127,10 @@
                             "id": 1809,
                             "name": "BeaconProxy",
                             "nodeType": "UserDefinedTypeName",
-                            "referencedDeclaration": 14260,
+                            "referencedDeclaration": 14282,
                             "src": "2871:11:9",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                              "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                               "typeString": "contract BeaconProxy"
                             }
                           }
@@ -7087,7 +7146,7 @@
                         "src": "2867:44:9",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                          "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                           "typeString": "contract BeaconProxy"
                         }
                       }
@@ -7095,7 +7154,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_contract$_BeaconProxy_$14260",
+                          "typeIdentifier": "t_contract$_BeaconProxy_$14282",
                           "typeString": "contract BeaconProxy"
                         }
                       ],
@@ -7243,10 +7302,10 @@
                           "name": "IPoolLiquidityToken",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6399,
+                          "referencedDeclaration": 6421,
                           "src": "2918:19:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_IPoolLiquidityToken_$6399_$",
+                            "typeIdentifier": "t_type$_t_contract$_IPoolLiquidityToken_$6421_$",
                             "typeString": "type(contract IPoolLiquidityToken)"
                           }
                         },
@@ -7261,7 +7320,7 @@
                         "src": "2918:35:9",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IPoolLiquidityToken_$6399",
+                          "typeIdentifier": "t_contract$_IPoolLiquidityToken_$6421",
                           "typeString": "contract IPoolLiquidityToken"
                         }
                       },
@@ -7272,7 +7331,7 @@
                       "lValueRequested": false,
                       "memberName": "initialize",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6398,
+                      "referencedDeclaration": 6420,
                       "src": "2918:46:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_address_$_t_uint256_$_t_string_memory_ptr_$_t_string_memory_ptr_$returns$__$",
@@ -7299,7 +7358,9 @@
                   "src": "2918:97:9"
                 },
                 {
-                  "assignments": [1830],
+                  "assignments": [
+                    1830
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -7471,7 +7532,10 @@
                       "id": 1833,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [-18, -18],
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
                       "referencedDeclaration": -18,
                       "src": "3495:7:9",
                       "typeDescriptions": {
@@ -7939,7 +8003,10 @@
                       "id": 1864,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [-18, -18],
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
                       "referencedDeclaration": -18,
                       "src": "3661:7:9",
                       "typeDescriptions": {
@@ -8509,7 +8576,10 @@
                       "id": 1901,
                       "name": "require",
                       "nodeType": "Identifier",
-                      "overloadedDeclarations": [-18, -18],
+                      "overloadedDeclarations": [
+                        -18,
+                        -18
+                      ],
                       "referencedDeclaration": -18,
                       "src": "3846:7:9",
                       "typeDescriptions": {
@@ -8961,7 +9031,9 @@
                   "src": "3969:54:9"
                 },
                 {
-                  "assignments": [1943],
+                  "assignments": [
+                    1943
+                  ],
                   "declarations": [
                     {
                       "constant": false,
@@ -9087,7 +9159,7 @@
                             "referencedDeclaration": 1663,
                             "src": "4117:11:9",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                              "typeIdentifier": "t_contract$_IParamStorage_$6367",
                               "typeString": "contract IParamStorage"
                             }
                           }
@@ -9095,7 +9167,7 @@
                         "expression": {
                           "argumentTypes": [
                             {
-                              "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                              "typeIdentifier": "t_contract$_IParamStorage_$6367",
                               "typeString": "contract IParamStorage"
                             }
                           ],
@@ -9345,10 +9417,10 @@
                           "name": "ITraderPoolInitializable",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 6431,
+                          "referencedDeclaration": 6453,
                           "src": "4328:24:9",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_ITraderPoolInitializable_$6431_$",
+                            "typeIdentifier": "t_type$_t_contract$_ITraderPoolInitializable_$6453_$",
                             "typeString": "type(contract ITraderPoolInitializable)"
                           }
                         },
@@ -9363,7 +9435,7 @@
                         "src": "4328:45:9",
                         "tryCall": false,
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_ITraderPoolInitializable_$6431",
+                          "typeIdentifier": "t_contract$_ITraderPoolInitializable_$6453",
                           "typeString": "contract ITraderPoolInitializable"
                         }
                       },
@@ -9374,7 +9446,7 @@
                       "lValueRequested": false,
                       "memberName": "initialize",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6430,
+                      "referencedDeclaration": 6452,
                       "src": "4328:56:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_nonpayable$_t_array$_t_address_$9_memory_ptr_$_t_uint256_$_t_bool_$_t_bool_$returns$__$",
@@ -9837,7 +9909,7 @@
                         "referencedDeclaration": 1663,
                         "src": "4610:11:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                          "typeIdentifier": "t_contract$_IParamStorage_$6367",
                           "typeString": "contract IParamStorage"
                         }
                       },
@@ -9848,7 +9920,7 @@
                       "lValueRequested": false,
                       "memberName": "getAddress",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6313,
+                      "referencedDeclaration": 6335,
                       "src": "4610:22:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_uint16_$returns$_t_address_$",
@@ -9979,7 +10051,7 @@
                         "referencedDeclaration": 1663,
                         "src": "4725:11:9",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_contract$_IParamStorage_$6345",
+                          "typeIdentifier": "t_contract$_IParamStorage_$6367",
                           "typeString": "contract IParamStorage"
                         }
                       },
@@ -9990,7 +10062,7 @@
                       "lValueRequested": false,
                       "memberName": "getAddress",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 6313,
+                      "referencedDeclaration": 6335,
                       "src": "4725:22:9",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_external_view$_t_uint16_$returns$_t_address_$",
@@ -10089,7 +10161,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.680Z",
+  "updatedAt": "2021-06-08T10:00:09.342Z",
   "devdoc": {
     "methods": {
       "createTraderContract(address,address,uint256,uint16[6],bool,bool,string,string)": {

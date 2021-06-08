@@ -141,14 +141,24 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IERC1643.sol",
     "exportedSymbols": {
-      "IERC1643": [6291]
+      "IERC1643": [
+        6313
+      ]
     },
-    "id": 6292,
+    "id": 6314,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6239,
-        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "id": 6261,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "34:31:26"
       },
@@ -159,30 +169,32 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6291,
-        "linearizedBaseContracts": [6291],
+        "id": 6313,
+        "linearizedBaseContracts": [
+          6313
+        ],
         "name": "IERC1643",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "anonymous": false,
             "documentation": null,
-            "id": 6247,
+            "id": 6269,
             "name": "DocumentRemoved",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6246,
+              "id": 6268,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6241,
+                  "id": 6263,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6247,
+                  "scope": 6269,
                   "src": "136:21:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -191,7 +203,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6240,
+                    "id": 6262,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "136:7:26",
@@ -205,13 +217,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6243,
+                  "id": 6265,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_uri",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6247,
+                  "scope": 6269,
                   "src": "159:11:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -220,7 +232,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6242,
+                    "id": 6264,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "159:6:26",
@@ -234,13 +246,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6245,
+                  "id": 6267,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_documentHash",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6247,
+                  "scope": 6269,
                   "src": "172:21:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -249,7 +261,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6244,
+                    "id": 6266,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "172:7:26",
@@ -269,22 +281,22 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 6255,
+            "id": 6277,
             "name": "DocumentUpdated",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6254,
+              "id": 6276,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6249,
+                  "id": 6271,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6255,
+                  "scope": 6277,
                   "src": "222:21:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -293,7 +305,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6248,
+                    "id": 6270,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "222:7:26",
@@ -307,13 +319,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6251,
+                  "id": 6273,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_uri",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6255,
+                  "scope": 6277,
                   "src": "245:11:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -322,7 +334,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6250,
+                    "id": 6272,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "245:6:26",
@@ -336,13 +348,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6253,
+                  "id": 6275,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_documentHash",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6255,
+                  "scope": 6277,
                   "src": "258:21:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -351,7 +363,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6252,
+                    "id": 6274,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "258:7:26",
@@ -371,13 +383,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6256,
+              "id": 6278,
               "nodeType": "StructuredDocumentation",
               "src": "287:440:26",
               "text": "@notice Used to attach a new document to the contract, or update the URI or hash of an existing attached document\n@dev Can only be executed by the owner of the contract.\n@param _name Name of the document. It should be unique always\n@param _uri Off-chain uri of the document from where it is accessible to investors/advisors to read.\n@param _documentHash hash (of the contents) of the document."
             },
             "functionSelector": "010648ca",
-            "id": 6265,
+            "id": 6287,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -385,17 +397,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6263,
+              "id": 6285,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6258,
+                  "id": 6280,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6265,
+                  "scope": 6287,
                   "src": "753:13:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -404,7 +416,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6257,
+                    "id": 6279,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "753:7:26",
@@ -418,12 +430,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6260,
+                  "id": 6282,
                   "mutability": "mutable",
                   "name": "_uri",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6265,
+                  "scope": 6287,
                   "src": "768:20:26",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -432,7 +444,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6259,
+                    "id": 6281,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "768:6:26",
@@ -446,12 +458,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6262,
+                  "id": 6284,
                   "mutability": "mutable",
                   "name": "_documentHash",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6265,
+                  "scope": 6287,
                   "src": "790:21:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -460,7 +472,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6261,
+                    "id": 6283,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "790:7:26",
@@ -476,12 +488,12 @@
               "src": "752:60:26"
             },
             "returnParameters": {
-              "id": 6264,
+              "id": 6286,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "821:0:26"
             },
-            "scope": 6291,
+            "scope": 6313,
             "src": "732:90:26",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -490,13 +502,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6266,
+              "id": 6288,
               "nodeType": "StructuredDocumentation",
               "src": "828:248:26",
               "text": "@notice Used to remove an existing document from the contract by giving the name of the document.\n@dev Can only be executed by the owner of the contract.\n@param _name Name of the document. It should be unique always"
             },
             "functionSelector": "c3501848",
-            "id": 6271,
+            "id": 6293,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -504,17 +516,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6269,
+              "id": 6291,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6268,
+                  "id": 6290,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6271,
+                  "scope": 6293,
                   "src": "1105:13:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -523,7 +535,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6267,
+                    "id": 6289,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1105:7:26",
@@ -539,12 +551,12 @@
               "src": "1104:15:26"
             },
             "returnParameters": {
-              "id": 6270,
+              "id": 6292,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1128:0:26"
             },
-            "scope": 6291,
+            "scope": 6313,
             "src": "1081:48:26",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -553,13 +565,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6272,
+              "id": 6294,
               "nodeType": "StructuredDocumentation",
               "src": "1135:382:26",
               "text": "@notice Used to return the details of a document with a known name (`bytes32`).\n@param _name Name of the document\n@return documentUri string The URI associated with the document.\n@return documentHash bytes32 The hash (of the contents) of the document.\n@return documentTime uint256 the timestamp at which the document was last modified."
             },
             "functionSelector": "b10d6b41",
-            "id": 6283,
+            "id": 6305,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -567,17 +579,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6275,
+              "id": 6297,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6274,
+                  "id": 6296,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6283,
+                  "scope": 6305,
                   "src": "1543:13:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -586,7 +598,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6273,
+                    "id": 6295,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1543:7:26",
@@ -602,17 +614,17 @@
               "src": "1542:15:26"
             },
             "returnParameters": {
-              "id": 6282,
+              "id": 6304,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6277,
+                  "id": 6299,
                   "mutability": "mutable",
                   "name": "documentUri",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6283,
+                  "scope": 6305,
                   "src": "1581:25:26",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -621,7 +633,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6276,
+                    "id": 6298,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1581:6:26",
@@ -635,12 +647,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6279,
+                  "id": 6301,
                   "mutability": "mutable",
                   "name": "documentHash",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6283,
+                  "scope": 6305,
                   "src": "1608:20:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -649,7 +661,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6278,
+                    "id": 6300,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1608:7:26",
@@ -663,12 +675,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6281,
+                  "id": 6303,
                   "mutability": "mutable",
                   "name": "documentTime",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6283,
+                  "scope": 6305,
                   "src": "1630:20:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -677,7 +689,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6280,
+                    "id": 6302,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1630:7:26",
@@ -692,7 +704,7 @@
               ],
               "src": "1580:71:26"
             },
-            "scope": 6291,
+            "scope": 6313,
             "src": "1522:130:26",
             "stateMutability": "view",
             "virtual": false,
@@ -701,13 +713,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6284,
+              "id": 6306,
               "nodeType": "StructuredDocumentation",
               "src": "1658:190:26",
               "text": "@notice Used to retrieve a full list of documents attached to the smart contract.\n@return documentNames bytes32 List of all documents names present in the contract."
             },
             "functionSelector": "9fa5f50b",
-            "id": 6290,
+            "id": 6312,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -715,23 +727,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6285,
+              "id": 6307,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1877:2:26"
             },
             "returnParameters": {
-              "id": 6289,
+              "id": 6311,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6288,
+                  "id": 6310,
                   "mutability": "mutable",
                   "name": "documentNames",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6290,
+                  "scope": 6312,
                   "src": "1903:30:26",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -741,7 +753,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 6286,
+                      "id": 6308,
                       "name": "bytes32",
                       "nodeType": "ElementaryTypeName",
                       "src": "1903:7:26",
@@ -750,7 +762,7 @@
                         "typeString": "bytes32"
                       }
                     },
-                    "id": 6287,
+                    "id": 6309,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "1903:9:26",
@@ -765,14 +777,14 @@
               ],
               "src": "1902:32:26"
             },
-            "scope": 6291,
+            "scope": 6313,
             "src": "1853:82:26",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6292,
+        "scope": 6314,
         "src": "67:1870:26"
       }
     ],
@@ -781,14 +793,24 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IERC1643.sol",
     "exportedSymbols": {
-      "IERC1643": [6291]
+      "IERC1643": [
+        6313
+      ]
     },
-    "id": 6292,
+    "id": 6314,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6239,
-        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "id": 6261,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "34:31:26"
       },
@@ -799,30 +821,32 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6291,
-        "linearizedBaseContracts": [6291],
+        "id": 6313,
+        "linearizedBaseContracts": [
+          6313
+        ],
         "name": "IERC1643",
         "nodeType": "ContractDefinition",
         "nodes": [
           {
             "anonymous": false,
             "documentation": null,
-            "id": 6247,
+            "id": 6269,
             "name": "DocumentRemoved",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6246,
+              "id": 6268,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6241,
+                  "id": 6263,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6247,
+                  "scope": 6269,
                   "src": "136:21:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -831,7 +855,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6240,
+                    "id": 6262,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "136:7:26",
@@ -845,13 +869,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6243,
+                  "id": 6265,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_uri",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6247,
+                  "scope": 6269,
                   "src": "159:11:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -860,7 +884,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6242,
+                    "id": 6264,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "159:6:26",
@@ -874,13 +898,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6245,
+                  "id": 6267,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_documentHash",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6247,
+                  "scope": 6269,
                   "src": "172:21:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -889,7 +913,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6244,
+                    "id": 6266,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "172:7:26",
@@ -909,22 +933,22 @@
           {
             "anonymous": false,
             "documentation": null,
-            "id": 6255,
+            "id": 6277,
             "name": "DocumentUpdated",
             "nodeType": "EventDefinition",
             "parameters": {
-              "id": 6254,
+              "id": 6276,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6249,
+                  "id": 6271,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6255,
+                  "scope": 6277,
                   "src": "222:21:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -933,7 +957,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6248,
+                    "id": 6270,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "222:7:26",
@@ -947,13 +971,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6251,
+                  "id": 6273,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_uri",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6255,
+                  "scope": 6277,
                   "src": "245:11:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -962,7 +986,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6250,
+                    "id": 6272,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "245:6:26",
@@ -976,13 +1000,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 6253,
+                  "id": 6275,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "_documentHash",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6255,
+                  "scope": 6277,
                   "src": "258:21:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -991,7 +1015,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6252,
+                    "id": 6274,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "258:7:26",
@@ -1011,13 +1035,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6256,
+              "id": 6278,
               "nodeType": "StructuredDocumentation",
               "src": "287:440:26",
               "text": "@notice Used to attach a new document to the contract, or update the URI or hash of an existing attached document\n@dev Can only be executed by the owner of the contract.\n@param _name Name of the document. It should be unique always\n@param _uri Off-chain uri of the document from where it is accessible to investors/advisors to read.\n@param _documentHash hash (of the contents) of the document."
             },
             "functionSelector": "010648ca",
-            "id": 6265,
+            "id": 6287,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1025,17 +1049,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6263,
+              "id": 6285,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6258,
+                  "id": 6280,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6265,
+                  "scope": 6287,
                   "src": "753:13:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1044,7 +1068,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6257,
+                    "id": 6279,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "753:7:26",
@@ -1058,12 +1082,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6260,
+                  "id": 6282,
                   "mutability": "mutable",
                   "name": "_uri",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6265,
+                  "scope": 6287,
                   "src": "768:20:26",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -1072,7 +1096,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6259,
+                    "id": 6281,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "768:6:26",
@@ -1086,12 +1110,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6262,
+                  "id": 6284,
                   "mutability": "mutable",
                   "name": "_documentHash",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6265,
+                  "scope": 6287,
                   "src": "790:21:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1100,7 +1124,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6261,
+                    "id": 6283,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "790:7:26",
@@ -1116,12 +1140,12 @@
               "src": "752:60:26"
             },
             "returnParameters": {
-              "id": 6264,
+              "id": 6286,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "821:0:26"
             },
-            "scope": 6291,
+            "scope": 6313,
             "src": "732:90:26",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1130,13 +1154,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6266,
+              "id": 6288,
               "nodeType": "StructuredDocumentation",
               "src": "828:248:26",
               "text": "@notice Used to remove an existing document from the contract by giving the name of the document.\n@dev Can only be executed by the owner of the contract.\n@param _name Name of the document. It should be unique always"
             },
             "functionSelector": "c3501848",
-            "id": 6271,
+            "id": 6293,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1144,17 +1168,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6269,
+              "id": 6291,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6268,
+                  "id": 6290,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6271,
+                  "scope": 6293,
                   "src": "1105:13:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1163,7 +1187,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6267,
+                    "id": 6289,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1105:7:26",
@@ -1179,12 +1203,12 @@
               "src": "1104:15:26"
             },
             "returnParameters": {
-              "id": 6270,
+              "id": 6292,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1128:0:26"
             },
-            "scope": 6291,
+            "scope": 6313,
             "src": "1081:48:26",
             "stateMutability": "nonpayable",
             "virtual": false,
@@ -1193,13 +1217,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6272,
+              "id": 6294,
               "nodeType": "StructuredDocumentation",
               "src": "1135:382:26",
               "text": "@notice Used to return the details of a document with a known name (`bytes32`).\n@param _name Name of the document\n@return documentUri string The URI associated with the document.\n@return documentHash bytes32 The hash (of the contents) of the document.\n@return documentTime uint256 the timestamp at which the document was last modified."
             },
             "functionSelector": "b10d6b41",
-            "id": 6283,
+            "id": 6305,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1207,17 +1231,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6275,
+              "id": 6297,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6274,
+                  "id": 6296,
                   "mutability": "mutable",
                   "name": "_name",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6283,
+                  "scope": 6305,
                   "src": "1543:13:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1226,7 +1250,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6273,
+                    "id": 6295,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1543:7:26",
@@ -1242,17 +1266,17 @@
               "src": "1542:15:26"
             },
             "returnParameters": {
-              "id": 6282,
+              "id": 6304,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6277,
+                  "id": 6299,
                   "mutability": "mutable",
                   "name": "documentUri",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6283,
+                  "scope": 6305,
                   "src": "1581:25:26",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1261,7 +1285,7 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 6276,
+                    "id": 6298,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
                     "src": "1581:6:26",
@@ -1275,12 +1299,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6279,
+                  "id": 6301,
                   "mutability": "mutable",
                   "name": "documentHash",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6283,
+                  "scope": 6305,
                   "src": "1608:20:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1289,7 +1313,7 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 6278,
+                    "id": 6300,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
                     "src": "1608:7:26",
@@ -1303,12 +1327,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6281,
+                  "id": 6303,
                   "mutability": "mutable",
                   "name": "documentTime",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6283,
+                  "scope": 6305,
                   "src": "1630:20:26",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1317,7 +1341,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6280,
+                    "id": 6302,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "1630:7:26",
@@ -1332,7 +1356,7 @@
               ],
               "src": "1580:71:26"
             },
-            "scope": 6291,
+            "scope": 6313,
             "src": "1522:130:26",
             "stateMutability": "view",
             "virtual": false,
@@ -1341,13 +1365,13 @@
           {
             "body": null,
             "documentation": {
-              "id": 6284,
+              "id": 6306,
               "nodeType": "StructuredDocumentation",
               "src": "1658:190:26",
               "text": "@notice Used to retrieve a full list of documents attached to the smart contract.\n@return documentNames bytes32 List of all documents names present in the contract."
             },
             "functionSelector": "9fa5f50b",
-            "id": 6290,
+            "id": 6312,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -1355,23 +1379,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6285,
+              "id": 6307,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "1877:2:26"
             },
             "returnParameters": {
-              "id": 6289,
+              "id": 6311,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6288,
+                  "id": 6310,
                   "mutability": "mutable",
                   "name": "documentNames",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6290,
+                  "scope": 6312,
                   "src": "1903:30:26",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -1381,7 +1405,7 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 6286,
+                      "id": 6308,
                       "name": "bytes32",
                       "nodeType": "ElementaryTypeName",
                       "src": "1903:7:26",
@@ -1390,7 +1414,7 @@
                         "typeString": "bytes32"
                       }
                     },
-                    "id": 6287,
+                    "id": 6309,
                     "length": null,
                     "nodeType": "ArrayTypeName",
                     "src": "1903:9:26",
@@ -1405,14 +1429,14 @@
               ],
               "src": "1902:32:26"
             },
-            "scope": 6291,
+            "scope": 6313,
             "src": "1853:82:26",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6292,
+        "scope": 6314,
         "src": "67:1870:26"
       }
     ],
@@ -1424,7 +1448,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.731Z",
+  "updatedAt": "2021-06-08T10:00:09.396Z",
   "devdoc": {
     "methods": {
       "getDocument(bytes32)": {

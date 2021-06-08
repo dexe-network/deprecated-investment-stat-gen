@@ -17,6 +17,7 @@ export function stateInitializer(provider: GanacheCore.Provider): IState {
     // @ts-ignore
     web3: new Web3(provider, null, { transactionConfirmationBlocks: 1 }),
     vendor: VENDOR.BSC,
+    provider,
     accounts: {
       all: accounts,
       traders: accounts.slice(0, 1),

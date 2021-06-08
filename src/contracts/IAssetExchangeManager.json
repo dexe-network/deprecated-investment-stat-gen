@@ -32,14 +32,24 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IAssetExchangeManager.sol",
     "exportedSymbols": {
-      "IAssetExchangeManager": [6214]
+      "IAssetExchangeManager": [
+        6236
+      ]
     },
-    "id": 6215,
+    "id": 6237,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6206,
-        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "id": 6228,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "33:31:24"
       },
@@ -50,8 +60,10 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6214,
-        "linearizedBaseContracts": [6214],
+        "id": 6236,
+        "linearizedBaseContracts": [
+          6236
+        ],
         "name": "IAssetExchangeManager",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -59,7 +71,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "09c5eabe",
-            "id": 6213,
+            "id": 6235,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -67,17 +79,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6209,
+              "id": 6231,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6208,
+                  "id": 6230,
                   "mutability": "mutable",
                   "name": "_calldata",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6213,
+                  "scope": 6235,
                   "src": "121:24:24",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -86,7 +98,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6207,
+                    "id": 6229,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "121:5:24",
@@ -102,17 +114,17 @@
               "src": "120:26:24"
             },
             "returnParameters": {
-              "id": 6212,
+              "id": 6234,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6211,
+                  "id": 6233,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6213,
+                  "scope": 6235,
                   "src": "165:4:24",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -121,7 +133,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6210,
+                    "id": 6232,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "165:4:24",
@@ -136,14 +148,14 @@
               ],
               "src": "164:6:24"
             },
-            "scope": 6214,
+            "scope": 6236,
             "src": "104:67:24",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6215,
+        "scope": 6237,
         "src": "66:107:24"
       }
     ],
@@ -152,14 +164,24 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IAssetExchangeManager.sol",
     "exportedSymbols": {
-      "IAssetExchangeManager": [6214]
+      "IAssetExchangeManager": [
+        6236
+      ]
     },
-    "id": 6215,
+    "id": 6237,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6206,
-        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "id": 6228,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "33:31:24"
       },
@@ -170,8 +192,10 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6214,
-        "linearizedBaseContracts": [6214],
+        "id": 6236,
+        "linearizedBaseContracts": [
+          6236
+        ],
         "name": "IAssetExchangeManager",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -179,7 +203,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "09c5eabe",
-            "id": 6213,
+            "id": 6235,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -187,17 +211,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6209,
+              "id": 6231,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6208,
+                  "id": 6230,
                   "mutability": "mutable",
                   "name": "_calldata",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6213,
+                  "scope": 6235,
                   "src": "121:24:24",
                   "stateVariable": false,
                   "storageLocation": "calldata",
@@ -206,7 +230,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 6207,
+                    "id": 6229,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "121:5:24",
@@ -222,17 +246,17 @@
               "src": "120:26:24"
             },
             "returnParameters": {
-              "id": 6212,
+              "id": 6234,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6211,
+                  "id": 6233,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6213,
+                  "scope": 6235,
                   "src": "165:4:24",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -241,7 +265,7 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 6210,
+                    "id": 6232,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
                     "src": "165:4:24",
@@ -256,14 +280,14 @@
               ],
               "src": "164:6:24"
             },
-            "scope": 6214,
+            "scope": 6236,
             "src": "104:67:24",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6215,
+        "scope": 6237,
         "src": "66:107:24"
       }
     ],
@@ -275,7 +299,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.730Z",
+  "updatedAt": "2021-06-08T10:00:09.395Z",
   "devdoc": {
     "methods": {}
   },

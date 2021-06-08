@@ -66,14 +66,24 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IAssetValuationManager.sol",
     "exportedSymbols": {
-      "IAssetValuationManager": [6237]
+      "IAssetValuationManager": [
+        6259
+      ]
     },
-    "id": 6238,
+    "id": 6260,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6216,
-        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "id": 6238,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "33:31:25"
       },
@@ -84,8 +94,10 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6237,
-        "linearizedBaseContracts": [6237],
+        "id": 6259,
+        "linearizedBaseContracts": [
+          6259
+        ],
         "name": "IAssetValuationManager",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -93,7 +105,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "df22dbeb",
-            "id": 6227,
+            "id": 6249,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -101,17 +113,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6223,
+              "id": 6245,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6218,
+                  "id": 6240,
                   "mutability": "mutable",
                   "name": "basicToken",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6227,
+                  "scope": 6249,
                   "src": "132:18:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -120,7 +132,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6217,
+                    "id": 6239,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "132:7:25",
@@ -135,12 +147,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6220,
+                  "id": 6242,
                   "mutability": "mutable",
                   "name": "assetToken",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6227,
+                  "scope": 6249,
                   "src": "152:18:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -149,7 +161,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6219,
+                    "id": 6241,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "152:7:25",
@@ -164,12 +176,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6222,
+                  "id": 6244,
                   "mutability": "mutable",
                   "name": "assetAmount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6227,
+                  "scope": 6249,
                   "src": "172:19:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -178,7 +190,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6221,
+                    "id": 6243,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "172:7:25",
@@ -194,17 +206,17 @@
               "src": "131:61:25"
             },
             "returnParameters": {
-              "id": 6226,
+              "id": 6248,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6225,
+                  "id": 6247,
                   "mutability": "mutable",
                   "name": "valuation",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6227,
+                  "scope": 6249,
                   "src": "216:17:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -213,7 +225,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6224,
+                    "id": 6246,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "216:7:25",
@@ -228,7 +240,7 @@
               ],
               "src": "215:19:25"
             },
-            "scope": 6237,
+            "scope": 6259,
             "src": "105:130:25",
             "stateMutability": "view",
             "virtual": false,
@@ -238,7 +250,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "6c3cac38",
-            "id": 6236,
+            "id": 6258,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -246,17 +258,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6232,
+              "id": 6254,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6229,
+                  "id": 6251,
                   "mutability": "mutable",
                   "name": "assetToken",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6236,
+                  "scope": 6258,
                   "src": "270:18:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -265,7 +277,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6228,
+                    "id": 6250,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "270:7:25",
@@ -280,12 +292,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6231,
+                  "id": 6253,
                   "mutability": "mutable",
                   "name": "assetTokenAmt",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6236,
+                  "scope": 6258,
                   "src": "290:21:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -294,7 +306,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6230,
+                    "id": 6252,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "290:7:25",
@@ -310,17 +322,17 @@
               "src": "269:43:25"
             },
             "returnParameters": {
-              "id": 6235,
+              "id": 6257,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6234,
+                  "id": 6256,
                   "mutability": "mutable",
                   "name": "assetTokenOut",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6236,
+                  "scope": 6258,
                   "src": "336:21:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -329,7 +341,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6233,
+                    "id": 6255,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "336:7:25",
@@ -344,14 +356,14 @@
               ],
               "src": "335:23:25"
             },
-            "scope": 6237,
+            "scope": 6259,
             "src": "240:119:25",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6238,
+        "scope": 6260,
         "src": "66:295:25"
       }
     ],
@@ -360,14 +372,24 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IAssetValuationManager.sol",
     "exportedSymbols": {
-      "IAssetValuationManager": [6237]
+      "IAssetValuationManager": [
+        6259
+      ]
     },
-    "id": 6238,
+    "id": 6260,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6216,
-        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "id": 6238,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "33:31:25"
       },
@@ -378,8 +400,10 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6237,
-        "linearizedBaseContracts": [6237],
+        "id": 6259,
+        "linearizedBaseContracts": [
+          6259
+        ],
         "name": "IAssetValuationManager",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -387,7 +411,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "df22dbeb",
-            "id": 6227,
+            "id": 6249,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -395,17 +419,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6223,
+              "id": 6245,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6218,
+                  "id": 6240,
                   "mutability": "mutable",
                   "name": "basicToken",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6227,
+                  "scope": 6249,
                   "src": "132:18:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -414,7 +438,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6217,
+                    "id": 6239,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "132:7:25",
@@ -429,12 +453,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6220,
+                  "id": 6242,
                   "mutability": "mutable",
                   "name": "assetToken",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6227,
+                  "scope": 6249,
                   "src": "152:18:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -443,7 +467,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6219,
+                    "id": 6241,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "152:7:25",
@@ -458,12 +482,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6222,
+                  "id": 6244,
                   "mutability": "mutable",
                   "name": "assetAmount",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6227,
+                  "scope": 6249,
                   "src": "172:19:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -472,7 +496,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6221,
+                    "id": 6243,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "172:7:25",
@@ -488,17 +512,17 @@
               "src": "131:61:25"
             },
             "returnParameters": {
-              "id": 6226,
+              "id": 6248,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6225,
+                  "id": 6247,
                   "mutability": "mutable",
                   "name": "valuation",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6227,
+                  "scope": 6249,
                   "src": "216:17:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -507,7 +531,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6224,
+                    "id": 6246,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "216:7:25",
@@ -522,7 +546,7 @@
               ],
               "src": "215:19:25"
             },
-            "scope": 6237,
+            "scope": 6259,
             "src": "105:130:25",
             "stateMutability": "view",
             "virtual": false,
@@ -532,7 +556,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "6c3cac38",
-            "id": 6236,
+            "id": 6258,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -540,17 +564,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6232,
+              "id": 6254,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6229,
+                  "id": 6251,
                   "mutability": "mutable",
                   "name": "assetToken",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6236,
+                  "scope": 6258,
                   "src": "270:18:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -559,7 +583,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 6228,
+                    "id": 6250,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "270:7:25",
@@ -574,12 +598,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 6231,
+                  "id": 6253,
                   "mutability": "mutable",
                   "name": "assetTokenAmt",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6236,
+                  "scope": 6258,
                   "src": "290:21:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -588,7 +612,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6230,
+                    "id": 6252,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "290:7:25",
@@ -604,17 +628,17 @@
               "src": "269:43:25"
             },
             "returnParameters": {
-              "id": 6235,
+              "id": 6257,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6234,
+                  "id": 6256,
                   "mutability": "mutable",
                   "name": "assetTokenOut",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6236,
+                  "scope": 6258,
                   "src": "336:21:25",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -623,7 +647,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 6233,
+                    "id": 6255,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
                     "src": "336:7:25",
@@ -638,14 +662,14 @@
               ],
               "src": "335:23:25"
             },
-            "scope": 6237,
+            "scope": 6259,
             "src": "240:119:25",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6238,
+        "scope": 6260,
         "src": "66:295:25"
       }
     ],
@@ -657,7 +681,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.731Z",
+  "updatedAt": "2021-06-08T10:00:09.395Z",
   "devdoc": {
     "methods": {}
   },

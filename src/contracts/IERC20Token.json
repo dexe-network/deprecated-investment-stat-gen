@@ -209,24 +209,34 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IERC20Token.sol",
     "exportedSymbols": {
-      "IERC20Token": [6302]
+      "IERC20Token": [
+        6324
+      ]
     },
-    "id": 6303,
+    "id": 6325,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6293,
-        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "id": 6315,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "34:31:27"
       },
       {
         "absolutePath": "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol",
         "file": "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol",
-        "id": 6294,
+        "id": 6316,
         "nodeType": "ImportDirective",
-        "scope": 6303,
-        "sourceUnit": 17360,
+        "scope": 6325,
+        "sourceUnit": 17382,
         "src": "67:79:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -238,27 +248,32 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 6295,
+              "id": 6317,
               "name": "IERC20Upgradeable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 17359,
+              "referencedDeclaration": 17381,
               "src": "173:17:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC20Upgradeable_$17359",
+                "typeIdentifier": "t_contract$_IERC20Upgradeable_$17381",
                 "typeString": "contract IERC20Upgradeable"
               }
             },
-            "id": 6296,
+            "id": 6318,
             "nodeType": "InheritanceSpecifier",
             "src": "173:17:27"
           }
         ],
-        "contractDependencies": [17359],
+        "contractDependencies": [
+          17381
+        ],
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6302,
-        "linearizedBaseContracts": [6302, 17359],
+        "id": 6324,
+        "linearizedBaseContracts": [
+          6324,
+          17381
+        ],
         "name": "IERC20Token",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -266,7 +281,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "313ce567",
-            "id": 6301,
+            "id": 6323,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -274,23 +289,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6297,
+              "id": 6319,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "213:2:27"
             },
             "returnParameters": {
-              "id": 6300,
+              "id": 6322,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6299,
+                  "id": 6321,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6301,
+                  "scope": 6323,
                   "src": "239:5:27",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -299,7 +314,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 6298,
+                    "id": 6320,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "239:5:27",
@@ -314,14 +329,14 @@
               ],
               "src": "238:7:27"
             },
-            "scope": 6302,
+            "scope": 6324,
             "src": "196:50:27",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6303,
+        "scope": 6325,
         "src": "148:100:27"
       }
     ],
@@ -330,24 +345,34 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/interfaces/IERC20Token.sol",
     "exportedSymbols": {
-      "IERC20Token": [6302]
+      "IERC20Token": [
+        6324
+      ]
     },
-    "id": 6303,
+    "id": 6325,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 6293,
-        "literals": ["solidity", ">=", "0.6", ".2", "<", "0.8", ".0"],
+        "id": 6315,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.6",
+          ".2",
+          "<",
+          "0.8",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "34:31:27"
       },
       {
         "absolutePath": "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol",
         "file": "@openzeppelin/contracts-upgradeable/token/ERC20/IERC20Upgradeable.sol",
-        "id": 6294,
+        "id": 6316,
         "nodeType": "ImportDirective",
-        "scope": 6303,
-        "sourceUnit": 17360,
+        "scope": 6325,
+        "sourceUnit": 17382,
         "src": "67:79:27",
         "symbolAliases": [],
         "unitAlias": ""
@@ -359,27 +384,32 @@
             "arguments": null,
             "baseName": {
               "contractScope": null,
-              "id": 6295,
+              "id": 6317,
               "name": "IERC20Upgradeable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 17359,
+              "referencedDeclaration": 17381,
               "src": "173:17:27",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_IERC20Upgradeable_$17359",
+                "typeIdentifier": "t_contract$_IERC20Upgradeable_$17381",
                 "typeString": "contract IERC20Upgradeable"
               }
             },
-            "id": 6296,
+            "id": 6318,
             "nodeType": "InheritanceSpecifier",
             "src": "173:17:27"
           }
         ],
-        "contractDependencies": [17359],
+        "contractDependencies": [
+          17381
+        ],
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 6302,
-        "linearizedBaseContracts": [6302, 17359],
+        "id": 6324,
+        "linearizedBaseContracts": [
+          6324,
+          17381
+        ],
         "name": "IERC20Token",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -387,7 +417,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "313ce567",
-            "id": 6301,
+            "id": 6323,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -395,23 +425,23 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 6297,
+              "id": 6319,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "213:2:27"
             },
             "returnParameters": {
-              "id": 6300,
+              "id": 6322,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 6299,
+                  "id": 6321,
                   "mutability": "mutable",
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 6301,
+                  "scope": 6323,
                   "src": "239:5:27",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -420,7 +450,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 6298,
+                    "id": 6320,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "239:5:27",
@@ -435,14 +465,14 @@
               ],
               "src": "238:7:27"
             },
-            "scope": 6302,
+            "scope": 6324,
             "src": "196:50:27",
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 6303,
+        "scope": 6325,
         "src": "148:100:27"
       }
     ],
@@ -454,7 +484,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.732Z",
+  "updatedAt": "2021-06-08T10:00:09.397Z",
   "devdoc": {
     "methods": {
       "allowance(address,address)": {

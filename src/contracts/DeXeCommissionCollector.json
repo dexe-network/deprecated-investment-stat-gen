@@ -70,14 +70,20 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/DeXeCommissionCollector.sol",
     "exportedSymbols": {
-      "DeXeCommissionCollector": [9]
+      "DeXeCommissionCollector": [
+        9
+      ]
     },
     "id": 10,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
-        "literals": ["solidity", "0.6", ".6"],
+        "literals": [
+          "solidity",
+          "0.6",
+          ".6"
+        ],
         "nodeType": "PragmaDirective",
         "src": "32:22:0"
       },
@@ -87,7 +93,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 10,
-        "sourceUnit": 5755,
+        "sourceUnit": 5777,
         "src": "56:30:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -102,10 +108,10 @@
               "id": 3,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5754,
+              "referencedDeclaration": 5776,
               "src": "124:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$5754",
+                "typeIdentifier": "t_contract$_Ownable_$5776",
                 "typeString": "contract Ownable"
               }
             },
@@ -114,12 +120,19 @@
             "src": "124:7:0"
           }
         ],
-        "contractDependencies": [32, 5754],
+        "contractDependencies": [
+          32,
+          5776
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 9,
-        "linearizedBaseContracts": [9, 5754, 32],
+        "linearizedBaseContracts": [
+          9,
+          5776,
+          32
+        ],
         "name": "DeXeCommissionCollector",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -166,14 +179,20 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/DeXeCommissionCollector.sol",
     "exportedSymbols": {
-      "DeXeCommissionCollector": [9]
+      "DeXeCommissionCollector": [
+        9
+      ]
     },
     "id": 10,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 1,
-        "literals": ["solidity", "0.6", ".6"],
+        "literals": [
+          "solidity",
+          "0.6",
+          ".6"
+        ],
         "nodeType": "PragmaDirective",
         "src": "32:22:0"
       },
@@ -183,7 +202,7 @@
         "id": 2,
         "nodeType": "ImportDirective",
         "scope": 10,
-        "sourceUnit": 5755,
+        "sourceUnit": 5777,
         "src": "56:30:0",
         "symbolAliases": [],
         "unitAlias": ""
@@ -198,10 +217,10 @@
               "id": 3,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5754,
+              "referencedDeclaration": 5776,
               "src": "124:7:0",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$5754",
+                "typeIdentifier": "t_contract$_Ownable_$5776",
                 "typeString": "contract Ownable"
               }
             },
@@ -210,12 +229,19 @@
             "src": "124:7:0"
           }
         ],
-        "contractDependencies": [32, 5754],
+        "contractDependencies": [
+          32,
+          5776
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 9,
-        "linearizedBaseContracts": [9, 5754, 32],
+        "linearizedBaseContracts": [
+          9,
+          5776,
+          32
+        ],
         "name": "DeXeCommissionCollector",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -265,7 +291,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.658Z",
+  "updatedAt": "2021-06-08T10:00:09.320Z",
   "devdoc": {
     "methods": {
       "owner()": {

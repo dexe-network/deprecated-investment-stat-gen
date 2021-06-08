@@ -48,22 +48,19 @@ export class BaseGenerator {
   }
 
   async runRandomOperations(): Promise<void> {
-    void this.baseOperation.openPosition(lodash.sample(this.state.addressData.traderPools));
-    return;
-
-    const rand = lodash.random(3, 10) * 1000;
+    const rand = lodash.random(3, 10) * 100;
     const operation = lodash.sample([1, 2]);
-    setTimeout(() => {
+    setTimeout(async () => {
       this.operationCounter++;
-      console.log('Operation'.bgGreen.bold, this.operationCounter);
-
       switch (operation) {
         case 1: {
-          void this.baseOperation.openPosition(lodash.sample(this.state.addressData.traderPools));
+          console.log('Operation openPosition'.bgGreen.bold, this.operationCounter);
+          await this.baseOperation.openPosition(lodash.sample(this.state.addressData.traderPools));
           break;
         }
         case 2: {
-          void this.baseOperation.closePosition(lodash.sample(this.state.addressData.traderPools));
+          console.log('Operation closePosition'.bgGreen.bold, this.operationCounter);
+          await this.baseOperation.closePosition(lodash.sample(this.state.addressData.traderPools));
           break;
         }
         default: {

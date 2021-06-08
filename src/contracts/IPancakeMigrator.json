@@ -46,14 +46,21 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/pancake/interfaces/IPancakeMigrator.sol",
     "exportedSymbols": {
-      "IPancakeMigrator": [9811]
+      "IPancakeMigrator": [
+        9833
+      ]
     },
-    "id": 9812,
+    "id": 9834,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9797,
-        "literals": ["solidity", ">=", "0.5", ".0"],
+        "id": 9819,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:24:41"
       },
@@ -64,8 +71,10 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 9811,
-        "linearizedBaseContracts": [9811],
+        "id": 9833,
+        "linearizedBaseContracts": [
+          9833
+        ],
         "name": "IPancakeMigrator",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -73,7 +82,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "b7df1d25",
-            "id": 9810,
+            "id": 9832,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -81,17 +90,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 9808,
+              "id": 9830,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9799,
+                  "id": 9821,
                   "mutability": "mutable",
                   "name": "token",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9810,
+                  "scope": 9832,
                   "src": "76:13:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -100,7 +109,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9798,
+                    "id": 9820,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "76:7:41",
@@ -115,12 +124,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9801,
+                  "id": 9823,
                   "mutability": "mutable",
                   "name": "amountTokenMin",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9810,
+                  "scope": 9832,
                   "src": "91:19:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -129,7 +138,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9800,
+                    "id": 9822,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "91:4:41",
@@ -143,12 +152,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9803,
+                  "id": 9825,
                   "mutability": "mutable",
                   "name": "amountETHMin",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9810,
+                  "scope": 9832,
                   "src": "112:17:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -157,7 +166,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9802,
+                    "id": 9824,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "112:4:41",
@@ -171,12 +180,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9805,
+                  "id": 9827,
                   "mutability": "mutable",
                   "name": "to",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9810,
+                  "scope": 9832,
                   "src": "131:10:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -185,7 +194,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9804,
+                    "id": 9826,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "131:7:41",
@@ -200,12 +209,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9807,
+                  "id": 9829,
                   "mutability": "mutable",
                   "name": "deadline",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9810,
+                  "scope": 9832,
                   "src": "143:13:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -214,7 +223,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9806,
+                    "id": 9828,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "143:4:41",
@@ -230,19 +239,19 @@
               "src": "75:82:41"
             },
             "returnParameters": {
-              "id": 9809,
+              "id": 9831,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "166:0:41"
             },
-            "scope": 9811,
+            "scope": 9833,
             "src": "59:108:41",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 9812,
+        "scope": 9834,
         "src": "26:143:41"
       }
     ],
@@ -251,14 +260,21 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/pancake/interfaces/IPancakeMigrator.sol",
     "exportedSymbols": {
-      "IPancakeMigrator": [9811]
+      "IPancakeMigrator": [
+        9833
+      ]
     },
-    "id": 9812,
+    "id": 9834,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 9797,
-        "literals": ["solidity", ">=", "0.5", ".0"],
+        "id": 9819,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.5",
+          ".0"
+        ],
         "nodeType": "PragmaDirective",
         "src": "0:24:41"
       },
@@ -269,8 +285,10 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 9811,
-        "linearizedBaseContracts": [9811],
+        "id": 9833,
+        "linearizedBaseContracts": [
+          9833
+        ],
         "name": "IPancakeMigrator",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -278,7 +296,7 @@
             "body": null,
             "documentation": null,
             "functionSelector": "b7df1d25",
-            "id": 9810,
+            "id": 9832,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -286,17 +304,17 @@
             "nodeType": "FunctionDefinition",
             "overrides": null,
             "parameters": {
-              "id": 9808,
+              "id": 9830,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 9799,
+                  "id": 9821,
                   "mutability": "mutable",
                   "name": "token",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9810,
+                  "scope": 9832,
                   "src": "76:13:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -305,7 +323,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9798,
+                    "id": 9820,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "76:7:41",
@@ -320,12 +338,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9801,
+                  "id": 9823,
                   "mutability": "mutable",
                   "name": "amountTokenMin",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9810,
+                  "scope": 9832,
                   "src": "91:19:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -334,7 +352,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9800,
+                    "id": 9822,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "91:4:41",
@@ -348,12 +366,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9803,
+                  "id": 9825,
                   "mutability": "mutable",
                   "name": "amountETHMin",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9810,
+                  "scope": 9832,
                   "src": "112:17:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -362,7 +380,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9802,
+                    "id": 9824,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "112:4:41",
@@ -376,12 +394,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9805,
+                  "id": 9827,
                   "mutability": "mutable",
                   "name": "to",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9810,
+                  "scope": 9832,
                   "src": "131:10:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -390,7 +408,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 9804,
+                    "id": 9826,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "131:7:41",
@@ -405,12 +423,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 9807,
+                  "id": 9829,
                   "mutability": "mutable",
                   "name": "deadline",
                   "nodeType": "VariableDeclaration",
                   "overrides": null,
-                  "scope": 9810,
+                  "scope": 9832,
                   "src": "143:13:41",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -419,7 +437,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 9806,
+                    "id": 9828,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "143:4:41",
@@ -435,19 +453,19 @@
               "src": "75:82:41"
             },
             "returnParameters": {
-              "id": 9809,
+              "id": 9831,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "166:0:41"
             },
-            "scope": 9811,
+            "scope": 9833,
             "src": "59:108:41",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 9812,
+        "scope": 9834,
         "src": "26:143:41"
       }
     ],
@@ -459,7 +477,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.775Z",
+  "updatedAt": "2021-06-08T10:00:09.457Z",
   "devdoc": {
     "methods": {}
   },

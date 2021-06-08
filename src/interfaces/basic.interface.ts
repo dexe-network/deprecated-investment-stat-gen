@@ -1,9 +1,11 @@
 import Web3 from 'web3';
+import GanacheCore from 'ganache-core';
 
 export interface IState {
   config: IConfig;
   web3: Web3;
   vendor: VENDOR;
+  provider: GanacheCore.Provider;
   abis: {
     abiPET: any;
     abiTPFU: any;
@@ -89,4 +91,11 @@ export interface IReserveData {
   reserve0: string;
   reserve1: string;
   blockTimestampLast: string;
+}
+
+export interface IPosition {
+  amountOpened: string; // the amount of Basic Tokens a position was opened with.
+  liquidity: string; // the amount of Destination tokens received from exchange when position was opened.
+  token: string; // token - the address of ERC20 token that position was opened to
+  // i.e. the position was opened with  "amountOpened" of BasicTokens and resulted in "liquidity" amount of "token"s.
 }

@@ -70,14 +70,20 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/InsuranceManager.sol",
     "exportedSymbols": {
-      "InsuranceManager": [52]
+      "InsuranceManager": [
+        52
+      ]
     },
     "id": 53,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 44,
-        "literals": ["solidity", "0.6", ".6"],
+        "literals": [
+          "solidity",
+          "0.6",
+          ".6"
+        ],
         "nodeType": "PragmaDirective",
         "src": "32:22:3"
       },
@@ -87,7 +93,7 @@
         "id": 45,
         "nodeType": "ImportDirective",
         "scope": 53,
-        "sourceUnit": 5755,
+        "sourceUnit": 5777,
         "src": "56:30:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -102,10 +108,10 @@
               "id": 46,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5754,
+              "referencedDeclaration": 5776,
               "src": "117:7:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$5754",
+                "typeIdentifier": "t_contract$_Ownable_$5776",
                 "typeString": "contract Ownable"
               }
             },
@@ -114,12 +120,19 @@
             "src": "117:7:3"
           }
         ],
-        "contractDependencies": [32, 5754],
+        "contractDependencies": [
+          32,
+          5776
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 52,
-        "linearizedBaseContracts": [52, 5754, 32],
+        "linearizedBaseContracts": [
+          52,
+          5776,
+          32
+        ],
         "name": "InsuranceManager",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -166,14 +179,20 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/InsuranceManager.sol",
     "exportedSymbols": {
-      "InsuranceManager": [52]
+      "InsuranceManager": [
+        52
+      ]
     },
     "id": 53,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 44,
-        "literals": ["solidity", "0.6", ".6"],
+        "literals": [
+          "solidity",
+          "0.6",
+          ".6"
+        ],
         "nodeType": "PragmaDirective",
         "src": "32:22:3"
       },
@@ -183,7 +202,7 @@
         "id": 45,
         "nodeType": "ImportDirective",
         "scope": 53,
-        "sourceUnit": 5755,
+        "sourceUnit": 5777,
         "src": "56:30:3",
         "symbolAliases": [],
         "unitAlias": ""
@@ -198,10 +217,10 @@
               "id": 46,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5754,
+              "referencedDeclaration": 5776,
               "src": "117:7:3",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$5754",
+                "typeIdentifier": "t_contract$_Ownable_$5776",
                 "typeString": "contract Ownable"
               }
             },
@@ -210,12 +229,19 @@
             "src": "117:7:3"
           }
         ],
-        "contractDependencies": [32, 5754],
+        "contractDependencies": [
+          32,
+          5776
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 52,
-        "linearizedBaseContracts": [52, 5754, 32],
+        "linearizedBaseContracts": [
+          52,
+          5776,
+          32
+        ],
         "name": "InsuranceManager",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -265,7 +291,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.659Z",
+  "updatedAt": "2021-06-08T10:00:09.322Z",
   "devdoc": {
     "methods": {
       "owner()": {

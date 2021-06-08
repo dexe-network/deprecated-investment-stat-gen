@@ -70,14 +70,20 @@
   "ast": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/Governance.sol",
     "exportedSymbols": {
-      "Governance": [42]
+      "Governance": [
+        42
+      ]
     },
     "id": 43,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 34,
-        "literals": ["solidity", "0.6", ".6"],
+        "literals": [
+          "solidity",
+          "0.6",
+          ".6"
+        ],
         "nodeType": "PragmaDirective",
         "src": "32:22:2"
       },
@@ -87,7 +93,7 @@
         "id": 35,
         "nodeType": "ImportDirective",
         "scope": 43,
-        "sourceUnit": 5755,
+        "sourceUnit": 5777,
         "src": "56:30:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -102,10 +108,10 @@
               "id": 36,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5754,
+              "referencedDeclaration": 5776,
               "src": "111:7:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$5754",
+                "typeIdentifier": "t_contract$_Ownable_$5776",
                 "typeString": "contract Ownable"
               }
             },
@@ -114,12 +120,19 @@
             "src": "111:7:2"
           }
         ],
-        "contractDependencies": [32, 5754],
+        "contractDependencies": [
+          32,
+          5776
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 42,
-        "linearizedBaseContracts": [42, 5754, 32],
+        "linearizedBaseContracts": [
+          42,
+          5776,
+          32
+        ],
         "name": "Governance",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -166,14 +179,20 @@
   "legacyAST": {
     "absolutePath": "/Users/Burger/dexe/contracts1/dexe-asset-management/contracts/Governance.sol",
     "exportedSymbols": {
-      "Governance": [42]
+      "Governance": [
+        42
+      ]
     },
     "id": 43,
     "nodeType": "SourceUnit",
     "nodes": [
       {
         "id": 34,
-        "literals": ["solidity", "0.6", ".6"],
+        "literals": [
+          "solidity",
+          "0.6",
+          ".6"
+        ],
         "nodeType": "PragmaDirective",
         "src": "32:22:2"
       },
@@ -183,7 +202,7 @@
         "id": 35,
         "nodeType": "ImportDirective",
         "scope": 43,
-        "sourceUnit": 5755,
+        "sourceUnit": 5777,
         "src": "56:30:2",
         "symbolAliases": [],
         "unitAlias": ""
@@ -198,10 +217,10 @@
               "id": 36,
               "name": "Ownable",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 5754,
+              "referencedDeclaration": 5776,
               "src": "111:7:2",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Ownable_$5754",
+                "typeIdentifier": "t_contract$_Ownable_$5776",
                 "typeString": "contract Ownable"
               }
             },
@@ -210,12 +229,19 @@
             "src": "111:7:2"
           }
         ],
-        "contractDependencies": [32, 5754],
+        "contractDependencies": [
+          32,
+          5776
+        ],
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
         "id": 42,
-        "linearizedBaseContracts": [42, 5754, 32],
+        "linearizedBaseContracts": [
+          42,
+          5776,
+          32
+        ],
         "name": "Governance",
         "nodeType": "ContractDefinition",
         "nodes": [
@@ -265,7 +291,7 @@
   },
   "networks": {},
   "schemaVersion": "3.2.4",
-  "updatedAt": "2021-05-31T12:09:06.659Z",
+  "updatedAt": "2021-06-08T10:00:09.321Z",
   "devdoc": {
     "methods": {
       "owner()": {
