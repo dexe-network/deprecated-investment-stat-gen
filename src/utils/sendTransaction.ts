@@ -11,6 +11,14 @@ export const sendTransaction = async (
   state: IState,
 ): Promise<TransactionReceipt> => {
   try {
+    state.provider.send(
+      {
+        jsonrpc: '2.0',
+        method: 'evm_mine',
+        params: [],
+      },
+      (error, res) => {},
+    );
     const transaction = new Transaction(rawTransaction);
     transaction.sign(secretKey);
     const serializedTransaction = transaction.serialize();
@@ -18,7 +26,9 @@ export const sendTransaction = async (
     const receipt = await state.web3.eth
       .sendSignedTransaction('0x' + serializedTransaction.toString('hex'))
       .on('transactionHash', r => {
-        console.log(type.bgWhite.bold, 'Transaction sent, TX hash:'.magenta.bold, r);
+        if (type) {
+          console.log(type.bgWhite.bold, 'Transaction sent, TX hash:'.magenta.bold, r);
+        }
       })
       .on('error', error => {
         // console.log('Error sending transaction (TRANSACTION TYPE 2):', error);

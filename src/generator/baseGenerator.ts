@@ -48,8 +48,9 @@ export class BaseGenerator {
   }
 
   async runRandomOperations(): Promise<void> {
-    const rand = lodash.random(3, 10) * 100;
-    const operation = lodash.sample([1, 2]);
+    // const rand = lodash.random(3, 10) * 100;
+    const rand = 0;
+    const operation = lodash.sample([1, 2, 3]);
     setTimeout(async () => {
       this.operationCounter++;
       switch (operation) {
@@ -61,6 +62,15 @@ export class BaseGenerator {
         case 2: {
           console.log('Operation closePosition'.bgGreen.bold, this.operationCounter);
           await this.baseOperation.closePosition(lodash.sample(this.state.addressData.traderPools));
+          break;
+        }
+        case 3: {
+          console.log('Operation Deposit'.bgGreen.bold, this.operationCounter);
+          await this.baseOperation.depositTokenToTraderPool(
+            lodash.sample(this.state.accounts.users),
+            lodash.sample(this.state.addressData.traderPools),
+            lodash.random(1, 3) * 100,
+          );
           break;
         }
         default: {
@@ -102,11 +112,7 @@ export class BaseGenerator {
     console.log('Deposit From Users'.bgGreen.bold);
     await Promise.all(
       usersList.map(async value => {
-        await this.baseOperation.depositTokenToTraderPool(
-          value,
-          lodash.sample(traderPools),
-          lodash.random(1, 3) * 1000,
-        );
+        await this.baseOperation.depositTokenToTraderPool(value, lodash.sample(traderPools), lodash.random(1, 3) * 100);
       }),
     );
     console.log('Deposit From Users Completed'.bgGreen.bold);

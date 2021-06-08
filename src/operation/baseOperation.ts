@@ -82,7 +82,7 @@ export class BaseOperation {
 
     await this.swapTokens(account, traderPool.basicToken, rawAmount);
     await this.approveTransferTokenToPool(account, traderPool, rawAmount);
-    // console.log('Balance before Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
+    console.log('Balance before Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
 
     const poolAddress = traderPool.poolAddress;
     const traderPoolContract = new this.state.web3.eth.Contract(this.state.abis.abiTraderPool, poolAddress);
@@ -95,10 +95,11 @@ export class BaseOperation {
       gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
       to: poolAddress,
       value: this.state.web3.utils.toHex(0),
+      // exclude some fee - in some thimes error
       data: traderPoolContract.methods.deposit(this.state.web3.utils.toHex(rawAmount.toFixed(0))).encodeABI(),
     };
     await sendTransaction(createDepositTransaction, account.secretKey, 'Deposited', this.state);
-    // console.log('Balance after Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
+    console.log('Balance after Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
   }
 
   private async approveTransferTokenToPool(account: IAccount, traderPool: IPoolInfo, rawAmount: BigNumber) {
@@ -115,7 +116,7 @@ export class BaseOperation {
         .approve(traderPool.poolAddress, this.state.web3.utils.toHex(rawAmount.toFixed(0)))
         .encodeABI(),
     };
-    await sendTransaction(createApproveRawTransaction, account.secretKey, 'Approved', this.state);
+    await sendTransaction(createApproveRawTransaction, account.secretKey, undefined, this.state);
   }
 
   private async swapTokens(account: IAccount, swapTokenAddress: string, rawAmount: BigNumber): Promise<void> {
@@ -149,7 +150,7 @@ export class BaseOperation {
         .swapETHForExactTokens(this.state.web3.utils.toHex(rawAmount.toFixed(0)), path, account.address, deadlineTime)
         .encodeABI(),
     };
-    await sendTransaction(createSwapRawTransaction, account.secretKey, 'Token Swapped', this.state);
+    await sendTransaction(createSwapRawTransaction, account.secretKey, undefined, this.state);
   }
 
   public async openPosition(traderPool: IPoolInfo): Promise<void> {
@@ -168,7 +169,7 @@ export class BaseOperation {
       newPositionSpendAmountRaw = new BigNumber(availableTokenForFuturePosition);
     } else {
       newPositionSpendAmountRaw = new BigNumber(availableTokenForFuturePosition)
-        .multipliedBy(lodash.random(50, 100))
+        .multipliedBy(lodash.random(3, 10))
         .dividedBy(100);
     }
 
