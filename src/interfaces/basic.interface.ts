@@ -6,15 +6,20 @@ export interface IState {
   web3: Web3;
   vendor: VENDOR;
   provider: GanacheCore.Provider;
-  abis: {
-    abiPET: any;
-    abiTPFU: any;
-    abiPancake: any;
-    abiTraderPool: any;
-    abiErc20: any;
-    abiPancakeFactory: any;
-    abiPairContract: any;
-    abiParamKeeper: any;
+  contracts: {
+    exchangeTool: IContract;
+    traderPoolFactory: IContract;
+    swapRouterV2: IContract;
+    traderPool: IContract;
+    erc20: IContract;
+    swapFactory: IContract;
+    pairContract: IContract;
+    paramKeeper: IContract;
+    upgradeableBeacon: IContract;
+    beaconProxy: IContract;
+    poolLiquidityTokenUpgradeable: IContract;
+    pathFinder: IContract;
+    autoExchangeTool: IContract;
   };
   accounts: {
     all: IAccount[];
@@ -91,6 +96,12 @@ export interface IReserveData {
   reserve0: string;
   reserve1: string;
   blockTimestampLast: string;
+}
+
+export interface IContract {
+  abi: any;
+  bytecode: any;
+  contractName: string;
 }
 
 export interface IPosition {

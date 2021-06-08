@@ -21,11 +21,11 @@ export class BaseOperation {
 
   public async createTraderPoolTx(account: IAccount, basicToken: string) {
     const tpfuContract = new this.state.web3.eth.Contract(
-      this.state.abis.abiTPFU,
+      this.state.contracts.traderPoolFactory.abi,
       this.state.addressData.deployedAddresses.traderPoolFactoryUpgradeable,
     );
 
-    abiDecoder.addABI(this.state.abis.abiTPFU);
+    abiDecoder.addABI(this.state.contracts.traderPoolFactory.abi);
 
     const txCount = await this.state.web3.eth.getTransactionCount(account.address);
     const commissions = [
@@ -85,7 +85,7 @@ export class BaseOperation {
     console.log('Balance before Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
 
     const poolAddress = traderPool.poolAddress;
-    const traderPoolContract = new this.state.web3.eth.Contract(this.state.abis.abiTraderPool, poolAddress);
+    const traderPoolContract = new this.state.web3.eth.Contract(this.state.contracts.traderPool.abi, poolAddress);
     const txCount = await this.state.web3.eth.getTransactionCount(account.address);
 
     const createDepositTransaction = {
@@ -103,7 +103,7 @@ export class BaseOperation {
   }
 
   private async approveTransferTokenToPool(account: IAccount, traderPool: IPoolInfo, rawAmount: BigNumber) {
-    const tokenContract = new this.state.web3.eth.Contract(this.state.abis.abiErc20, traderPool.basicToken);
+    const tokenContract = new this.state.web3.eth.Contract(this.state.contracts.erc20.abi, traderPool.basicToken);
     const txCount = await this.state.web3.eth.getTransactionCount(account.address);
     const createApproveRawTransaction = {
       from: account.address,
@@ -121,7 +121,7 @@ export class BaseOperation {
 
   private async swapTokens(account: IAccount, swapTokenAddress: string, rawAmount: BigNumber): Promise<void> {
     const pancakeContract = new this.state.web3.eth.Contract(
-      this.state.abis.abiPancake,
+      this.state.contracts.swapRouterV2.abi,
       this.state.addressData.baseAddresses.defiSwapRouter,
     );
     const swapTokenDecimal = await getDecimal(swapTokenAddress, this.state);
@@ -174,7 +174,7 @@ export class BaseOperation {
     }
 
     const contract = new this.state.web3.eth.Contract(
-      this.state.abis.abiPET,
+      this.state.contracts.exchangeTool.abi,
       this.state.addressData.deployedAddresses.exchangeTool,
     );
     const txCount = await this.state.web3.eth.getTransactionCount(traderPool.traderWallet);
@@ -235,7 +235,7 @@ export class BaseOperation {
     }
 
     const contract = new this.state.web3.eth.Contract(
-      this.state.abis.abiPET,
+      this.state.contracts.exchangeTool.abi,
       this.state.addressData.deployedAddresses.exchangeTool,
     );
     const txCount = await this.state.web3.eth.getTransactionCount(traderPool.traderWallet);

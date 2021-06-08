@@ -11,7 +11,7 @@ async function getPairContractAddress(
   receiveToken: string,
 ): Promise<string> {
   try {
-    const contract = getContract('IUniswapV2Factory', state.addressData.baseAddresses.defiFactory, state);
+    const contract = getContract(state.contracts.swapFactory, state.addressData.baseAddresses.defiFactory, state);
     const pairAddress = await contract.methods.getPair(sendToken, receiveToken).call();
     return pairAddress;
   } catch (e) {
@@ -21,7 +21,7 @@ async function getPairContractAddress(
 
 async function getReserves(web3: Web3, state: IState, pairAddress: string): Promise<IReserveData> {
   try {
-    const contract = new state.web3.eth.Contract(state.abis.abiPairContract, pairAddress);
+    const contract = new state.web3.eth.Contract(state.contracts.pairContract.abi, pairAddress);
     const reserves = await contract.methods.getReserves().call();
     return reserves;
   } catch (e) {
@@ -38,7 +38,7 @@ async function getTokensData(
   reserves: IReserveData,
 ): Promise<ITokenPriceData> {
   try {
-    const contract = new state.web3.eth.Contract(state.abis.abiPairContract, pairAddress);
+    const contract = new state.web3.eth.Contract(state.contracts.pairContract.abi, pairAddress);
     const token0 = await contract.methods.token0().call();
     const token1 = await contract.methods.token1().call();
 

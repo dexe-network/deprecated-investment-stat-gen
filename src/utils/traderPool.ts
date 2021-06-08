@@ -4,7 +4,7 @@ import { getContract } from './getContract';
 
 export async function getTotalSupply(contractAddress: string, state: IState): Promise<string> {
   try {
-    const contract = getContract('TraderPoolUpgradeable', contractAddress, state);
+    const contract = getContract(state.contracts.traderPool, contractAddress, state);
     const totalSupply = await contract.methods.totalSupply().call();
     return totalSupply;
   } catch (e) {
@@ -14,7 +14,7 @@ export async function getTotalSupply(contractAddress: string, state: IState): Pr
 
 export async function getDepositedAmount(contractAddress: string, state: IState): Promise<string> {
   try {
-    const contract = getContract('TraderPoolUpgradeable', contractAddress, state);
+    const contract = getContract(state.contracts.traderPool, contractAddress, state);
     const deposits = await contract.methods.getTotalValueLocked().call();
     return deposits;
   } catch (e) {
@@ -24,7 +24,7 @@ export async function getDepositedAmount(contractAddress: string, state: IState)
 
 export async function positionAt(index, contractAddress: string, state: IState): Promise<{}> {
   try {
-    const contract = getContract('TraderPoolUpgradeable', contractAddress, state);
+    const contract = getContract(state.contracts.traderPool, contractAddress, state);
     const amount = await contract.methods.positionAt(index).call();
     return amount;
   } catch (e) {
@@ -34,7 +34,7 @@ export async function positionAt(index, contractAddress: string, state: IState):
 
 export async function positionsLength(contractAddress: string, state: IState): Promise<string> {
   try {
-    const contract = getContract('TraderPoolUpgradeable', contractAddress, state);
+    const contract = getContract(state.contracts.traderPool, contractAddress, state);
     const amount = await contract.methods.positionsLength().call();
     return amount;
   } catch (e) {
@@ -44,7 +44,7 @@ export async function positionsLength(contractAddress: string, state: IState): P
 
 export async function getMaxPositionOpenAmount(contractAddress: string, state: IState): Promise<string> {
   try {
-    const contract = getContract('TraderPoolUpgradeable', contractAddress, state);
+    const contract = getContract(state.contracts.traderPool, contractAddress, state);
     const amount = await contract.methods.getMaxPositionOpenAmount().call();
     return amount;
   } catch (e) {

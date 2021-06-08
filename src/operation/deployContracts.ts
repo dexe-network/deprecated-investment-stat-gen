@@ -1,4 +1,4 @@
-import { IAccount, IRawTransaction, IState, VENDOR } from '../interfaces/basic.interface';
+import { IAccount, IContract, IRawTransaction, IState, VENDOR } from '../interfaces/basic.interface';
 import fs from 'fs';
 import path from 'path';
 import 'colors';
@@ -18,30 +18,33 @@ export class DeployContracts {
   }
 
   public async run(): Promise<void> {
-    const traderPoolUpgradeableBeacon = await this.deployContract('TraderPoolUpgradeable', this.account).then(
+    const traderPoolUpgradeableBeacon = await this.deployContract(this.state.contracts.traderPool, this.account).then(
       contract1 => {
-        return this.deployContract('UpgradeableBeacon', this.account, [contract1.address]);
+        return this.deployContract(this.state.contracts.upgradeableBeacon, this.account, [contract1.address]);
       },
     );
     const poolLiquidityTokenUpgradeableBeacon = await this.deployContract(
-      'PoolLiquidityTokenUpgradeable',
+      this.state.contracts.poolLiquidityTokenUpgradeable,
       this.account,
     ).then(contract1 => {
-      return this.deployContract('UpgradeableBeacon', this.account, [contract1.address]);
+      return this.deployContract(this.state.contracts.upgradeableBeacon, this.account, [contract1.address]);
     });
 
-    const traderPoolFactoryUpgradeableBeacon = await this.deployContract('TraderPoolFactoryUpgradeable', this.account)
+    const traderPoolFactoryUpgradeableBeacon = await this.deployContract(
+      this.state.contracts.traderPoolFactory,
+      this.account,
+    )
       .then(contract1 => {
-        return this.deployContract('UpgradeableBeacon', this.account, [contract1.address]);
+        return this.deployContract(this.state.contracts.upgradeableBeacon, this.account, [contract1.address]);
       })
       .then(contract2 => {
-        return this.deployContract('BeaconProxy', this.account, [
+        return this.deployContract(this.state.contracts.beaconProxy, this.account, [
           contract2.address,
           this.state.web3.utils.hexToBytes('0x'),
         ]);
       });
 
-    const paramKeeper = await this.deployContract('ParamKeeper', this.account);
+    const paramKeeper = await this.deployContract(this.state.contracts.paramKeeper, this.account);
 
     let defiRouter: Contract;
     let defiFactoryAddress;
@@ -52,21 +55,29 @@ export class DeployContracts {
     let swapTool: IDeployResult;
 
     if (this.state.vendor === VENDOR.Ethereum) {
-      defiRouter = getContract('IUniswapV2Router02', this.state.addressData.baseAddresses.defiSwapRouter, this.state);
+      defiRouter = getContract(
+        this.state.contracts.swapRouterV2,
+        this.state.addressData.baseAddresses.defiSwapRouter,
+        this.state,
+      );
       defiFactoryAddress = await defiRouter.methods.factory().call();
       wethTokenAddress = await defiRouter.methods.WETH().call();
 
-      swapTool = await this.deployContract('UniswapExchangeTool', this.account);
-      valuationManager = await this.deployContract('UniswapPathFinder', this.account);
-      automaticExchangeManager = await this.deployContract('UniswapAutoExchangeTool', this.account);
+      swapTool = await this.deployContract(this.state.contracts.exchangeTool, this.account);
+      valuationManager = await this.deployContract(this.state.contracts.pathFinder, this.account);
+      automaticExchangeManager = await this.deployContract(this.state.contracts.autoExchangeTool, this.account);
     } else if (this.state.vendor === VENDOR.BSC) {
-      defiRouter = getContract('IPancakeRouter01', this.state.addressData.baseAddresses.defiSwapRouter, this.state);
+      defiRouter = getContract(
+        this.state.contracts.swapRouterV2,
+        this.state.addressData.baseAddresses.defiSwapRouter,
+        this.state,
+      );
       defiFactoryAddress = await defiRouter.methods.factory().call();
       wethTokenAddress = await defiRouter.methods.WETH().call();
 
-      swapTool = await this.deployContract('PancakeExchangeTool', this.account);
-      valuationManager = await this.deployContract('PancakePathFinder', this.account);
-      automaticExchangeManager = await this.deployContract('PancakeExchangeTool', this.account);
+      swapTool = await this.deployContract(this.state.contracts.exchangeTool, this.account);
+      valuationManager = await this.deployContract(this.state.contracts.pathFinder, this.account);
+      automaticExchangeManager = await this.deployContract(this.state.contracts.exchangeTool, this.account);
     }
 
     // this.state.addressData.baseAddresses.defiFactory = defiFactoryAddress;
@@ -121,7 +132,11 @@ export class DeployContracts {
     paramKeeper: IDeployResult,
     wethTokenAddress: string,
   ): Promise<void> {
-    const contract = getContract('TraderPoolFactoryUpgradeable', traderPoolFactoryUpgradeable.address, this.state);
+    const contract = getContract(
+      this.state.contracts.traderPoolFactory,
+      traderPoolFactoryUpgradeable.address,
+      this.state,
+    );
     const txCount = await this.state.web3.eth.getTransactionCount(this.account.address);
     const rawTransaction: IRawTransaction = {
       from: this.account.address,
@@ -203,10 +218,8 @@ export class DeployContracts {
     await sendTransaction(rawTransaction, this.account.secretKey, 'setAssetAutomaticExchangeManager', this.state);
   }
 
-  private async deployContract(fileName: string, account: IAccount, deployArg: any[] = []): Promise<IDeployResult> {
+  private async deployContract(contract: IContract, account: IAccount, deployArg: any[] = []): Promise<IDeployResult> {
     try {
-      const source = fs.readFileSync(path.resolve(__dirname, '../contracts', `${fileName}.json`));
-      const contract = JSON.parse(source.toString());
       const abi = contract.abi;
       const code = contract.bytecode;
       const SampleContract = new this.state.web3.eth.Contract(abi);
@@ -220,7 +233,7 @@ export class DeployContracts {
           gas: this.state.config.gasLimit,
         })
         .on('transactionHash', r => {
-          console.log('Deploy Contract'.bgYellow.bold, fileName.bgCyan.bold, 'TX hash:'.magenta.bold, r);
+          console.log('Deploy Contract'.bgYellow.bold, contract.contractName.bgCyan.bold, 'TX hash:'.magenta.bold, r);
         });
       return {
         contract: deployedContract,
