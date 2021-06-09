@@ -2,6 +2,7 @@ import { IAccount, IState, VENDOR } from '../interfaces/basic.interface';
 import Web3 from 'web3';
 import GanacheCore from 'ganache-core';
 import { basicEthereumTokensAddress, ethereumSwapTokenList, WethOrWbnbAddress } from '../constant/basicTokenList';
+import { generationRange } from '../app';
 
 export function stateInitializer(provider: GanacheCore.Provider): IState {
   // @ts-ignore
@@ -13,6 +14,10 @@ export function stateInitializer(provider: GanacheCore.Provider): IState {
       gasPrice: Web3.utils.hexToNumber(provider.options.gasPrice),
       //@ts-ignore
       gasLimit: Web3.utils.hexToNumber(provider.options.gasLimit),
+    },
+    timeRange: {
+      startTime: generationRange.startTime,
+      finishTime: generationRange.finishTime,
     },
     // @ts-ignore
     web3: new Web3(provider, null, { transactionConfirmationBlocks: 1 }),

@@ -26,6 +26,10 @@ export interface IState {
     traders: IAccount[];
     users: IAccount[];
   };
+  timeRange: {
+    startTime: Date;
+    finishTime: Date;
+  };
   addressData: IAddressData;
 }
 

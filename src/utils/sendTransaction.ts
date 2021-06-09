@@ -2,6 +2,7 @@ import { IRawTransaction, IState } from '../interfaces/basic.interface';
 import { TransactionReceipt } from 'web3-core';
 import { Transaction } from 'ethereumjs-tx';
 import { getRevertReason } from './getRevertReason';
+import moment from 'moment';
 
 export const sendTransaction = async (
   rawTransaction: IRawTransaction,
@@ -10,14 +11,30 @@ export const sendTransaction = async (
   state: IState,
 ): Promise<TransactionReceipt> => {
   try {
-    // state.provider.send(
-    //   {
-    //     jsonrpc: '2.0',
-    //     method: 'evm_mine',
-    //     params: [],
-    //   },
-    //   (error, res) => {},
-    // );
+    await new Promise((resolve, reject) => {
+      state.provider.send(
+        {
+          jsonrpc: '2.0',
+          method: 'evm_mine',
+          params: [],
+        },
+        () => {
+          resolve({});
+        },
+      );
+    });
+    await new Promise((resolve, reject) => {
+      state.provider.send(
+        {
+          jsonrpc: '2.0',
+          method: 'evm_increaseTime',
+          params: [3600],
+        },
+        () => {
+          resolve({});
+        },
+      );
+    });
     const transaction = new Transaction(rawTransaction);
     transaction.sign(secretKey);
     const serializedTransaction = transaction.serialize();
@@ -32,6 +49,10 @@ export const sendTransaction = async (
         // console.log('Error sending transaction (TRANSACTION TYPE 2):', error);
         void getRevertReason(error, state);
       });
+    console.log(
+      'TIME'.bgYellow,
+      moment(+(await state.web3.eth.getBlock(receipt.blockNumber)).timestamp * 1000).toDate(),
+    );
     return receipt;
   } catch (error) {
     void getRevertReason(error, state);

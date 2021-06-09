@@ -6,6 +6,7 @@ import fs from 'fs';
 import path from 'path';
 import { loadData, storeData } from '../helpers/fileSystem.helper';
 import { DeployContracts } from '../operation/deployContracts';
+import moment from 'moment';
 
 export class BaseGenerator {
   baseOperation: BaseOperation = new BaseOperation(this.state);
@@ -21,26 +22,26 @@ export class BaseGenerator {
 
   async run(): Promise<void> {
     try {
-      await this.deployContracts.run();
-      await this.generateTraderPools();
-      console.log('Start Endless trading operations'.bgYellow.bold);
-      void this.runRandomOperations();
+      // await this.deployContracts.run();
+      // await this.generateTraderPools();
+      // console.log('Start Endless trading operations'.bgYellow.bold);
+      // void this.runRandomOperations();
 
-      // if (this.isNewBD) {
-      //   await this.deployContracts.run();
-      //   await this.generateTraderPools();
-      //   this.saveAddressDataData(this.state.addressData);
-      //   console.log('Start Endless trading operations'.bgYellow.bold);
-      //   void this.runRandomOperations();
-      // } else {
-      //   console.log('DB already exist'.bgGreen.bold);
-      //   console.log('generateTraderPools skipped'.bgYellow.bold);
-      //   this.loadAddressDataData();
-      //   console.log('Trader Pool Data was Loaded'.bgCyan.bold);
-      //
-      //   console.log('Start Endless trading operations'.bgYellow.bold);
-      //   void this.runRandomOperations();
-      // }
+      if (this.isNewBD) {
+        await this.deployContracts.run();
+        await this.generateTraderPools();
+        this.saveAddressDataData(this.state.addressData);
+        console.log('Start Endless trading operations'.bgYellow.bold);
+        void this.runRandomOperations();
+      } else {
+        console.log('DB already exist'.bgGreen.bold);
+        console.log('generateTraderPools skipped'.bgYellow.bold);
+        this.loadAddressDataData();
+        console.log('Trader Pool Data was Loaded'.bgCyan.bold);
+
+        console.log('Start Endless trading operations'.bgYellow.bold);
+        void this.runRandomOperations();
+      }
     } catch (e) {
       throw e;
     }
@@ -76,8 +77,10 @@ export class BaseGenerator {
           throw new Error('Wrong Operation Number');
         }
       }
-
-      void this.runRandomOperations();
+      console.log('RANGE', await this.timeRange());
+      if (await this.timeRange()) {
+        void this.runRandomOperations();
+      }
     }, rand);
   }
 
@@ -125,5 +128,12 @@ export class BaseGenerator {
 
   private loadAddressDataData(): void {
     this.state.addressData = loadData<IAddressData>(path.resolve(__dirname, '../db', 'addressData.json'));
+  }
+
+  private async timeRange(): Promise<boolean> {
+    const blockNumber = await this.state.web3.eth.getBlockNumber();
+    const currentTime = moment(+(await this.state.web3.eth.getBlock(blockNumber)).timestamp * 1000);
+    const finishTime = moment(this.state.timeRange.finishTime);
+    return currentTime.isBefore(finishTime);
   }
 }
