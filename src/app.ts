@@ -30,7 +30,8 @@ const ganacheOptions: Ganache.IProviderOptions = {
   db_path: path.resolve(__dirname, 'db', 'db'),
 };
 
-const provider = Ganache.provider(ganacheOptions);
+const server = Ganache.server(ganacheOptions);
+const provider = server.provider;
 const state = stateInitializer(provider);
 const Generator = new BaseGenerator(state);
 
@@ -51,7 +52,8 @@ async function run(): Promise<void> {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-empty-function
-setInterval(() => {}, 10000);
+server.listen(8545, () => {
+  console.log('Ganache Server started', 'ws://localhost:8545');
+});
 
 void run();
