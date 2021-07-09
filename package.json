@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node  --transpile-only ./src/app.ts",
+    "start": "ts-node ./src/app.ts",
     "start-network": "npx ganache-cli -f https://bsc-dataseed1.binance.org -d -i 56 --hardfork istanbul -b 3 -e 10000 -a 101",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lintPretty": "pretty-quick --staged && npm run lint:fix",

@@ -102,6 +102,28 @@ export class BaseOperation {
     // console.log('Balance after Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
   }
 
+  public async withdrawTokenFromTraderPool(account: IAccount, traderPool: IPoolInfo, amount: number) {
+    const basicTokenDecimal = +(await getDecimal(traderPool.basicToken, this.state));
+    const rawAmount = parsedBalanceToRaw(new BigNumber(amount), basicTokenDecimal);
+
+    const poolAddress = traderPool.poolAddress;
+    const traderPoolContract = new this.state.web3.eth.Contract(this.state.contracts.traderPool.abi, poolAddress);
+    const txCount = await this.state.web3.eth.getTransactionCount(account.address);
+
+    const createWithdrawTransaction = {
+      from: account.address,
+      nonce: this.state.web3.utils.toHex(txCount),
+      gasPrice: this.state.web3.utils.toHex(this.state.config.gasPrice),
+      gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
+      to: poolAddress,
+      value: this.state.web3.utils.toHex(0),
+      // exclude some fee - in some thimes error
+      data: traderPoolContract.methods.withdraw(this.state.web3.utils.toHex(rawAmount.toFixed(0))).encodeABI(),
+    };
+    await sendTransaction(createWithdrawTransaction, account.secretKey, 'Withdrawn', this.state);
+    // console.log('Balance after Deposit', await getUserBalance(this.state, traderPool.basicToken, account.address));
+  }
+
   private async approveTransferTokenToPool(account: IAccount, traderPool: IPoolInfo, rawAmount: BigNumber) {
     const tokenContract = new this.state.web3.eth.Contract(this.state.contracts.erc20.abi, traderPool.basicToken);
     const txCount = await this.state.web3.eth.getTransactionCount(account.address);

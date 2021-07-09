@@ -2,7 +2,7 @@ import { IAccount, IState, VENDOR } from '../interfaces/basic.interface';
 import Web3 from 'web3';
 import GanacheCore from 'ganache-core';
 import { basicEthereumTokensAddress, ethereumSwapTokenList, WethOrWbnbAddress } from '../constant/basicTokenList';
-import { generationRange } from '../app';
+import { generationRange } from './ganacheConfig';
 
 export function stateInitializer(provider: GanacheCore.Provider): IState {
   // @ts-ignore
@@ -25,8 +25,8 @@ export function stateInitializer(provider: GanacheCore.Provider): IState {
     provider,
     accounts: {
       all: accounts,
-      traders: accounts.slice(0, 1),
-      users: accounts.slice(21, 25),
+      traders: accounts.slice(0, 15),
+      users: accounts.slice(21, 45),
     },
     contracts: {
       exchangeTool: require('../contracts/UniswapExchangeTool.json'),
@@ -42,6 +42,9 @@ export function stateInitializer(provider: GanacheCore.Provider): IState {
       poolLiquidityTokenUpgradeable: require('../contracts/PoolLiquidityTokenUpgradeable.json'),
       pathFinder: require('../contracts/UniswapPathFinder.json'),
       autoExchangeTool: require('../contracts/UniswapAutoExchangeTool.json'),
+    },
+    operationsInfo: {
+      investorDeposits: [],
     },
     addressData: {
       baseAddresses: {

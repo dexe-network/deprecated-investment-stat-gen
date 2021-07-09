@@ -1,4 +1,4 @@
-import { IAddressData, IPoolInfo, IState } from '../interfaces/basic.interface';
+import { IAddressData, IOperationsInfo, IPoolInfo, IState } from '../interfaces/basic.interface';
 import { BaseOperation } from '../operation/baseOperation';
 import lodash from 'lodash';
 import 'colors';
@@ -30,13 +30,13 @@ export class BaseGenerator {
       if (this.isNewBD) {
         await this.deployContracts.run();
         await this.generateTraderPools();
-        this.saveAddressDataData(this.state.addressData);
+        this.saveStateData(this.state);
         console.log('Start Endless trading operations'.bgYellow.bold);
         void this.runRandomOperations();
       } else {
         console.log('DB already exist'.bgGreen.bold);
         console.log('generateTraderPools skipped'.bgYellow.bold);
-        this.loadAddressDataData();
+        this.loadStateData();
         console.log('Trader Pool Data was Loaded'.bgCyan.bold);
 
         console.log('Start Endless trading operations'.bgYellow.bold);
@@ -50,7 +50,7 @@ export class BaseGenerator {
   async runRandomOperations(): Promise<void> {
     // const rand = lodash.random(3, 10) * 100;
     const rand = 0;
-    const operation = lodash.sample([1, 2, 3]);
+    const operation = lodash.sample([1, 2, 3, 4]);
     setTimeout(async () => {
       this.operationCounter++;
       switch (operation) {
@@ -71,6 +71,16 @@ export class BaseGenerator {
             lodash.sample(this.state.addressData.traderPools),
             lodash.random(1, 3) * 100,
           );
+          break;
+        }
+        case 4: {
+          console.log('Operation Withdraw'.bgGreen.bold, this.operationCounter);
+          const randomIndex = lodash.random(0, this.state.operationsInfo.investorDeposits.length - 1);
+          const randomItem = this.state.operationsInfo.investorDeposits[randomIndex];
+          const account = this.state.accounts.all.find(x => x.address === randomItem.walletAddress);
+          this.state.operationsInfo.investorDeposits.splice(randomIndex, 1);
+
+          await this.baseOperation.withdrawTokenFromTraderPool(account, randomItem.traderPool, randomItem.amount);
           break;
         }
         default: {
@@ -114,7 +124,9 @@ export class BaseGenerator {
     console.log('Deposit From Users'.bgGreen.bold);
     await Promise.all(
       usersList.map(async value => {
-        await this.baseOperation.depositTokenToTraderPool(value, lodash.sample(traderPools), lodash.random(1, 3) * 100);
+        const [account, traderPool, amount] = [value, lodash.sample(traderPools), lodash.random(1, 3) * 100];
+        this.state.operationsInfo.investorDeposits.push({ walletAddress: account.address, traderPool, amount });
+        await this.baseOperation.depositTokenToTraderPool(account, traderPool, amount);
       }),
     );
     console.log('Deposit From Users Completed'.bgGreen.bold);
@@ -122,12 +134,14 @@ export class BaseGenerator {
     console.log('generateTraderPools was Completed'.bgYellow.bold);
   }
 
-  private saveAddressDataData(addressData: IAddressData): void {
-    storeData(addressData, path.resolve(__dirname, '../db', 'addressData.json'));
+  private saveStateData(state: IState): void {
+    storeData(state.addressData, path.resolve(__dirname, '../db', 'addressData.json'));
+    storeData(state.operationsInfo, path.resolve(__dirname, '../db', 'operationsInfo.json'));
   }
 
-  private loadAddressDataData(): void {
+  private loadStateData(): void {
     this.state.addressData = loadData<IAddressData>(path.resolve(__dirname, '../db', 'addressData.json'));
+    this.state.operationsInfo = loadData<IOperationsInfo>(path.resolve(__dirname, '../db', 'operationsInfo.json'));
   }
 
   private async timeRange(): Promise<boolean> {

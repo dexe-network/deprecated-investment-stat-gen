@@ -22,7 +22,7 @@ export async function getDepositedAmount(contractAddress: string, state: IState)
   }
 }
 
-export async function positionAt(index, contractAddress: string, state: IState): Promise<{}> {
+export async function positionAt(index, contractAddress: string, state: IState): Promise<any> {
   try {
     const contract = getContract(state.contracts.traderPool, contractAddress, state);
     const amount = await contract.methods.positionAt(index).call();

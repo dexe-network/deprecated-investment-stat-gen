@@ -30,7 +30,16 @@ export interface IState {
     startTime: Date;
     finishTime: Date;
   };
+  operationsInfo: IOperationsInfo;
   addressData: IAddressData;
+}
+
+export interface IOperationsInfo {
+  investorDeposits: {
+    walletAddress: string;
+    traderPool: IPoolInfo;
+    amount: number;
+  }[];
 }
 
 export interface IAddressData {
