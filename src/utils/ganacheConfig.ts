@@ -12,7 +12,7 @@ export const getGanacheConfig = (): Ganache.IProviderOptions => {
     account_keys_path: path.resolve(__dirname, '../accounts.json'),
     // fork: fs.existsSync(path.resolve(__dirname, '../db')) ? undefined : 'https://bsc-dataseed1.binance.org',
     // fork: 'https://bsc-dataseed1.binance.org',
-    fork: 'ws://eth.getblock.io/mainnet/?api_key=ba8b0738-9220-42e7-97fb-5e607e581ab7',
+    fork: 'https://mainnet.infura.io/v3/de45a48fc06f4f49b8c867241f429239',
     networkId: 56,
     fork_block_number: 12096424,
     time: fs.existsSync(path.resolve(__dirname, '../db')) ? generationRange.finishTime : generationRange.startTime,

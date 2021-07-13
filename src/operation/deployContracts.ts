@@ -83,6 +83,7 @@ export class DeployContracts {
     // this.state.addressData.baseAddresses.defiFactory = defiFactoryAddress;
     this.state.addressData.deployedAddresses.exchangeTool = swapTool.address;
     this.state.addressData.deployedAddresses.traderPoolFactoryUpgradeable = traderPoolFactoryUpgradeableBeacon.address;
+    this.state.addressData.deployedAddresses.paramKeeper = paramKeeper.address;
 
     await this.setAssetAutomaticExchangeManager(paramKeeper, automaticExchangeManager);
     await this.setAssetValuationManager(paramKeeper, valuationManager);
@@ -109,6 +110,8 @@ export class DeployContracts {
     for (const tokenAddress of this.state.addressData.swapTokenList) {
       await this.setWhitelistToken(paramKeeper, tokenAddress);
     }
+    await this.delistTokenFromWhitelist(paramKeeper, this.state.addressData.swapTokenList[0]);
+    await this.setWhitelistToken(paramKeeper, this.state.addressData.swapTokenList[0]);
   }
 
   private async setWhitelistToken(paramKeeper: IDeployResult, address: string): Promise<void> {
@@ -123,6 +126,20 @@ export class DeployContracts {
       data: paramKeeper.contract.methods.whitelistToken(address).encodeABI(),
     };
     await sendTransaction(rawTransaction, this.account.secretKey, 'whitelistToken', this.state);
+  }
+
+  private async delistTokenFromWhitelist(paramKeeper: IDeployResult, address: string): Promise<void> {
+    const txCount = await this.state.web3.eth.getTransactionCount(this.account.address);
+    const rawTransaction: IRawTransaction = {
+      from: this.account.address,
+      nonce: this.state.web3.utils.toHex(txCount),
+      gasPrice: this.state.web3.utils.toHex(this.state.config.gasPrice),
+      gasLimit: this.state.web3.utils.toHex(this.state.config.gasLimit),
+      to: paramKeeper.address,
+      value: this.state.web3.utils.toHex(0),
+      data: paramKeeper.contract.methods.delistToken(address).encodeABI(),
+    };
+    await sendTransaction(rawTransaction, this.account.secretKey, 'delistToken', this.state);
   }
 
   private async initializeFactory(

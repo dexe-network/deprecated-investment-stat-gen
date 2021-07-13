@@ -50,6 +50,7 @@ export interface IAddressData {
   deployedAddresses: {
     traderPoolFactoryUpgradeable: string;
     exchangeTool: string;
+    paramKeeper: string;
   };
   traderPools: IPoolInfo[];
   baseTokenList: string[];

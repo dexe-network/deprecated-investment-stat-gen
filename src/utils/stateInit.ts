@@ -54,6 +54,7 @@ export function stateInitializer(provider: GanacheCore.Provider): IState {
       deployedAddresses: {
         exchangeTool: '',
         traderPoolFactoryUpgradeable: '',
+        paramKeeper: '',
       },
       traderPools: [],
       baseTokenList: basicEthereumTokensAddress,
