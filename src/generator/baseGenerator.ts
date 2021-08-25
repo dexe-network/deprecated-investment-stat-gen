@@ -66,20 +66,29 @@ export class BaseGenerator {
         }
         case 3: {
           console.log('Operation Deposit'.bgGreen.bold, this.operationCounter);
-          await this.baseOperation.depositTokenToTraderPool(
-            lodash.sample(this.state.accounts.users),
-            lodash.sample(this.state.addressData.traderPools),
-            lodash.random(1, 3) * 100,
-          );
+          const user = lodash.sample(this.state.accounts.users);
+          const traderPool = lodash.sample(this.state.addressData.traderPools);
+          const amount = lodash.random(1, 3) * 100;
+          this.state.operationsInfo.investorDeposits.push({ walletAddress: user.address, traderPool, amount });
+          await this.baseOperation.depositTokenToTraderPool(user, traderPool, amount);
           break;
         }
         case 4: {
-          console.log('Operation Withdraw'.bgGreen.bold, this.operationCounter);
+          console.log(
+            'Operation Withdraw'.bgGreen.bold,
+            this.operationCounter,
+            this.state.operationsInfo.investorDeposits.length,
+          );
+
+          if (this.state.operationsInfo.investorDeposits.length === 0) {
+            console.log('No Investors'.bgGreen.bold);
+            break;
+          }
+
           const randomIndex = lodash.random(0, this.state.operationsInfo.investorDeposits.length - 1);
           const randomItem = this.state.operationsInfo.investorDeposits[randomIndex];
           const account = this.state.accounts.all.find(x => x.address === randomItem.walletAddress);
           this.state.operationsInfo.investorDeposits.splice(randomIndex, 1);
-
           await this.baseOperation.withdrawTokenFromTraderPool(account, randomItem.traderPool, randomItem.amount);
           break;
         }

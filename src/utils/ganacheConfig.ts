@@ -4,8 +4,10 @@ import Ganache from 'ganache-core';
 
 export const generationRange = {
   startTime: new Date('2021-03-23 19:11'),
-  finishTime: new Date('2021-04-01 19:11'),
+  finishTime: new Date('2021-08-01 19:11'),
 };
+
+export const timeBetweenOperationInSeconds = 21600;
 
 export const getGanacheConfig = (): Ganache.IProviderOptions => {
   return {

@@ -3,6 +3,7 @@ import { TransactionReceipt } from 'web3-core';
 import { Transaction } from 'ethereumjs-tx';
 import { getRevertReason } from './getRevertReason';
 import moment from 'moment';
+import { timeBetweenOperationInSeconds } from './ganacheConfig';
 
 export const sendTransaction = async (
   rawTransaction: IRawTransaction,
@@ -28,7 +29,7 @@ export const sendTransaction = async (
         {
           jsonrpc: '2.0',
           method: 'evm_increaseTime',
-          params: [3600],
+          params: [timeBetweenOperationInSeconds],
         },
         () => {
           resolve({});
