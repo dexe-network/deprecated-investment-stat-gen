@@ -257,8 +257,11 @@ export class BaseOperation {
       closePositionAmountRaw = availablePositionAmountRaw;
       transactionMessage = 'Position Closed';
     } else {
-      closePositionAmountRaw = availablePositionAmountRaw.multipliedBy(lodash.random(50, 100)).dividedBy(100);
-      transactionMessage = 'Partial Position Closed';
+      closePositionAmountRaw = lodash.sample([
+        availablePositionAmountRaw.multipliedBy(lodash.random(50, 100)).dividedBy(100),
+        availablePositionAmountRaw,
+      ]);
+      transactionMessage = 'Partial/Full Position Closed';
     }
 
     const contract = new this.state.web3.eth.Contract(
