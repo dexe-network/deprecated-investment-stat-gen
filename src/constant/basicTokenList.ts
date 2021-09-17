@@ -31,7 +31,7 @@ export const ethereumSwapTokenList = [
   // '0x9f8f72aa9304c8b593d555f12ef6589cc3a579a2', // Maker
   '0x111111111117dc0aa78b770fa6a738034120c302', // Inch
   '0xc00e94cb662c3520282e6f5717214004a7f26888', // COMP
-  '0x35a532d376ffd9a705d0bb319532837337a398e7', // Wdodge
+  // '0x35a532d376ffd9a705d0bb319532837337a398e7', // Wdodge
 ];
 
 export const WethOrWbnbAddress = '0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2';

@@ -25,8 +25,8 @@ export function stateInitializer(provider: GanacheCore.Provider): IState {
     provider,
     accounts: {
       all: accounts,
-      traders: accounts.slice(0, 15),
-      users: accounts.slice(21, 45),
+      traders: accounts.slice(0, 3),
+      users: accounts.slice(21, 28),
     },
     contracts: {
       exchangeTool: require('../contracts/UniswapExchangeTool.json'),

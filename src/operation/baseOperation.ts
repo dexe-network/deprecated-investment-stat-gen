@@ -12,7 +12,7 @@ import { parsedBalanceToRaw, rawBalanceToParsed } from '../helpers/tokens.helper
 import { getUserBalance } from '../utils/getUserBalance';
 import 'colors';
 import { getDecimal } from '../utils/getDecimal';
-import { getMaxPositionOpenAmount, positionAt, positionsLength } from '../utils/traderPool';
+import { getAmountOut, getMaxPositionOpenAmount, positionAt, positionsLength } from '../utils/traderPool';
 import { sendTransaction } from '../utils/sendTransaction';
 import { WethOrWbnbAddress } from '../constant/basicTokenList';
 
@@ -206,16 +206,23 @@ export class BaseOperation {
     );
     const txCount = await this.state.web3.eth.getTransactionCount(traderPool.traderWallet);
     const swapTokenAddress = lodash.sample(this.state.addressData.swapTokenList);
-    // console.log(
-    //   'Get',
-    //   swapTokenAddress,
-    //   'Send',
-    //   traderPool.basicToken,
-    //   availableTokenForFuturePosition.toString(),
-    //   newPositionSpendAmountRaw.toString(),
-    // );
+
+    const currentPrice = await getCurrentExchangeRate(
+      this.state.web3,
+      this.state,
+      traderPool.basicToken,
+      swapTokenAddress,
+    );
+    console.log(currentPrice);
+
+    const swapTokenDecimal = await getDecimal(swapTokenAddress, this.state);
+    const parsedSpendAmount = rawBalanceToParsed(newPositionSpendAmountRaw, swapTokenDecimal)
+      .multipliedBy(1.15)
+      .dividedBy(currentPrice);
 
     const path = [traderPool.basicToken, swapTokenAddress];
+    console.log(path);
+    const amountOutMin = await getAmountOut(newPositionSpendAmountRaw, path, this.state);
     const deadlineTime = moment(moment.now()).add(10, 'minutes').unix();
     const traderAccount = this.state.accounts.traders.find(x => x.address === traderPool.traderWallet);
 
@@ -230,7 +237,7 @@ export class BaseOperation {
         .swapExactTokensForTokens(
           traderPool.poolAddress,
           this.state.web3.utils.toHex(newPositionSpendAmountRaw.toFixed(0)),
-          this.state.web3.utils.toHex(0),
+          this.state.web3.utils.toHex(amountOutMin),
           path,
           deadlineTime,
         )
@@ -261,7 +268,11 @@ export class BaseOperation {
         availablePositionAmountRaw.multipliedBy(lodash.random(50, 100)).dividedBy(100),
         availablePositionAmountRaw,
       ]);
-      transactionMessage = 'Partial/Full Position Closed';
+      if (closePositionAmountRaw.isEqualTo(availablePositionAmountRaw)) {
+        transactionMessage = 'Full Position Closed';
+      } else {
+        transactionMessage = 'Partial Position Closed';
+      }
     }
 
     const contract = new this.state.web3.eth.Contract(
@@ -270,6 +281,7 @@ export class BaseOperation {
     );
     const txCount = await this.state.web3.eth.getTransactionCount(traderPool.traderWallet);
     const path = [selectedPosition.token, traderPool.basicToken];
+    const amountOutMin = await getAmountOut(closePositionAmountRaw, path, this.state);
     const deadlineTime = moment(moment.now()).add(10, 'minutes').unix();
     const traderAccount = this.state.accounts.traders.find(x => x.address === traderPool.traderWallet);
 
@@ -284,7 +296,7 @@ export class BaseOperation {
         .swapExactTokensForTokens(
           traderPool.poolAddress,
           this.state.web3.utils.toHex(closePositionAmountRaw.toFixed(0)),
-          this.state.web3.utils.toHex(0),
+          this.state.web3.utils.toHex(amountOutMin),
           path,
           deadlineTime,
         )

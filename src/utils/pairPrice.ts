@@ -97,6 +97,7 @@ export async function getCurrentExchangeRate(
   // Not correct work if token with different decimal , need some improve
   const pairContractAddress = await getPairContractAddress(web3, state, sendToken, receiveToken);
   const reserves = await getReserves(web3, state, pairContractAddress);
+  console.log(reserves);
   const tokensData = await getTokensData(web3, state, pairContractAddress, sendToken, receiveToken, reserves);
   return new BigNumber(tokensData.receiveToken.reserve)
     .dividedBy(

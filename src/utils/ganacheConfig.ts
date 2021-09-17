@@ -3,8 +3,8 @@ import fs from 'fs';
 import Ganache from 'ganache-core';
 
 export const generationRange = {
-  startTime: new Date('2021-03-23 19:11'),
-  finishTime: new Date('2021-08-01 19:11'),
+  startTime: new Date('2021-07-23 19:11'),
+  finishTime: new Date('2021-09-01 19:11'),
 };
 
 export const timeBetweenOperationInSeconds = 21600;
